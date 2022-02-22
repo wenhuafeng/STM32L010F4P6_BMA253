@@ -1,981 +1,0 @@
-Dependencies for Project 'STM32L0_BMA253', Target 'STM32L0_BMA253': (DO NOT MODIFY !)
-F (startup_stm32l010x4.s)(0x5F3F1074)(--cpu Cortex-M0+ -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include--pd "__UVISION_VERSION SETA 525" --pd "_RTE_ SETA 1"--list startup_stm32l010x4.lst --xref -o stm32l0_bma253\startup_stm32l010x4.o --depend stm32l0_bma253\startup_stm32l010x4.d)
-F (..\User\GsensorToSflash\accelerometer_bma253.c)(0x5EC2260B)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\accelerometer_bma253.o --omf_browse stm32l0_bma253\accelerometer_bma253.crf --depend stm32l0_bma253\accelerometer_bma253.d)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-I (..\User\GsensorToSflash\accelerometer.h)(0x5EBDE668)
-I (..\User\GsensorToSflash\TypeDefine.h)(0x5EBB4CF9)
-I (..\User\GsensorToSflash\accelerometer_bma253_iic.h)(0x5EC5F825)
-F (..\User\GsensorToSflash\accelerometer_bma253_iic.c)(0x5EC1DACD)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\accelerometer_bma253_iic.o --omf_browse stm32l0_bma253\accelerometer_bma253_iic.crf --depend stm32l0_bma253\accelerometer_bma253_iic.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-I (..\User\GsensorToSflash\TypeDefine.h)(0x5EBB4CF9)
-I (../Core/Inc/i2c.h)(0x5F447F82)
-F (..\User\GsensorToSflash\ArrayQueue.C)(0x5EBF6A84)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\arrayqueue.o --omf_browse stm32l0_bma253\arrayqueue.crf --depend stm32l0_bma253\arrayqueue.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
-I (..\User\GsensorToSflash\TypeDefine.h)(0x5EBB4CF9)
-I (..\User\GsensorToSflash\ArrayQueue.h)(0x5EBF6533)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-F (..\User\GsensorToSflash\GsensorToSflash_Process.c)(0x5EC4D442)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\gsensortosflash_process.o --omf_browse stm32l0_bma253\gsensortosflash_process.crf --depend stm32l0_bma253\gsensortosflash_process.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-I (..\User\GsensorToSflash\TypeDefine.h)(0x5EBB4CF9)
-I (..\User\GsensorToSflash\accelerometer.h)(0x5EBDE668)
-I (..\User\GsensorToSflash\W25Q128.h)(0x5EB52113)
-I (..\User\GsensorToSflash\ArrayQueue.h)(0x5EBF6533)
-I (..\User\GsensorToSflash\accelerometer_bma253_iic.h)(0x5EC5F825)
-I (..\User\GsensorToSflash\GsensorToSflash_Process.h)(0x5EBF6557)
-F (..\User\GsensorToSflash\W25Q128.c)(0x5EE48A6C)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\w25q128.o --omf_browse stm32l0_bma253\w25q128.crf --depend stm32l0_bma253\w25q128.d)
-I (..\User\GsensorToSflash\W25Q128.h)(0x5EB52113)
-I (..\User\GsensorToSflash\TypeDefine.h)(0x5EBB4CF9)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-F (../Core/Src/main.c)(0x5F448438)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\main.o --omf_browse stm32l0_bma253\main.crf --depend stm32l0_bma253\main.d)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-I (../Core/Inc/dma.h)(0x5F3F106C)
-I (../Core/Inc/i2c.h)(0x5F447F82)
-I (../Core/Inc/lptim.h)(0x5F3F106D)
-I (../Core/Inc/usart.h)(0x5F3F106E)
-I (../Core/Inc/rtc.h)(0x5F3F106F)
-I (../Core/Inc/spi.h)(0x5F3F106F)
-I (../Core/Inc/gpio.h)(0x5F3F106A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
-I (../User/GsensorToSflash/GsensorToSflash_Process.h)(0x5EBF6557)
-I (../User/GsensorToSflash/TypeDefine.h)(0x5EBB4CF9)
-I (../User/GsensorToSflash/accelerometer_bma253_iic.h)(0x5EC5F825)
-I (../User/GsensorToSflash/accelerometer.h)(0x5EBDE668)
-I (../User/GsensorToSflash/W25Q128.h)(0x5EB52113)
-F (../Core/Src/dma.c)(0x5F3F106C)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\dma.o --omf_browse stm32l0_bma253\dma.crf --depend stm32l0_bma253\dma.d)
-I (../Core/Inc/dma.h)(0x5F3F106C)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-F (../Core/Src/gpio.c)(0x5F3F106A)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\gpio.o --omf_browse stm32l0_bma253\gpio.crf --depend stm32l0_bma253\gpio.d)
-I (../Core/Inc/gpio.h)(0x5F3F106A)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-F (../Core/Src/i2c.c)(0x5F3F106C)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\i2c.o --omf_browse stm32l0_bma253\i2c.crf --depend stm32l0_bma253\i2c.d)
-I (../Core/Inc/i2c.h)(0x5F447F82)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-F (../Core/Src/lptim.c)(0x5F3F106D)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\lptim.o --omf_browse stm32l0_bma253\lptim.crf --depend stm32l0_bma253\lptim.d)
-I (../Core/Inc/lptim.h)(0x5F3F106D)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-F (../Core/Src/usart.c)(0x5F3F106E)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\usart.o --omf_browse stm32l0_bma253\usart.crf --depend stm32l0_bma253\usart.d)
-I (../Core/Inc/usart.h)(0x5F3F106E)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-F (../Core/Src/rtc.c)(0x5F3F106E)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\rtc.o --omf_browse stm32l0_bma253\rtc.crf --depend stm32l0_bma253\rtc.d)
-I (../Core/Inc/rtc.h)(0x5F3F106F)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-F (../Core/Src/spi.c)(0x5F3F106F)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\spi.o --omf_browse stm32l0_bma253\spi.crf --depend stm32l0_bma253\spi.d)
-I (../Core/Inc/spi.h)(0x5F3F106F)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-F (../Core/Src/stm32l0xx_it.c)(0x5F3F1070)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\stm32l0xx_it.o --omf_browse stm32l0_bma253\stm32l0xx_it.crf --depend stm32l0_bma253\stm32l0xx_it.d)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-I (../Core/Inc/stm32l0xx_it.h)(0x5F3F1070)
-I (../User/GsensorToSflash/GsensorToSflash_Process.h)(0x5EBF6557)
-I (../User/GsensorToSflash/TypeDefine.h)(0x5EBB4CF9)
-F (../Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_gpio.c)(0x5EA8CABA)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\stm32l0xx_ll_gpio.o --omf_browse stm32l0_bma253\stm32l0xx_ll_gpio.crf --depend stm32l0_bma253\stm32l0xx_ll_gpio.d)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-F (../Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_dma.c)(0x5EA8CABA)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\stm32l0xx_ll_dma.o --omf_browse stm32l0_bma253\stm32l0xx_ll_dma.crf --depend stm32l0_bma253\stm32l0xx_ll_dma.d)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-F (../Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_i2c.c)(0x5EA8CABA)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\stm32l0xx_ll_i2c.o --omf_browse stm32l0_bma253\stm32l0xx_ll_i2c.crf --depend stm32l0_bma253\stm32l0xx_ll_i2c.d)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-F (../Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_rcc.c)(0x5EA8CABA)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\stm32l0xx_ll_rcc.o --omf_browse stm32l0_bma253\stm32l0xx_ll_rcc.crf --depend stm32l0_bma253\stm32l0xx_ll_rcc.d)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-F (../Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_utils.c)(0x5EA8CABA)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\stm32l0xx_ll_utils.o --omf_browse stm32l0_bma253\stm32l0xx_ll_utils.crf --depend stm32l0_bma253\stm32l0xx_ll_utils.d)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-F (../Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_exti.c)(0x5EA8CABA)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\stm32l0xx_ll_exti.o --omf_browse stm32l0_bma253\stm32l0xx_ll_exti.crf --depend stm32l0_bma253\stm32l0xx_ll_exti.d)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-F (../Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_lptim.c)(0x5EA8CABA)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\stm32l0xx_ll_lptim.o --omf_browse stm32l0_bma253\stm32l0xx_ll_lptim.crf --depend stm32l0_bma253\stm32l0xx_ll_lptim.d)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-F (../Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_lpuart.c)(0x5EA8CABA)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\stm32l0xx_ll_lpuart.o --omf_browse stm32l0_bma253\stm32l0xx_ll_lpuart.crf --depend stm32l0_bma253\stm32l0xx_ll_lpuart.d)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-F (../Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_rtc.c)(0x5EA8CABA)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\stm32l0xx_ll_rtc.o --omf_browse stm32l0_bma253\stm32l0xx_ll_rtc.crf --depend stm32l0_bma253\stm32l0xx_ll_rtc.d)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-F (../Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_spi.c)(0x5EA8CABA)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\stm32l0xx_ll_spi.o --omf_browse stm32l0_bma253\stm32l0xx_ll_spi.crf --depend stm32l0_bma253\stm32l0xx_ll_spi.d)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-F (../Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_pwr.c)(0x5EA8CABA)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\stm32l0xx_ll_pwr.o --omf_browse stm32l0_bma253\stm32l0xx_ll_pwr.crf --depend stm32l0_bma253\stm32l0xx_ll_pwr.d)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-F (../Core/Src/system_stm32l0xx.c)(0x5EA8CA82)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\system_stm32l0xx.o --omf_browse stm32l0_bma253\system_stm32l0xx.crf --depend stm32l0_bma253\system_stm32l0xx.d)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-F (..\User\StepCount\StepDetector.c)(0x5EBA6C59)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\stepdetector.o --omf_browse stm32l0_bma253\stepdetector.crf --depend stm32l0_bma253\stepdetector.d)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
-I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x588B8344)
-I (..\User\StepCount\StepDetector.h)(0x5A9CBB74)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x588B8344)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (..\User\StepCount\StepCount.h)(0x5A9CBB74)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-F (..\User\StepCount\StepCount.c)(0x5EBA6C70)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\stepcount.o --omf_browse stm32l0_bma253\stepcount.crf --depend stm32l0_bma253\stepcount.d)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
-I (..\User\StepCount\StepDetector.h)(0x5A9CBB74)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x588B8344)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-F (..\User\Pedometer\bma2x2.c)(0x5EC393DD)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\bma2x2.o --omf_browse stm32l0_bma253\bma2x2.crf --depend stm32l0_bma253\bma2x2.d)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-I (..\User\Pedometer\bma2x2.h)(0x5EC357E6)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x588B8344)
-F (..\User\Pedometer\bma253_iic.c)(0x5EC34375)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\bma253_iic.o --omf_browse stm32l0_bma253\bma253_iic.crf --depend stm32l0_bma253\bma253_iic.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-I (../User/GsensorToSflash/TypeDefine.h)(0x5EBB4CF9)
-F (..\User\Pedometer\bma253.c)(0x5EC39BE5)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\bma253.o --omf_browse stm32l0_bma253\bma253.crf --depend stm32l0_bma253\bma253.d)
-I (..\User\Pedometer\bma2x2.h)(0x5EC357E6)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x588B8344)
-I (..\User\Pedometer\bma253.h)(0x5EC39BAC)
-I (../User/GsensorToSflash/TypeDefine.h)(0x5EBB4CF9)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-I (..\User\Pedometer\Task_Step.h)(0x5EC74612)
-I (..\User\Pedometer\bma253_iic.h)(0x5EC5FA06)
-F (..\User\Pedometer\bma253_1.c)(0x5EC5F007)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\bma253_1.o --omf_browse stm32l0_bma253\bma253_1.crf --depend stm32l0_bma253\bma253_1.d)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-I (..\User\Pedometer\bma253_1.h)(0x5EC4F091)
-I (../User/GsensorToSflash/TypeDefine.h)(0x5EBB4CF9)
-I (..\User\Pedometer\bma253_iic.h)(0x5EC5FA06)
-F (..\User\Pedometer\step_process.c)(0x5EBCAFC4)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\step_process.o --omf_browse stm32l0_bma253\step_process.crf --depend stm32l0_bma253\step_process.d)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-I (..\User\Pedometer\step_process.h)(0x5EBCAFED)
-I (..\User\Pedometer\bma2x2.h)(0x5EC357E6)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x588B8344)
-I (..\User\Pedometer\bma253.h)(0x5EC39BAC)
-I (../User/GsensorToSflash/TypeDefine.h)(0x5EBB4CF9)
-F (..\User\Pedometer\Task_Step.c)(0x5EC7908F)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\task_step.o --omf_browse stm32l0_bma253\task_step.crf --depend stm32l0_bma253\task_step.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-I (../Core/Inc/lptim.h)(0x5F3F106D)
-I (../User/GsensorToSflash/TypeDefine.h)(0x5EBB4CF9)
-I (..\User\Pedometer\Task_Step.h)(0x5EC74612)
-I (..\User\Pedometer\step_process.h)(0x5EBCAFED)
-I (../User/LPUART/vcom.h)(0x5EC78CE5)
-F (..\User\Pedometer\command.c)(0x5EE44DDC)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\command.o --omf_browse stm32l0_bma253\command.crf --depend stm32l0_bma253\command.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
-I (..\User\Pedometer\at.h)(0x5EC7472E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../User/LPUART/vcom.h)(0x5EC78CE5)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-I (../User/GsensorToSflash/TypeDefine.h)(0x5EBB4CF9)
-I (..\User\Pedometer\command.h)(0x5DC930A2)
-F (..\User\Pedometer\at.c)(0x5EE44D3D)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\at.o --omf_browse stm32l0_bma253\at.crf --depend stm32l0_bma253\at.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x588B8344)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
-I (..\User\Pedometer\at.h)(0x5EC7472E)
-I (../User/LPUART/utilities.h)(0x5EC76B78)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-I (../User/LPUART/vcom.h)(0x5EC78CE5)
-I (../User/GsensorToSflash/TypeDefine.h)(0x5EBB4CF9)
-I (../User/LPUART/tiny_sscanf.h)(0x5DC930A2)
-I (..\User\Pedometer\Task_Step.h)(0x5EC74612)
-F (..\User\LPUART\tiny_sscanf.c)(0x5DC930A2)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\tiny_sscanf.o --omf_browse stm32l0_bma253\tiny_sscanf.crf --depend stm32l0_bma253\tiny_sscanf.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
-I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
-I (C:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x588B8344)
-I (..\User\LPUART\tiny_sscanf.h)(0x5DC930A2)
-F (..\User\LPUART\tiny_vsnprintf.c)(0x5DC930A2)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\tiny_vsnprintf.o --omf_browse stm32l0_bma253\tiny_vsnprintf.crf --depend stm32l0_bma253\tiny_vsnprintf.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
-I (..\User\LPUART\tiny_vsnprintf.h)(0x5DC930A2)
-F (..\User\LPUART\utilities.c)(0x5EE44D0A)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\utilities.o --omf_browse stm32l0_bma253\utilities.crf --depend stm32l0_bma253\utilities.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (..\User\LPUART\utilities.h)(0x5EC76B78)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-F (..\User\LPUART\vcom.c)(0x5EC78D68)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\vcom.o --omf_browse stm32l0_bma253\vcom.crf --depend stm32l0_bma253\vcom.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
-I (..\User\LPUART\vcom.h)(0x5EC78CE5)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-I (../User/GsensorToSflash/TypeDefine.h)(0x5EBB4CF9)
-I (..\User\LPUART\tiny_vsnprintf.h)(0x5DC930A2)
-F (..\User\AccPrint\acc_bma253.c)(0x5F447F12)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\acc_bma253.o --omf_browse stm32l0_bma253\acc_bma253.crf --depend stm32l0_bma253\acc_bma253.d)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-I (..\User\AccPrint\acc_bma253.h)(0x5EBDE668)
-I (..\User\AccPrint\TypeDefine.h)(0x5EBB4CF9)
-I (..\User\AccPrint\acc_bma253_iic.h)(0x5F44AA60)
-F (..\User\AccPrint\acc_bma253_iic.c)(0x5F44A3E6)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\acc_bma253_iic.o --omf_browse stm32l0_bma253\acc_bma253_iic.crf --depend stm32l0_bma253\acc_bma253_iic.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-I (..\User\AccPrint\TypeDefine.h)(0x5EBB4CF9)
-I (..\User\AccPrint\acc_bma253_iic.h)(0x5F44AA60)
-F (..\User\AccPrint\acc_printf.c)(0x5EE6C35E)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ../User/GsensorToSflash -I ../User/Pedometer -I ../User/LPUART -I ../User/AccPrint-I.\RTE\_STM32L0_BMA253-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-D__UVISION_VERSION="525" -D_RTE_ -DUSE_FULL_LL_DRIVER -DSTM32L010x4 -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="37000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1"-o stm32l0_bma253\acc_printf.o --omf_browse stm32l0_bma253\acc_printf.crf --depend stm32l0_bma253\acc_printf.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
-I (../Core/Inc/main.h)(0x5F633FF1)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h)(0x5EA8CABA)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h)(0x5EA8CA82)
-I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5EA8CA88)
-I (../Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h)(0x5EA8CA82)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h)(0x5EA8CABA)
-I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h)(0x5EA8CABA)
-I (..\User\AccPrint\TypeDefine.h)(0x5EBB4CF9)
-I (..\User\AccPrint\acc_bma253.h)(0x5EBDE668)
-I (..\User\AccPrint\acc_bma253_iic.h)(0x5F44AA60)
-I (..\User\AccPrint\acc_printf.h)(0x5EE6BF54)
-I (../User/LPUART/vcom.h)(0x5EC78CE5)
-I (../User/GsensorToSflash/TypeDefine.h)(0x5EBB4CF9)

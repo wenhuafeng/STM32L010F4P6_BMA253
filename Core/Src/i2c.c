@@ -1,12 +1,12 @@
 /**
   ******************************************************************************
-  * File Name          : I2C.c
-  * Description        : This file provides code for the configuration
-  *                      of the I2C instances.
+  * @file    i2c.c
+  * @brief   This file provides code for the configuration
+  *          of the I2C instances.
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2022 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under BSD 3-Clause license,
@@ -27,6 +27,11 @@
 /* I2C1 init function */
 void MX_I2C1_Init(void)
 {
+
+  /* USER CODE BEGIN I2C1_Init 0 */
+
+  /* USER CODE END I2C1_Init 0 */
+
   LL_I2C_InitTypeDef I2C_InitStruct = {0};
 
   LL_GPIO_InitTypeDef GPIO_InitStruct = {0};
@@ -59,6 +64,9 @@ void MX_I2C1_Init(void)
   NVIC_SetPriority(I2C1_IRQn, 0);
   NVIC_EnableIRQ(I2C1_IRQn);
 
+  /* USER CODE BEGIN I2C1_Init 1 */
+
+  /* USER CODE END I2C1_Init 1 */
   /** I2C Initialization
   */
   LL_I2C_EnableAutoEndMode(I2C1);
@@ -74,6 +82,9 @@ void MX_I2C1_Init(void)
   I2C_InitStruct.OwnAddrSize = LL_I2C_OWNADDRESS1_7BIT;
   LL_I2C_Init(I2C1, &I2C_InitStruct);
   LL_I2C_SetOwnAddress2(I2C1, 0, LL_I2C_OWNADDRESS2_NOMASK);
+  /* USER CODE BEGIN I2C1_Init 2 */
+
+  /* USER CODE END I2C1_Init 2 */
 
 }
 

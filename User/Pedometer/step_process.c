@@ -1,400 +1,504 @@
-
-/*******************************************************************************
-* Copytight 2020 raycohk Tech.Co., Ltd. All rights reserved                    *
-*                                                                              *
-* Filename      : step_process.c                                               *
-* Author        : wenhuafeng                                                   *
-* Version       : 1.0                                                          *
-*                                                                              *
-* Decription    : step process                                                 *
-*                                                                              *
-* Created       : 2020-05-13                                                   *
-* Last modified : 2020.06.06                                                   *
-*******************************************************************************/
-
-#include "main.h"
 #include "step_process.h"
-#include "bma2x2.h"
+#include <stdint.h>
+#include <string.h>
+#include "main.h"
+#include "usart.h"
+#include "lptim.h"
+#include "vcom.h"
+#include "sys_func.h"
 #include "bma253.h"
 
+#if (PEDOMETER)
 
-#if (_PEDOMETER_)
+#define MAX_COUNT 3 // x.y.z
+#define FILTER_NR 9
+#define MIN_EFFECTIVE_STEPS 9
 
-struct AccelDevice accelDevice;
-unsigned int mTicks = 0;
+#define TASK_STEP_CLEAR_TIME_1 (1500 / 31.25)
+#define TASK_STEP_CLEAR_TIME_2 (2200 / 31.25)
 
-//------------------------------------------------------------------------------
+struct AccelDevice {
+    int32_t max[MAX_COUNT];
+    int32_t mid[MAX_COUNT];
+    int32_t min[MAX_COUNT];
+    uint32_t counter[MAX_COUNT];
+    uint32_t iCounter[MAX_COUNT];
+    uint32_t allCounter;
+    uint32_t oCounter;
+};
 
-#define FILTER_NR    9
+static struct AccelDevice g_accelDevice;
+static struct bma2x2_accel_data_fifo g_accelFifo[FIFO_DEPTH];
+static int32_t g_filterArr[MAX_COUNT][FILTER_NR];
 
-static s16 filter_arr[3][FILTER_NR];
+static bool g_gsensorInt;
+static bool g_stepStatus;
+static uint16_t g_mTicks = 0;
+static uint32_t g_counter;
+static uint8_t g_taskStepClearCount;
 
-/** 
- * func void accel_filter_init(void);
- * To init the filter array.
- */
-void accel_filter_init(void)
+static int32_t AccelFilter(uint8_t idx, int32_t value)
 {
-  register u8 i,j;
-  
-  for (i=0; i<2; i++)
-  {
-    for (j=0; j<FILTER_NR; j++)
-    {
-      filter_arr[i][j] = 0;
+    uint8_t i;
+    int32_t sum = 0;
+
+    for (i = 0; i < FILTER_NR - 1; i++) {
+        g_filterArr[idx][i] = g_filterArr[idx][i + 1];
+        sum += g_filterArr[idx][i + 1];
     }
-  }
-}
 
-s16 accel_filter(u8 idx, s16 value)
-{
-  register u8 i;
-  register s32 sum = 0;
-
-  for (i=0; i<FILTER_NR-1; i++)
-  {
-    filter_arr[idx][i] = filter_arr[idx][i+1];
-    sum += filter_arr[idx][i+1]; 
-  }
-
-  filter_arr[idx][FILTER_NR-1] = value;
+    g_filterArr[idx][FILTER_NR - 1] = value;
     sum += value;
 
-  return sum / FILTER_NR;
+    return (sum / FILTER_NR);
 }
 
-s16 Find_Max_int(s16 * pdata, u8 len)
+static int32_t FindMaxInt(int32_t *data, uint8_t len)
 {
-  u8 i;
-  s16 max = pdata[0];
-  
-  for (i=1; i<len; i++)
-  {
-    if (pdata[i] > max) {
-      max = pdata[i];
+    uint8_t i;
+    int32_t max = data[0];
+
+    for (i = 1; i < len; i++) {
+        if (data[i] > max) {
+            max = data[i];
+        }
     }
-  }
-  
-  return max;
+
+    return max;
 }
 
-s16 Find_Min_int(s16 * pdata, u8 len)
+static int32_t FindMinInt(int32_t *data, uint8_t len)
 {
-  u8 i;
-  s16 min = pdata[0];
-  
-  for(i=1; i<len; i++)
-  {
-    if (pdata[i] < min) {
-      min = pdata[i];
+    uint8_t i;
+    int32_t min = data[0];
+
+    for (i = 1; i < len; i++) {
+        if (data[i] < min) {
+            min = data[i];
+        }
     }
-  }
-  
-  return min;
+
+    return min;
 }
 
-//------------------------------------------------------------------------------
-u8 calcuX( unsigned int value )
+static uint8_t CalcX(unsigned int value)
 {
-  //static int dirflag = 0/*, toMidleLines = 0*/;
-  static int /*mTicks = 0, *//*hTicks = 0,*/ lTicks = 0;
-  int D4MaxMin;// = 0/*, done = 0*/;
-  static s16 X[5];
-  
-  X[0] = X[1];
-  X[1] = X[2];
-  X[2] = X[3];
-  X[3] = X[4];
-  X[4] = value;
+    static int lTicks = 0;
+    uint32_t maxMin;
+    static int32_t x[5];
 
-  /* Find the wave crest */
-  if ((X[0]<X[1] && X[1]<X[2] && X[2]>X[3] && X[3]>X[4]) ||
-    ((X[0]==X[1]) && (X[1]>X[2] && X[2]>X[3] && X[3]>X[4])) ||
-    (X[3]>X[2] && X[3]>X[4]))
-  {
-    // accelDevice.hightCnt[0]++;
-    // accelDevice.MaxThreshold[0] = X[1];
-    accelDevice.MaxThreshold[0] = Find_Max_int(X, 5);
-    
-    D4MaxMin = accelDevice.MaxThreshold[0] - accelDevice.MinThreshold[0];
-
-    //accelDevice.MidleThreshold[0] =  (int)(accelDevice.MaxThreshold[0] - D4MaxMin * 0.2);
-
-    if (((mTicks-lTicks) >= 200) && ((mTicks-lTicks) <= 2000))
-    {
-      
-    }
-
-    //hTicks = mTicks;
-  }
-
-  /* Find the wave trough */
-  if ((X[0]>X[1] && X[1]>X[2] && X[2]<X[3] && X[3]<=X[4]) ||
-    ((X[0]==X[1]) && (X[1]<X[2] && X[2]<X[3] && X[3]<=X[4])) ||
-    (X[3]<X[2] && X[3]<X[4]))
-  {
-    // accelDevice.lowCnt[0]++;
-    // accelDevice.MinThreshold[0] = X[1];
-    accelDevice.MinThreshold[0] = Find_Min_int(X, 5);
-    
-    D4MaxMin = accelDevice.MaxThreshold[0] - accelDevice.MinThreshold[0];
-
-    //accelDevice.MidleThreshold[0] =  (int)(accelDevice.MinThreshold[0] + D4MaxMin * 0.2);
-      
-    if ((((mTicks - lTicks) >= 200) &&((mTicks - lTicks) <= 2000))
-       && (D4MaxMin > 35))
-       //&& (D4MaxMin > 50))
-    {
-      accelDevice.Counter[0]++;
-      accelDevice.iCounter[0]++;
-
-      int max = (accelDevice.iCounter[1] > accelDevice.iCounter[2])
-                ?(accelDevice.iCounter[1]):(accelDevice.iCounter[2]);
-
-      if (accelDevice.iCounter[0] < max) {
-        accelDevice.iCounter[0] = max;
-        accelDevice.allCounter  = max;
-      } else {
-        accelDevice.allCounter = accelDevice.iCounter[0];
-        
-        // Add for sleep
-        //accelDevice.WaveCounter++;
-        //accelDevice.WaveAmplitudeSum += D4MaxMin;
-      }
-    }
-
-    lTicks = mTicks;
-  }
-
-  return 0;
-}
-
-u8 calcuY( unsigned int value )
-{
-  // static int dirflag = 0/*, toMidleLines = 0*/;
-  static int /*mTicks = 0*//*, hTicks = 0, */ lTicks = 0;
-  int D4MaxMin;// = 0/*, done = 0*/;
-  static s16 Y[5];
-  
-  Y[0] = Y[1];
-  Y[1] = Y[2];
-  Y[2] = Y[3];
-  Y[3] = Y[4];
-  Y[4] = value;
+    x[0] = x[1];
+    x[1] = x[2];
+    x[2] = x[3];
+    x[3] = x[4];
+    x[4] = value;
 
     /* Find the wave crest */
-  if ((Y[0]<Y[1] && Y[1]<Y[2] && Y[2]>Y[3] && Y[3]>Y[4]) ||
-    ((Y[0]==Y[1]) && (Y[1]>Y[2] && Y[2]>Y[3] && Y[3]>Y[4])) ||
-    (Y[3]>Y[2] && Y[3]>Y[4])) 
-  {
-    // accelDevice.hightCnt[1]++;
-    // accelDevice.MaxThreshold[1] = Y[1];
-    accelDevice.MaxThreshold[1] = Find_Max_int(Y, 5);
-    
-    D4MaxMin = accelDevice.MaxThreshold[1] - accelDevice.MinThreshold[1];
+    if ((x[0] < x[1] && x[1] < x[2] && x[2] > x[3] && x[3] > x[4]) ||
+        ((x[0] == x[1]) && (x[1] > x[2] && x[2] > x[3] && x[3] > x[4])) || (x[3] > x[2] && x[3] > x[4])) {
+        // g_accelDevice.hightCnt[0]++;
+        // g_accelDevice.max[0] = x[1];
+        g_accelDevice.max[0] = FindMaxInt(x, 5);
+        maxMin = g_accelDevice.max[0] - g_accelDevice.min[0];
+        //g_accelDevice.mid[0] =  (int)(g_accelDevice.max[0] - maxMin * 0.2);
 
-    //accelDevice.MidleThreshold[1] =  (int)(accelDevice.MaxThreshold[1] - D4MaxMin * 0.2);
+        if (((g_mTicks - lTicks) >= 200) && ((g_mTicks - lTicks) <= 2000)) {
+        }
 
-    if (((mTicks-lTicks)>=200) && ((mTicks-lTicks)<=2000))
-    {
-      
+        //hTicks = g_mTicks;
     }
 
-    // hTicks = mTicks;
-  }
+    /* Find the wave trough */
+    if ((x[0] > x[1] && x[1] > x[2] && x[2] < x[3] && x[3] <= x[4]) ||
+        ((x[0] == x[1]) && (x[1] < x[2] && x[2] < x[3] && x[3] <= x[4])) || (x[3] < x[2] && x[3] < x[4])) {
+        // g_accelDevice.lowCnt[0]++;
+        // g_accelDevice.min[0] = x[1];
+        g_accelDevice.min[0] = FindMinInt(x, 5);
+        maxMin = g_accelDevice.max[0] - g_accelDevice.min[0];
+        //g_accelDevice.mid[0] =  (int)(g_accelDevice.min[0] + maxMin * 0.2);
 
-  /* Find the wave trough */
-  if ((Y[0]>Y[1] && Y[1]>Y[2] && Y[2]<Y[3] && Y[3]<=Y[4]) ||
-    ((Y[0]==Y[1]) && (Y[1]<Y[2] && Y[2]<Y[3] && Y[3]<=Y[4])) ||
-    (Y[3]<Y[2] && Y[3]<Y[4]))
-  {
-    // accelDevice.lowCnt[1]++;
-    // accelDevice.MinThreshold[1] = Y[1];
-    accelDevice.MinThreshold[1] = Find_Min_int(Y, 5);
-    
-    D4MaxMin = accelDevice.MaxThreshold[1] - accelDevice.MinThreshold[1];
+        if ((((g_mTicks - lTicks) >= 200) && ((g_mTicks - lTicks) <= 2000)) && (maxMin > 35))
+        //&& (maxMin > 50))
+        {
+            g_accelDevice.counter[0]++;
+            g_accelDevice.iCounter[0]++;
 
-    //accelDevice.MidleThreshold[1] =  (int)(accelDevice.MinThreshold[1] + D4MaxMin * 0.2);
-      
-    if ((((mTicks - lTicks) >= 200) &&((mTicks - lTicks) <= 2000))
-       && (D4MaxMin > 35))
-       //&& (D4MaxMin > 50))
-    {
-      accelDevice.Counter[1]++;
-      accelDevice.iCounter[1]++;
+            uint32_t max = (g_accelDevice.iCounter[1] > g_accelDevice.iCounter[2]) ? (g_accelDevice.iCounter[1]) :
+                                                                            (g_accelDevice.iCounter[2]);
 
-      int max = (accelDevice.iCounter[0] > accelDevice.iCounter[2])
-                ?(accelDevice.iCounter[0]):(accelDevice.iCounter[2]);
+            if (g_accelDevice.iCounter[0] < max) {
+                g_accelDevice.iCounter[0] = max;
+                g_accelDevice.allCounter = max;
+            } else {
+                g_accelDevice.allCounter = g_accelDevice.iCounter[0];
 
-      if (accelDevice.iCounter[1] < max) {
-        accelDevice.iCounter[1] = max;
-        accelDevice.allCounter  = max;
-      } else {
-        accelDevice.allCounter = accelDevice.iCounter[1];
-        
-        // Add for sleep
-        //accelDevice.WaveCounter++;
-        //accelDevice.WaveAmplitudeSum += D4MaxMin;
-      }
+                // Add for sleep
+                //g_accelDevice.WaveCounter++;
+                //g_accelDevice.WaveAmplitudeSum += maxMin;
+            }
+        }
+
+        lTicks = g_mTicks;
     }
 
-    lTicks = mTicks;
-  }
-
-  return 0;
+    return 0;
 }
 
-u8 calcuZ( unsigned int value )
+static uint8_t CalcY(unsigned int value)
 {
-  // static int dirflag = 0/*, toMidleLines = 0*/;
-  static int /*mTicks = 0*//*, hTicks = 0,*/ lTicks = 0;
-  int D4MaxMin;// = 0/*, done = 0*/;
-  static s16 Z[5];
-  
-  Z[0] = Z[1];
-  Z[1] = Z[2];
-  Z[2] = Z[3];
-  Z[3] = Z[4];
-  Z[4] = value;
+    static int lTicks = 0;
+    uint32_t maxMin;
+    static int32_t y[5];
 
-  /* Find the wave crest */
-  if ((Z[0]<Z[1] && Z[1]<Z[2] && Z[2]>Z[3] && Z[3]>Z[4]) ||
-    ((Z[0]==Z[1]) && (Z[1]>Z[2] && Z[2]>Z[3] && Z[3]>Z[4])) ||
-    (Z[3]>Z[2] && Z[3]>Z[4]))
-  {
-    // accelDevice.hightCnt[2]++;
-    // accelDevice.MaxThreshold[2] = Z[1];
-    accelDevice.MaxThreshold[2] = Find_Max_int(Z, 5);
-    
-    D4MaxMin = accelDevice.MaxThreshold[2] - accelDevice.MinThreshold[2];
+    y[0] = y[1];
+    y[1] = y[2];
+    y[2] = y[3];
+    y[3] = y[4];
+    y[4] = value;
 
-    //accelDevice.MidleThreshold[2] =  (int)(accelDevice.MaxThreshold[2] - D4MaxMin * 0.2);
+    /* Find the wave crest */
+    if ((y[0] < y[1] && y[1] < y[2] && y[2] > y[3] && y[3] > y[4]) ||
+        ((y[0] == y[1]) && (y[1] > y[2] && y[2] > y[3] && y[3] > y[4])) || (y[3] > y[2] && y[3] > y[4])) {
+        // g_accelDevice.hightCnt[1]++;
+        // g_accelDevice.max[1] = y[1];
+        g_accelDevice.max[1] = FindMaxInt(y, 5);
+        maxMin = g_accelDevice.max[1] - g_accelDevice.min[1];
+        //g_accelDevice.mid[1] =  (int)(g_accelDevice.max[1] - maxMin * 0.2);
 
-    if (((mTicks-lTicks) >= 200) && ((mTicks-lTicks) <= 2000))
-    {
-      
+        if (((g_mTicks - lTicks) >= 200) && ((g_mTicks - lTicks) <= 2000)) {
+        }
+
+        // hTicks = g_mTicks;
     }
 
-    // hTicks = mTicks;
-  }
+    /* Find the wave trough */
+    if ((y[0] > y[1] && y[1] > y[2] && y[2] < y[3] && y[3] <= y[4]) ||
+        ((y[0] == y[1]) && (y[1] < y[2] && y[2] < y[3] && y[3] <= y[4])) || (y[3] < y[2] && y[3] < y[4])) {
+        // g_accelDevice.lowCnt[1]++;
+        // g_accelDevice.min[1] = y[1];
+        g_accelDevice.min[1] = FindMinInt(y, 5);
+        maxMin = g_accelDevice.max[1] - g_accelDevice.min[1];
+        //g_accelDevice.mid[1] =  (int)(g_accelDevice.min[1] + maxMin * 0.2);
 
-  /* Find the wave trough */
-  if ((Z[0]>Z[1] && Z[1]>Z[2] && Z[2]<Z[3] && Z[3]<=Z[4]) ||
-    ((Z[0]==Z[1]) && (Z[1]<Z[2] && Z[2]<Z[3] && Z[3]<=Z[4])) ||
-    (Z[3]<Z[2] && Z[3]<Z[4]))
-  {
-    // accelDevice.lowCnt[2]++;
-    // accelDevice.MinThreshold[2] = Z[1];
-    accelDevice.MinThreshold[2] = Find_Min_int(Z, 5);
-    
-    D4MaxMin = accelDevice.MaxThreshold[2] - accelDevice.MinThreshold[2];
+        if ((((g_mTicks - lTicks) >= 200) && ((g_mTicks - lTicks) <= 2000)) && (maxMin > 35))
+        //&& (maxMin > 50))
+        {
+            g_accelDevice.counter[1]++;
+            g_accelDevice.iCounter[1]++;
 
-    //accelDevice.MidleThreshold[2] = (int)(accelDevice.MinThreshold[2] + D4MaxMin * 0.2);
-      
-    if ((((mTicks-lTicks) >= 200) && ((mTicks-lTicks) <= 2000))
-       && (D4MaxMin > 35))
-       //&& (D4MaxMin > 50))
-    {
-      accelDevice.Counter[2]++;
-      accelDevice.iCounter[2]++;
+            uint32_t max = (g_accelDevice.iCounter[0] > g_accelDevice.iCounter[2]) ? (g_accelDevice.iCounter[0]) :
+                                                                            (g_accelDevice.iCounter[2]);
 
-      unsigned int max = (accelDevice.iCounter[1] > accelDevice.iCounter[0])
-                ?(accelDevice.iCounter[1]):(accelDevice.iCounter[0]);
+            if (g_accelDevice.iCounter[1] < max) {
+                g_accelDevice.iCounter[1] = max;
+                g_accelDevice.allCounter = max;
+            } else {
+                g_accelDevice.allCounter = g_accelDevice.iCounter[1];
 
-      if ( accelDevice.iCounter[2] < max ) {
-        accelDevice.iCounter[2] = max;
-        accelDevice.allCounter  = max;
-      } else {
-        accelDevice.allCounter = accelDevice.iCounter[2];
-        
-        // Add for sleep
-        //accelDevice.WaveCounter++;
-        //accelDevice.WaveAmplitudeSum += D4MaxMin;
-      }
+                // Add for sleep
+                //g_accelDevice.WaveCounter++;
+                //g_accelDevice.WaveAmplitudeSum += maxMin;
+            }
+        }
+
+        lTicks = g_mTicks;
     }
 
-    lTicks = mTicks;
-  }
-
-  return 0;
+    return 0;
 }
 
-u8 Step_main_thread(struct bma2x2_accel_data_fifo *accel)
+static uint8_t CalcZ(unsigned int value)
 {
-  struct bma2x2_accel_data_fifo *pa;
-  register s16 val;
-  
-  pa = accel;
-  
-  val = pa->x + 512;
-  val = accel_filter(0, val);
-  calcuX(val);
-  
-  val = pa->y + 512;
-  val = accel_filter(1, val);
-  calcuY(val);
-  
-  val = pa->z + 512;
-  val = accel_filter(2, val);
-  calcuZ(val);   
-  
-  mTicks += 25;
+    static int lTicks = 0;
+    uint32_t maxMin;
+    static int32_t z[5];
 
-  return 0;
+    z[0] = z[1];
+    z[1] = z[2];
+    z[2] = z[3];
+    z[3] = z[4];
+    z[4] = value;
+
+    /* Find the wave crest */
+    if ((z[0] < z[1] && z[1] < z[2] && z[2] > z[3] && z[3] > z[4]) ||
+        ((z[0] == z[1]) && (z[1] > z[2] && z[2] > z[3] && z[3] > z[4])) || (z[3] > z[2] && z[3] > z[4])) {
+        // g_accelDevice.hightCnt[2]++;
+        // g_accelDevice.max[2] = z[1];
+        g_accelDevice.max[2] = FindMaxInt(z, 5);
+        maxMin = g_accelDevice.max[2] - g_accelDevice.min[2];
+        //g_accelDevice.mid[2] =  (int)(g_accelDevice.max[2] - maxMin * 0.2);
+        if (((g_mTicks - lTicks) >= 200) && ((g_mTicks - lTicks) <= 2000)) {
+        }
+
+        // hTicks = g_mTicks;
+    }
+
+    /* Find the wave trough */
+    if ((z[0] > z[1] && z[1] > z[2] && z[2] < z[3] && z[3] <= z[4]) ||
+        ((z[0] == z[1]) && (z[1] < z[2] && z[2] < z[3] && z[3] <= z[4])) || (z[3] < z[2] && z[3] < z[4])) {
+        // g_accelDevice.lowCnt[2]++;
+        // g_accelDevice.min[2] = z[1];
+        g_accelDevice.min[2] = FindMinInt(z, 5);
+        maxMin = g_accelDevice.max[2] - g_accelDevice.min[2];
+        //g_accelDevice.mid[2] = (int)(g_accelDevice.min[2] + maxMin * 0.2);
+        if ((((g_mTicks - lTicks) >= 200) && ((g_mTicks - lTicks) <= 2000)) && (maxMin > 35))
+        //&& (maxMin > 50))
+        {
+            g_accelDevice.counter[2]++;
+            g_accelDevice.iCounter[2]++;
+
+            uint32_t max = (g_accelDevice.iCounter[1] > g_accelDevice.iCounter[0]) ? (g_accelDevice.iCounter[1]) :
+                                                                                     (g_accelDevice.iCounter[0]);
+
+            if (g_accelDevice.iCounter[2] < max) {
+                g_accelDevice.iCounter[2] = max;
+                g_accelDevice.allCounter = max;
+            } else {
+                g_accelDevice.allCounter = g_accelDevice.iCounter[2];
+
+                // Add for sleep
+                //g_accelDevice.WaveCounter++;
+                //g_accelDevice.WaveAmplitudeSum += maxMin;
+            }
+        }
+
+        lTicks = g_mTicks;
+    }
+
+    return 0;
 }
 
-//------------------------------------------------------------------------------
-extern struct bma2x2_accel_data_fifo accel_fifo[];
-
-void AccelHandle(void)
+static uint8_t StepThread(struct bma2x2_accel_data_fifo *accel)
 {
-  register u8 i;
-  
-  #if (FIFO_DEPTH == 16)
-    for(i = 0; i < FIFO_DEPTH; i += FIFO_DEPTH/2)
-    {
-        Step_main_thread(&accel_fifo[i]);
-        Step_main_thread(&accel_fifo[i+1]);
-        Step_main_thread(&accel_fifo[i+2]);
-        Step_main_thread(&accel_fifo[i+3]);
-        Step_main_thread(&accel_fifo[i+4]);
-        Step_main_thread(&accel_fifo[i+5]);
-        Step_main_thread(&accel_fifo[i+6]);
-        Step_main_thread(&accel_fifo[i+7]); 
+    struct bma2x2_accel_data_fifo *pa;
+    register int16_t val;
+
+    pa = accel;
+
+    val = pa->x + 512;
+    val = AccelFilter(0, val);
+    CalcX(val);
+
+    val = pa->y + 512;
+    val = AccelFilter(1, val);
+    CalcY(val);
+
+    val = pa->z + 512;
+    val = AccelFilter(2, val);
+    CalcZ(val);
+
+    g_mTicks += 25;
+
+    return 0;
+}
+
+static void AccelHandle(void)
+{
+    register uint8_t i;
+
+#if (FIFO_DEPTH == 16)
+    for (i = 0; i < FIFO_DEPTH; i += FIFO_DEPTH / 2) {
+        StepThread(&g_accelFifo[i]);
+        StepThread(&g_accelFifo[i + 1]);
+        StepThread(&g_accelFifo[i + 2]);
+        StepThread(&g_accelFifo[i + 3]);
+        StepThread(&g_accelFifo[i + 4]);
+        StepThread(&g_accelFifo[i + 5]);
+        StepThread(&g_accelFifo[i + 6]);
+        StepThread(&g_accelFifo[i + 7]);
     }
-  #elif (FIFO_DEPTH == 20)
-    for(i = 0; i < FIFO_DEPTH; i += FIFO_DEPTH/2 )
-    {
-        Step_main_thread(&accel_fifo[i]);
-        Step_main_thread(&accel_fifo[i+1]);
-        Step_main_thread(&accel_fifo[i+2]);
-        Step_main_thread(&accel_fifo[i+3]);
-        Step_main_thread(&accel_fifo[i+4]);
-        Step_main_thread(&accel_fifo[i+5]);
-        Step_main_thread(&accel_fifo[i+6]);
-        Step_main_thread(&accel_fifo[i+7]); 
-        Step_main_thread(&accel_fifo[i+8]);
-        Step_main_thread(&accel_fifo[i+9]);
+#elif (FIFO_DEPTH == 20)
+    for (i = 0; i < FIFO_DEPTH; i += FIFO_DEPTH / 2) {
+        StepThread(&g_accelFifo[i]);
+        StepThread(&g_accelFifo[i + 1]);
+        StepThread(&g_accelFifo[i + 2]);
+        StepThread(&g_accelFifo[i + 3]);
+        StepThread(&g_accelFifo[i + 4]);
+        StepThread(&g_accelFifo[i + 5]);
+        StepThread(&g_accelFifo[i + 6]);
+        StepThread(&g_accelFifo[i + 7]);
+        StepThread(&g_accelFifo[i + 8]);
+        StepThread(&g_accelFifo[i + 9]);
     }
-  #elif (FIFO_DEPTH == 31)
-    for(i = 0; i < FIFO_DEPTH; i += FIFO_DEPTH/2 )
-    {
-        Step_main_thread(&accel_fifo[i]);
-        Step_main_thread(&accel_fifo[i+1]);
-        Step_main_thread(&accel_fifo[i+2]);
-        Step_main_thread(&accel_fifo[i+3]);
-        Step_main_thread(&accel_fifo[i+4]);
-        Step_main_thread(&accel_fifo[i+5]);
-        Step_main_thread(&accel_fifo[i+6]);
-        Step_main_thread(&accel_fifo[i+7]); 
-        Step_main_thread(&accel_fifo[i+8]);
-        Step_main_thread(&accel_fifo[i+9]);
+#elif (FIFO_DEPTH == 31)
+    for (i = 0; i < FIFO_DEPTH; i += FIFO_DEPTH / 2) {
+        StepThread(&g_accelFifo[i]);
+        StepThread(&g_accelFifo[i + 1]);
+        StepThread(&g_accelFifo[i + 2]);
+        StepThread(&g_accelFifo[i + 3]);
+        StepThread(&g_accelFifo[i + 4]);
+        StepThread(&g_accelFifo[i + 5]);
+        StepThread(&g_accelFifo[i + 6]);
+        StepThread(&g_accelFifo[i + 7]);
+        StepThread(&g_accelFifo[i + 8]);
+        StepThread(&g_accelFifo[i + 9]);
     }
-    Step_main_thread(&accel_fifo[30]);
-  #else
-    #error "FIFO DEPTH Error"
-  #endif
+    StepThread(&g_accelFifo[30]);
+#else
+#error "FIFO DEPTH Error"
+#endif
+}
+
+static void UploadPedometer(void)
+{
+    static uint32_t counter = 0;
+
+    if (g_stepStatus == 0) {
+        /* 至少2秒内要走出一步，且连续十步有效 */
+        if ((g_accelDevice.allCounter - g_accelDevice.oCounter) > MIN_EFFECTIVE_STEPS) {
+            g_stepStatus = 1;
+            g_taskStepClearCount = 0x00;
+            goto exit;
+        }
+
+        if (counter != g_accelDevice.allCounter) {
+            counter = g_accelDevice.allCounter;
+
+            g_taskStepClearCount = TASK_STEP_CLEAR_TIME_1;
+            if (!LL_LPTIM_IsEnabled(LPTIM1)) {
+                MX_LPTIM1_Init();
+                LPTIM1_CounterStartIT();
+            }
+        }
+        goto exit;
+    }
+
+    if (g_accelDevice.oCounter != g_accelDevice.allCounter) {
+        g_accelDevice.oCounter = g_accelDevice.allCounter;
+        g_counter = g_accelDevice.oCounter; /* update pedometer */
+        PRINTF("Pedometer:%d\n",g_counter);
+
+        g_taskStepClearCount = TASK_STEP_CLEAR_TIME_2;
+        if (!LL_LPTIM_IsEnabled(LPTIM1)) {
+            MX_LPTIM1_Init();
+            LPTIM1_CounterStartIT();
+        }
+    }
+
+exit:
+    __asm("NOP");
+}
+
+static void accel_filter_init(void)
+{
+    uint8_t i;
+    uint8_t j;
+
+    for (i = 0; i < MAX_COUNT; i++) {
+        for (j = 0; j < FILTER_NR; j++) {
+            g_filterArr[i][j] = 0;
+        }
+    }
+}
+
+static void ReadFifoData(void)
+{
+    bool ret;
+    uint8_t i;
+    const char *buf;
+
+    //BMA2X2_READ_FIFO_BUFFER(g_accelFifo, 6 * FIFO_DEPTH);
+    ret = accelerometer_fifo_data_read(g_accelFifo, sizeof(g_accelFifo));
+    if (ret == false) {
+        PRINTF("read accelerometer fifo error!\r\n");
+        return;
+    }
+
+    for (i = 0; i < FIFO_DEPTH; i++) {
+        buf = (char *)&g_accelFifo[i];
+
+        g_accelFifo[i].x = (int16_t)((((int32_t)((int8_t)buf[1])) << C_BMA2x2_EIGHT_uint8_tX) |
+                                    (buf[0] & BMA2x2_10_BIT_SHIFT));
+        g_accelFifo[i].x = g_accelFifo[i].x >> C_BMA2x2_SIX_uint8_tX;
+
+        g_accelFifo[i].y = (int16_t)((((int32_t)((int8_t)buf[3])) << C_BMA2x2_EIGHT_uint8_tX) |
+                                    (buf[2] & BMA2x2_10_BIT_SHIFT));
+        g_accelFifo[i].y = g_accelFifo[i].y >> C_BMA2x2_SIX_uint8_tX;
+
+        g_accelFifo[i].z = (int16_t)((((int32_t)((int8_t)buf[5])) << C_BMA2x2_EIGHT_uint8_tX) |
+                                    (buf[4] & BMA2x2_10_BIT_SHIFT));
+        g_accelFifo[i].z = g_accelFifo[i].z >> C_BMA2x2_SIX_uint8_tX;
+    }
+}
+
+static void TaskStepFunc(void)
+{
+    if (g_gsensorInt == false) {
+        return;
+    }
+    g_gsensorInt = false;
+
+    //LED_OFF();
+    ReadFifoData();
+    AccelHandle();
+    UploadPedometer();
+    accelerometer_rst_intr();
+    //LED_ON();
+}
+
+static void TaskStepClearCountdown(void)
+{
+    uint8_t i;
+
+    if (Get32HzFlag() == false) {
+        return;
+    }
+    Set32HzFlag(false);
+
+    if (g_taskStepClearCount) {
+        g_taskStepClearCount--;
+        if (g_taskStepClearCount == 0x00) {
+            g_accelDevice.allCounter = g_accelDevice.oCounter;
+            for (i = 0; i < MAX_COUNT; i++) {
+                g_accelDevice.counter[i] = g_accelDevice.oCounter;
+                g_accelDevice.iCounter[i] = g_accelDevice.oCounter;
+            }
+
+            g_stepStatus = 0;
+            LL_LPTIM_Disable(LPTIM1);
+        }
+    }
+}
+
+void SetGsensorIntFlag(bool flag)
+{
+    g_gsensorInt = flag;
+}
+
+uint32_t GetPedometer(void)
+{
+    return g_counter;
+}
+
+void TaskStepInit(void)
+{
+    memset(&g_accelDevice, 0, sizeof(struct AccelDevice));
+    memset(&g_accelFifo, 0, sizeof(struct bma2x2_accel_data_fifo));
+    accel_filter_init();
+}
+
+void TaskStep(void)
+{
+    TaskStepFunc();
+    TaskStepClearCountdown();
+}
+#else
+
+void SetGsensorIntFlag(bool flag)
+{
+}
+
+uint32_t GetPedometer(void)
+{
+    return 0;
+}
+
+void TaskStepInit(void)
+{
+}
+
+void TaskStep(void)
+{
 }
 
 #endif
-

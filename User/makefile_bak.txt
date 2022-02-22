@@ -1,0 +1,40 @@
+user/AccPrint/acc_bma253_iic.c \
+user/AccPrint/acc_bma253.c \
+user/AccPrint/acc_printf.c \
+user/GsensorToSflash/accelerometer_bma253_iic.c \
+user/GsensorToSflash/accelerometer_bma253.c \
+user/GsensorToSflash/array_queue.c \
+user/GsensorToSflash/gsensor_to_sflash_process.c \
+user/GsensorToSflash/w25q128.c \
+user/LPUART/tiny_sscanf.c \
+user/LPUART/tiny_vsnprintf.c \
+user/LPUART/utilities.c \
+user/LPUART/vcom.c \
+user/Pedometer/at.c \
+user/Pedometer/bma2x2.c \
+user/Pedometer/bma253_1.c \
+user/Pedometer/bma253_iic.c \
+user/Pedometer/bma253.c \
+user/Pedometer/command.c \
+user/Pedometer/step_process.c \
+user/Pedometer/task_step.c \
+user/StepCount/step_count.c \
+user/StepCount/step_detector.c
+
+-Iuser/GsensorToSflash \
+-Iuser/LPUART \
+-Iuser/Pedometer \
+-Iuser/StepCount
+
+  SystemClock_Config_2();
+  MX_GPIO_Init();
+  MX_LPUART1_UART_Init_3();
+  MX_RTC_Init();
+  MX_LPTIM1_Init();
+  LPTIM1_Counter_Start_IT();
+
+  vcom_Init();
+  vcom_ReceiveInit();
+
+  BMA253_I2cInit();
+  accelerometer_init();

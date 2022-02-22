@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "ArrayQueue.C": "cpp",
+        "array_queue.C": "cpp",
+        "bma253_iic.h": "c",
+        "lptim.h": "c",
+        "vcom.h": "c",
+        "stdio.h": "c",
+        "printf.h": "c",
+        "bma253.h": "c",
+        "sys_func.h": "c",
+        "stdint.h": "c",
+        "stdarg.h": "c"
+    }
+}

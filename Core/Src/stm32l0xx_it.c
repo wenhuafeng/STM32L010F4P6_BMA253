@@ -23,19 +23,8 @@
 #include "stm32l0xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#if (_GSENSOR_TO_SPI_FLASH_)
-#include "GsensorToSflash_Process.h"
-#endif
-
-#if (_PEDOMETER_)
-#include "vcom.h"
-#include "Task_Step.h"
-#endif
-
-#if (_ACC_PRINTF_)
-#include "vcom.h"
-#include "acc_printf.h"
-#endif
+#include "sys_func.h"
+#include "step_process.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -45,7 +34,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
- 
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -164,9 +153,7 @@ void EXTI2_3_IRQHandler(void)
   {
     LL_EXTI_ClearFlag_0_31(LL_EXTI_LINE_2);
     /* USER CODE BEGIN LL_EXTI_LINE_2 */
-    #if (_PEDOMETER_)
-      F_GsensorINT = 1;
-    #endif
+    SetGsensorIntFlag(true);
     /* USER CODE END LL_EXTI_LINE_2 */
   }
   /* USER CODE BEGIN EXTI2_3_IRQn 1 */
@@ -194,12 +181,7 @@ void DMA1_Channel2_3_IRQHandler(void)
 void DMA1_Channel4_5_IRQHandler(void)
 {
   /* USER CODE BEGIN DMA1_Channel4_5_IRQn 0 */
-  #if (_GSENSOR_TO_SPI_FLASH_)
-    DMA_ISR_Callback();
-  #endif
-  #if (_PEDOMETER_)
-    //DMA_ISR_Callback();
-  #endif
+
   /* USER CODE END DMA1_Channel4_5_IRQn 0 */
 
   /* USER CODE BEGIN DMA1_Channel4_5_IRQn 1 */
@@ -213,18 +195,10 @@ void DMA1_Channel4_5_IRQHandler(void)
 void LPTIM1_IRQHandler(void)
 {
   /* USER CODE BEGIN LPTIM1_IRQn 0 */
-  //LL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+
   /* USER CODE END LPTIM1_IRQn 0 */
   /* USER CODE BEGIN LPTIM1_IRQn 1 */
-  #if (_GSENSOR_TO_SPI_FLASH_)
-    LP_TimeHandle();
-  #endif
-  #if (_PEDOMETER_)
-    LP_TimeHandle();
-  #endif
-  #if (_ACC_PRINTF_)
-    LP_TimeHandle();
-  #endif
+  LP_TimeHandle();
   LL_LPTIM_ClearFLAG_ARRM(LPTIM1);
   /* USER CODE END LPTIM1_IRQn 1 */
 }
@@ -262,16 +236,10 @@ void SPI1_IRQHandler(void)
 void LPUART1_IRQHandler(void)
 {
   /* USER CODE BEGIN LPUART1_IRQn 0 */
-  #if (_GSENSOR_TO_SPI_FLASH_)
-    LPUART_RxIdleCallback();
-  #endif
-  #if (_PEDOMETER_)
-  //LPUART_RxIdleCallback();
-  vcom_IRQHandler();
-  #endif
+
   /* USER CODE END LPUART1_IRQn 0 */
   /* USER CODE BEGIN LPUART1_IRQn 1 */
-  //LPUART_TxCompleteCallback();
+
   /* USER CODE END LPUART1_IRQn 1 */
 }
 

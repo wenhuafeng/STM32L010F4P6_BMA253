@@ -1,12 +1,12 @@
 /**
   ******************************************************************************
-  * File Name          : RTC.c
-  * Description        : This file provides code for the configuration
-  *                      of the RTC instances.
+  * @file    rtc.c
+  * @brief   This file provides code for the configuration
+  *          of the RTC instances.
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2022 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under BSD 3-Clause license,
@@ -27,6 +27,11 @@
 /* RTC init function */
 void MX_RTC_Init(void)
 {
+
+  /* USER CODE BEGIN RTC_Init 0 */
+
+  /* USER CODE END RTC_Init 0 */
+
   LL_RTC_InitTypeDef RTC_InitStruct = {0};
   LL_RTC_TimeTypeDef RTC_TimeStruct = {0};
   LL_RTC_DateTypeDef RTC_DateStruct = {0};
@@ -34,6 +39,9 @@ void MX_RTC_Init(void)
   /* Peripheral clock enable */
   LL_RCC_EnableRTC();
 
+  /* USER CODE BEGIN RTC_Init 1 */
+
+  /* USER CODE END RTC_Init 1 */
   /** Initialize RTC and set the Time and Date
   */
   RTC_InitStruct.HourFormat = LL_RTC_HOURFORMAT_24HOUR;
@@ -48,8 +56,12 @@ void MX_RTC_Init(void)
   LL_RTC_TIME_Init(RTC, LL_RTC_FORMAT_BCD, &RTC_TimeStruct);
   RTC_DateStruct.WeekDay = LL_RTC_WEEKDAY_FRIDAY;
   RTC_DateStruct.Month = LL_RTC_MONTH_MAY;
+  RTC_DateStruct.Day = 1;
   RTC_DateStruct.Year = 20;
   LL_RTC_DATE_Init(RTC, LL_RTC_FORMAT_BCD, &RTC_DateStruct);
+  /* USER CODE BEGIN RTC_Init 2 */
+
+  /* USER CODE END RTC_Init 2 */
 
 }
 

@@ -28,8 +28,8 @@ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
+
 #include "stm32l0xx_ll_dma.h"
-#include "stm32l0xx.h"
 #include "stm32l0xx_ll_i2c.h"
 #include "stm32l0xx_ll_lptim.h"
 #include "stm32l0xx_ll_lpuart.h"
@@ -51,26 +51,8 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#define HIGH                        1
-#define LOW                         0
-
-#define TRUE                        1
-#define FALSE                       0
-
-#define true                        1
-#define false                       0
-
-#define _GSENSOR_TO_SPI_FLASH_      1
-#define _PEDOMETER_                 0
-#define _STEP_COUNT_                0
-#if (_PEDOMETER_)
-#define _BMA253_NEW_DRIVE_          1
-#endif
-#define _ACC_PRINTF_                0
-
-#define _HARDWARE_IIC_              0
-#define _SOFTWARE_IIC_              1
-#define _IIC_TYPE_                  _HARDWARE_IIC_
+#define ACC_PRINTF 0
+#define PEDOMETER 1
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
