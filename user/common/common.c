@@ -163,14 +163,44 @@ void Set32HzFlag(bool flag)
     F_32HZ = flag;
 }
 
-bool GetOneSecondFlag(void)
+void Set250msFlag(bool flag)
+{
+    F_250MS = flag;
+}
+
+bool Get250msFlag(void)
+{
+    return F_250MS;
+}
+
+void Set500msFlag(bool flag)
+{
+    F_500MS = flag;
+}
+
+bool Get500msFlag(void)
+{
+    return F_500MS;
+}
+
+void Set1sFlag(bool flag)
+{
+    F_1S = flag;
+}
+
+bool Get1sFlag(void)
 {
     return F_1S;
 }
 
-void SetOneSecondFlag(bool flag)
+void Set2sFlag(bool flag)
 {
-    F_1S = flag;
+    F_2S = flag;
+}
+
+bool Get2sFlag(void)
+{
+    return F_2S;
 }
 
 void SysInit(void)

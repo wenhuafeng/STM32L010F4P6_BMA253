@@ -25,10 +25,17 @@ extern void LPUART_TxCompleteCallback(void);
 extern void LPTIM1_CounterStartIT(void);
 extern void LPTIM1_IsrHandle(void);
 
-extern bool Get32HzFlag(void);
 extern void Set32HzFlag(bool flag);
-extern bool GetOneSecondFlag(void);
-extern void SetOneSecondFlag(bool flag);
+extern bool Get32HzFlag(void);
+extern void Set250msFlag(bool flag);
+extern bool Get250msFlag(void);
+extern void Set500msFlag(bool flag);
+extern bool Get500msFlag(void);
+extern void Set1sFlag(bool flag);
+extern bool Get1sFlag(void);
+extern void Set2sFlag(bool flag);
+extern bool Get2sFlag(void);
+
 extern void SysInit(void);
 extern void EnterStopMode(void);
 extern int fputc(int ch, FILE *stream);

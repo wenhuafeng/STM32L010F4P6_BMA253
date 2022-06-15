@@ -19,8 +19,6 @@
     } while (0)
 
 static char g_receivedData[MAX_RECEIVED_DATA];
-static unsigned g_receivedDataSize = 0;
-static uint8_t g_receivedDataPort;
 
 void AT_SetReceive(uint8_t AppPort, uint8_t *Buff, uint8_t BuffSize)
 {
@@ -29,8 +27,6 @@ void AT_SetReceive(uint8_t AppPort, uint8_t *Buff, uint8_t BuffSize)
     }
 
     memcpy1((uint8_t *)g_receivedData, Buff, BuffSize);
-    g_receivedDataSize = BuffSize;
-    g_receivedDataPort = AppPort;
 }
 
 ATEerror_t AT_ReturnOk(const char *param)

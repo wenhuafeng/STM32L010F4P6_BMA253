@@ -13,10 +13,10 @@ void ACC_PRINTF_GetData(void)
     bool ret;
     int16_t x, y, z;
 
-    if (GetOneSecondFlag() == false) {
+    if (Get1sFlag() == false) {
         return;
     }
-    SetOneSecondFlag(false);
+    Set1sFlag(false);
 
     ret = accelerometer_accel_get(&x, &y, &z);
     if (ret == true) {
