@@ -2,7 +2,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "main.h"
-#include "sys_func.h"
+#include "common.h"
 #include "vcom.h"
 #include "bma253.h"
 

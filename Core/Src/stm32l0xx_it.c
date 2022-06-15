@@ -23,7 +23,7 @@
 #include "stm32l0xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "sys_func.h"
+#include "common.h"
 #include "step_process.h"
 /* USER CODE END Includes */
 

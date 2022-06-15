@@ -5,7 +5,7 @@
 #include "usart.h"
 #include "lptim.h"
 #include "vcom.h"
-#include "sys_func.h"
+#include "common.h"
 #include "bma253.h"
 
 #if (PEDOMETER)

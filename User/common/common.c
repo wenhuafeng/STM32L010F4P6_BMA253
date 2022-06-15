@@ -8,7 +8,7 @@
 #include "lptim.h"
 #include "rtc.h"
 #include "vcom.h"
-#include "sys_func.h"
+#include "common.h"
 
 #define RX_BUFF_SIZE 20
 #define TX_BUFF_SIZE 100
@@ -71,6 +71,7 @@ void LPUART_DMA_CONFIG(void)
     }
 }
 
+/*
 void LPUART_RxIdleCallback(void)
 {
     uint8_t cnt;
@@ -85,7 +86,6 @@ void LPUART_RxIdleCallback(void)
     }
 }
 
-/*
 void LPUART_TxCompleteCallback(void)
 {
   if (LL_LPUART_IsActiveFlag_TC(LPUART1))

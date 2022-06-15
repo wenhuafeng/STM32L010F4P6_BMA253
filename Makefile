@@ -60,14 +60,17 @@ Core/Src/system_stm32l0xx.c \
 user/acc_printf/acc_printf.c \
 user/bma253/bma253_iic.c \
 user/bma253/bma253.c \
-user/common/sys_func.c \
+user/common/common.c \
 user/lpuart/tiny_sscanf.c \
 user/lpuart/tiny_vsnprintf.c \
 user/lpuart/utilities.c \
 user/lpuart/vcom.c \
 user/pedometer/at.c \
 user/pedometer/command.c \
-user/pedometer/step_process.c
+user/pedometer/step_process.c \
+user/sflash/array_queue.c \
+user/sflash/w25qxx.c \
+user/sflash/write_sflash.c
 
 # ASM sources
 ASM_SOURCES =  \
@@ -143,7 +146,8 @@ C_INCLUDES =  \
 -Iuser/bma253 \
 -Iuser/common \
 -Iuser/lpuart \
--Iuser/pedometer
+-Iuser/pedometer \
+-Iuser/sflash
 
 
 # compile gcc flags

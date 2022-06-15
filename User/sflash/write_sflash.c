@@ -1,4 +1,4 @@
-#include "gsensor_to_sflash_process.h"
+#include "write_sflash.h"
 #include <stdint.h>
 #include <string.h>
 #include "main.h"
