@@ -4,6 +4,8 @@
 #include "i2c.h"
 #include "vcom.h"
 
+#if defined(PEDOMETER) && PEDOMETER
+
 #define BMA253_I2C_SLAVE_ADDRESS 0x18
 
 #if 0
@@ -230,4 +232,5 @@ I2C_ERROR:
     return false;
 }
 
+#endif
 #endif

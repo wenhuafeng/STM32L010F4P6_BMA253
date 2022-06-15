@@ -2,7 +2,7 @@
 #include <stdint.h>
 #include "main.h"
 
-//#if (_GSENSOR_TO_SPI_FLASH_)
+#if defined(GSENSOR_TO_SPI_FLASH) && GSENSOR_TO_SPI_FLASH
 
 #define W25Q80 0XEF13
 #define W25Q16 0XEF14
@@ -322,4 +322,5 @@ void W25QXX_Wakeup(void)
     W25QXX_CS(1);
     LL_mDelay(1);
 }
-//#endif
+
+#endif

@@ -1,5 +1,5 @@
-#ifndef SYS_FUNC_H
-#define SYS_FUNC_H
+#ifndef COMMON_H
+#define COMMON_H
 
 #include <stdio.h>
 #include <stdbool.h>

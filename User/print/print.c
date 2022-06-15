@@ -1,4 +1,4 @@
-#include "acc_printf.h"
+#include "print.h"
 #include <stdint.h>
 #include <stdbool.h>
 #include "main.h"
@@ -6,12 +6,7 @@
 #include "vcom.h"
 #include "bma253.h"
 
-#if (ACC_PRINTF)
-
-void ACC_PRINTF_Init(void)
-{
-
-}
+#if defined(ACC_PRINTF) && ACC_PRINTF
 
 void ACC_PRINTF_GetData(void)
 {
@@ -33,9 +28,6 @@ void ACC_PRINTF_GetData(void)
 
 #else
 
-void ACC_PRINTF_Init(void)
-{
-}
 void ACC_PRINTF_GetData(void)
 {
 }

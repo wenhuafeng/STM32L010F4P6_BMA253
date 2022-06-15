@@ -3,7 +3,7 @@
 #include "bma253_iic.h"
 #include "vcom.h"
 
-//#if (PEDOMETER && _BMA253_NEW_DRIVE_)
+#if defined(PEDOMETER) && PEDOMETER
 
 #define GET_ACC_VALUE(H, L) ((int16_t)(((int16_t)((int8_t)(H))) << 8 | ((L)&0xf0))) >> 4
 #define CHECK_SLOW_AUOT_OFFSET_TARGET(O) ((O) == -1 || (O) == 0 || (O) == 1)
@@ -1354,4 +1354,4 @@ void BMA253_Init(void)
     }
 }
 
-//#endif
+#endif

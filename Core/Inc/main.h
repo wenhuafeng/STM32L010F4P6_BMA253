@@ -53,6 +53,7 @@ extern "C" {
 /* USER CODE BEGIN Includes */
 #define ACC_PRINTF 1
 #define PEDOMETER 1
+#define GSENSOR_TO_SPI_FLASH 0
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/

@@ -8,7 +8,7 @@
 #include "common.h"
 #include "bma253.h"
 
-#if (PEDOMETER)
+#if defined(PEDOMETER) && PEDOMETER
 
 #define MAX_COUNT 3 // x.y.z
 #define FILTER_NR 9

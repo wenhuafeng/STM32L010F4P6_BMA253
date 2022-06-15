@@ -57,7 +57,6 @@ Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_rtc.c \
 Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_spi.c \
 Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_pwr.c \
 Core/Src/system_stm32l0xx.c \
-user/acc_printf/acc_printf.c \
 user/bma253/bma253_iic.c \
 user/bma253/bma253.c \
 user/common/common.c \
@@ -68,6 +67,7 @@ user/lpuart/vcom.c \
 user/pedometer/at.c \
 user/pedometer/command.c \
 user/pedometer/step_process.c \
+user/print/print.c \
 user/sflash/array_queue.c \
 user/sflash/w25qxx.c \
 user/sflash/write_sflash.c
@@ -142,11 +142,11 @@ C_INCLUDES =  \
 -IDrivers/STM32L0xx_HAL_Driver/Inc \
 -IDrivers/CMSIS/Device/ST/STM32L0xx/Include \
 -IDrivers/CMSIS/Include \
--Iuser/acc_printf \
 -Iuser/bma253 \
 -Iuser/common \
 -Iuser/lpuart \
 -Iuser/pedometer \
+-Iuser/print \
 -Iuser/sflash
 
 

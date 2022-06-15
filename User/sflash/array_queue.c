@@ -4,7 +4,7 @@
 #include <stdbool.h>
 #include "main.h"
 
-#if (_GSENSOR_TO_SPI_FLASH_)
+#if defined(GSENSOR_TO_SPI_FLASH) && GSENSOR_TO_SPI_FLASH
 
 struct Queue queue;
 

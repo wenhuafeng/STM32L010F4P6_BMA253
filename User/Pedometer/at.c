@@ -6,7 +6,7 @@
 #include "vcom.h"
 #include "tiny_sscanf.h"
 
-#if (PEDOMETER)
+#if defined(PEDOMETER) && PEDOMETER
 
 #define MAX_RECEIVED_DATA 255
 

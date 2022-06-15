@@ -4,7 +4,7 @@
 #include "vcom.h"
 #include "command.h"
 
-#if (PEDOMETER)
+#if defined(PEDOMETER) && PEDOMETER
 
 struct ATCommand_s {
     const char *string;                   /*< command string, after the "AT" */

@@ -24,7 +24,7 @@
 /* USER CODE BEGIN Includes */
 #include "common.h"
 #include "bma253.h"
-#include "acc_printf.h"
+#include "print.h"
 #include "step_process.h"
 /* USER CODE END Includes */
 
@@ -85,7 +85,6 @@ int main(void)
   /* USER CODE BEGIN SysInit */
   SysInit();
   BMA253_Init();
-  ACC_PRINTF_Init();
   STEP_TaskStepInit();
   /* USER CODE END SysInit */
 

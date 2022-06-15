@@ -1,5 +1,5 @@
-#ifndef W25Q128_H
-#define W25Q128_H
+#ifndef W25Qxx_H
+#define W25Qxx_H
 
 #include <stdint.h>
 

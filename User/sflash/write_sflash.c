@@ -5,7 +5,7 @@
 #include "w25qxx.h"
 #include "array_queue.h"
 
-#if (_GSENSOR_TO_SPI_FLASH_)
+#if defined(GSENSOR_TO_SPI_FLASH) && GSENSOR_TO_SPI_FLASH
 
 bool F_QueueFull;
 bool F_Sflash_Full;
