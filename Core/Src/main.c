@@ -86,7 +86,7 @@ int main(void)
   SysInit();
   BMA253_Init();
   ACC_PRINTF_Init();
-  TaskStepInit();
+  STEP_TaskStepInit();
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -102,7 +102,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
     ACC_PRINTF_GetData();
-    TaskStep();
+    STEP_TaskStep();
   }
   /* USER CODE END 3 */
 }

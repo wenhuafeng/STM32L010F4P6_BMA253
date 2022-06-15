@@ -7,6 +7,10 @@
 extern "C" {
 #endif
 
+/* AT Command strings. Commands start with AT */
+#define AT_RESET      "+REBOOT"
+#define AT_GSTEP      "+GSTEP"
+
 typedef enum eATEerror
 {
   AT_OK = 0,
@@ -19,17 +23,9 @@ typedef enum eATEerror
   AT_MAX,
 } ATEerror_t;
 
-#define AT_PRINTF(...)     vcom_Send(__VA_ARGS__)
-
-/* AT Command strings. Commands start with AT */
-#define AT_RESET      "+REBOOT"
-#define AT_GSTEP      "+GSTEP"
-
-//void set_at_receive(uint8_t AppPort, uint8_t* Buff, uint8_t BuffSize);
-//ATEerror_t at_return_ok(const char *param);
-ATEerror_t at_return_error(const char *param);
-ATEerror_t at_reset(const char *param);
-ATEerror_t AT_GetPedometer(const char *param);
+extern ATEerror_t AT_ReturnError(const char *param);
+extern ATEerror_t AT_Reset(const char *param);
+extern ATEerror_t AT_GetPedometer(const char *param);
 
 #ifdef __cplusplus
 }

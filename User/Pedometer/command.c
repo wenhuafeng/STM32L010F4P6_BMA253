@@ -39,9 +39,9 @@ static const struct ATCommand_s ATCommand[] = {
 #ifndef NO_HELP
             .help_string = "AT" AT_RESET ": Trig a reset of the MCU\r\n",
 #endif
-            .get = at_return_error,
-            .set = at_return_error,
-            .run = at_reset,
+            .get = AT_ReturnError,
+            .set = AT_ReturnError,
+            .run = AT_Reset,
     },
 
     {
@@ -51,65 +51,18 @@ static const struct ATCommand_s ATCommand[] = {
             .help_string = "AT" AT_GSTEP ": Get the step count\r\n",
 #endif
             .get = AT_GetPedometer,
-            .set = at_return_error,
-            .run = at_return_error,
+            .set = AT_ReturnError,
+            .run = AT_ReturnError,
     },
 
 };
 
-static void com_error(ATEerror_t error_type);
-static void parse_cmd(const char *cmd);
-
-void CMD_Init(void)
+static void com_error(ATEerror_t err)
 {
-    vcom_Init();
-    vcom_ReceiveInit();
-}
-
-char command[CMD_SIZE];
-
-void CMD_Process(void)
-{
-    //static char command[CMD_SIZE];
-    static unsigned i = 0;
-
-    /* Process all commands */
-    while (IsNewCharReceived() == SET) {
-        command[i] = GetNewChar();
-
-#if 0 /* echo On    */
-    PRINTF("%c", command[i]);
-#endif
-
-        if (command[i] == AT_ERROR_RX_CHAR) {
-            i = 0;
-            com_error(AT_RX_ERROR);
-            break;
-        } else {
-            if (command[i] == ('\r')) {
-                if (i != 0) {
-                    command[i] = '\0';
-                    parse_cmd(command);
-                    i = 0;
-                }
-            } else {
-                if (i == (CMD_SIZE - 1)) {
-                    i = 0;
-                    com_error(AT_TEST_PARAM_OVERFLOW);
-                } else {
-                    i++;
-                }
-            }
-        }
+    if (err > AT_MAX) {
+        err = AT_MAX;
     }
-}
-
-static void com_error(ATEerror_t error_type)
-{
-    if (error_type > AT_MAX) {
-        error_type = AT_MAX;
-    }
-    AT_PRINTF(ATError_description[error_type]);
+    PRINTF(ATError_description[err]);
 }
 
 static void parse_cmd(const char *cmd)
@@ -159,6 +112,48 @@ static void parse_cmd(const char *cmd)
     }
     if (status != AT_OK || (confirm_set == 1)) {
         com_error(status);
+    }
+}
+
+void CMD_Init(void)
+{
+    vcom_Init();
+    vcom_ReceiveInit();
+}
+
+void CMD_Process(void)
+{
+    static char command[CMD_SIZE];
+    static unsigned i = 0;
+
+    /* Process all commands */
+    while (vcom_IsNewCharReceived() == SET) {
+        command[i] = vcom_GetNewChar();
+
+#if 0 /* echo On    */
+    PRINTF("%c", command[i]);
+#endif
+
+        if (command[i] == AT_ERROR_RX_CHAR) {
+            i = 0;
+            com_error(AT_RX_ERROR);
+            break;
+        } else {
+            if (command[i] == ('\r')) {
+                if (i != 0) {
+                    command[i] = '\0';
+                    parse_cmd(command);
+                    i = 0;
+                }
+            } else {
+                if (i == (CMD_SIZE - 1)) {
+                    i = 0;
+                    com_error(AT_TEST_PARAM_OVERFLOW);
+                } else {
+                    i++;
+                }
+            }
+        }
     }
 }
 

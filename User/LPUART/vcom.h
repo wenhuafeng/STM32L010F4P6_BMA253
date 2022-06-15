@@ -10,6 +10,8 @@
 extern "C" {
 #endif
 
+#define AT_ERROR_RX_CHAR 0x01
+
 typedef enum {
     HW_UNLOCKED = 0x00U,
     HW_LOCKED = 0x01U,
@@ -29,7 +31,6 @@ typedef enum {
         (__HANDLE__)->Lock = HW_UNLOCKED; \
     } while (0)
 
-#define AT_ERROR_RX_CHAR 0x01
 #define DISABLE_IRQ() __disable_irq()
 #define ENABLE_IRQ() __enable_irq()
 
@@ -40,8 +41,8 @@ void vcom_IoInit(void);
 void vcom_ReceiveInit(void);
 void vcom_IoDeInit(void);
 void vcom_Send(const char *format, ...);
-FlagStatus IsNewCharReceived(void);
-uint8_t GetNewChar(void);
+FlagStatus vcom_IsNewCharReceived(void);
+uint8_t vcom_GetNewChar(void);
 void vcom_IRQHandler(void);
 
 #if 1

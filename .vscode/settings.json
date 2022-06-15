@@ -1,7 +1,6 @@
 {
     "files.associations": {
-        "ArrayQueue.C": "cpp",
-        "array_queue.C": "cpp",
+        "array_queue.c": "c",
         "bma253_iic.h": "c",
         "lptim.h": "c",
         "vcom.h": "c",

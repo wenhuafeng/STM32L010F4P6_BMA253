@@ -5,8 +5,6 @@
 extern "C" {
 #endif
 
-#define AT_ERROR_RX_CHAR 0x01
-
 void CMD_Init(void);
 void CMD_Process(void);
 

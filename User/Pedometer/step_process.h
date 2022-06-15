@@ -4,9 +4,9 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-void SetGsensorIntFlag(bool flag);
-uint32_t GetPedometer(void);
-void TaskStepInit(void);
-void TaskStep(void);
+void STEP_SetGsensorIntFlag(bool flag);
+uint32_t STEP_GetPedometer(void);
+void STEP_TaskStepInit(void);
+void STEP_TaskStep(void);
 
 #endif

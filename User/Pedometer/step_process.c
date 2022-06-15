@@ -457,44 +457,44 @@ static void TaskStepClearCountdown(void)
     }
 }
 
-void SetGsensorIntFlag(bool flag)
+void STEP_SetGsensorIntFlag(bool flag)
 {
     g_gsensorInt = flag;
 }
 
-uint32_t GetPedometer(void)
+uint32_t STEP_GetPedometer(void)
 {
     return g_counter;
 }
 
-void TaskStepInit(void)
+void STEP_TaskStepInit(void)
 {
     memset(&g_accelDevice, 0, sizeof(struct AccelDevice));
     memset(&g_accelFifo, 0, sizeof(struct bma2x2_accel_data_fifo));
     accel_filter_init();
 }
 
-void TaskStep(void)
+void STEP_TaskStep(void)
 {
     TaskStepFunc();
     TaskStepClearCountdown();
 }
 #else
 
-void SetGsensorIntFlag(bool flag)
+void STEP_SetGsensorIntFlag(bool flag)
 {
 }
 
-uint32_t GetPedometer(void)
+uint32_t STEP_GetPedometer(void)
 {
     return 0;
 }
 
-void TaskStepInit(void)
+void STEP_TaskStepInit(void)
 {
 }
 
-void TaskStep(void)
+void STEP_TaskStep(void)
 {
 }
 

@@ -116,7 +116,7 @@ void vcom_Send(const char *format, ...)
     va_end(args);
 }
 
-FlagStatus IsNewCharReceived(void)
+FlagStatus vcom_IsNewCharReceived(void)
 {
     FlagStatus status;
 
@@ -131,7 +131,7 @@ FlagStatus IsNewCharReceived(void)
     return status;
 }
 
-uint8_t GetNewChar(void)
+uint8_t vcom_GetNewChar(void)
 {
     uint8_t NewChar;
 
