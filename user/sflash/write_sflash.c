@@ -41,7 +41,6 @@ void AccelerometerDataGet(void)
         //TEST
         if (F_EraseChip)
             return;
-        //if (F_GetData) return;
 
         ret = accelerometer_accel_get(&x, &y, &z);
         if (ret == true) {
@@ -112,7 +111,7 @@ void AT_command_process(char *cRxBuf)
     buf = "AT+GET";
     if (strstr(cRxBuf, buf) != NULL) {
         Address_start = 0x00;
-        F_txComplete = true;
+        F_txComplete  = true;
         do {
             if (F_32HZ_1) {
                 F_32HZ_1 = 0;

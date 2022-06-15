@@ -5,7 +5,7 @@
 
 #if defined(PEDOMETER) && PEDOMETER
 
-#define GET_ACC_VALUE(H, L) ((int16_t)(((int16_t)((int8_t)(H))) << 8 | ((L)&0xf0))) >> 4
+#define GET_ACC_VALUE(H, L)              ((int16_t)(((int16_t)((int8_t)(H))) << 8 | ((L)&0xf0))) >> 4
 #define CHECK_SLOW_AUOT_OFFSET_TARGET(O) ((O) == -1 || (O) == 0 || (O) == 1)
 #define BMA253_SET_BIT(R, O, Ret)                  \
     do {                                           \
@@ -46,9 +46,9 @@
 // b'1111'1010
 #define BMA253_CHIP_ID (0xFA)
 
-#define BMA253_EEP_OFFSET (0x16)
-#define BMA253_IMAGE_BASE (0x38)
-#define BMA253_IMAGE_LEN (22)
+#define BMA253_EEP_OFFSET   (0x16)
+#define BMA253_IMAGE_BASE   (0x38)
+#define BMA253_IMAGE_LEN    (22)
 #define BMA253_CHIP_ID_ADDR (0x00)
 /* DATA ADDRESS DEFINITIONS */
 #define BMA253_X_AXIS_LSB_ADDR (0x02)
@@ -57,50 +57,50 @@
 #define BMA253_Y_AXIS_MSB_ADDR (0x05)
 #define BMA253_Z_AXIS_LSB_ADDR (0x06)
 #define BMA253_Z_AXIS_MSB_ADDR (0x07)
-#define BMA253_TEMP_ADDR (0x08)
+#define BMA253_TEMP_ADDR       (0x08)
 /* STATUS ADDRESS DEFINITIONS */
-#define BMA253_STAT1_ADDR (0x09)
-#define BMA253_STAT2_ADDR (0x0A)
-#define BMA253_STAT_TAP_SLOPE_ADDR (0x0B)
+#define BMA253_STAT1_ADDR            (0x09)
+#define BMA253_STAT2_ADDR            (0x0A)
+#define BMA253_STAT_TAP_SLOPE_ADDR   (0x0B)
 #define BMA253_STAT_ORIENT_HIGH_ADDR (0x0C)
-#define BMA253_STAT_FIFO_ADDR (0x0E)
+#define BMA253_STAT_FIFO_ADDR        (0x0E)
 /* STATUS ADDRESS DEFINITIONS */
-#define BMA253_RANGE_SELECT_ADDR (0x0F)
-#define BMA253_BW_SELECT_ADDR (0x10)
-#define BMA253_MODE_CTRL_ADDR (0x11)
+#define BMA253_RANGE_SELECT_ADDR   (0x0F)
+#define BMA253_BW_SELECT_ADDR      (0x10)
+#define BMA253_MODE_CTRL_ADDR      (0x11)
 #define BMA253_LOW_NOISE_CTRL_ADDR (0x12)
-#define BMA253_DATA_CTRL_ADDR (0x13)
-#define BMA253_RST_ADDR (0x14)
+#define BMA253_DATA_CTRL_ADDR      (0x13)
+#define BMA253_RST_ADDR            (0x14)
 /* INTERUPT ADDRESS DEFINITIONS */
-#define BMA253_INTR_ENABLE1_ADDR (0x16)
-#define BMA253_INTR_ENABLE2_ADDR (0x17)
+#define BMA253_INTR_ENABLE1_ADDR        (0x16)
+#define BMA253_INTR_ENABLE2_ADDR        (0x17)
 #define BMA253_INTR_SLOW_NO_MOTION_ADDR (0x18)
-#define BMA253_INTR1_PAD_SELECT_ADDR (0x19)
-#define BMA253_INTR_DATA_SELECT_ADDR (0x1A)
-#define BMA253_INTR2_PAD_SELECT_ADDR (0x1B)
-#define BMA253_INTR_SOURCE_ADDR (0x1E)
-#define BMA253_INTR_SET_ADDR (0x20)
-#define BMA253_INTR_CTRL_ADDR (0x21)
+#define BMA253_INTR1_PAD_SELECT_ADDR    (0x19)
+#define BMA253_INTR_DATA_SELECT_ADDR    (0x1A)
+#define BMA253_INTR2_PAD_SELECT_ADDR    (0x1B)
+#define BMA253_INTR_SOURCE_ADDR         (0x1E)
+#define BMA253_INTR_SET_ADDR            (0x20)
+#define BMA253_INTR_CTRL_ADDR           (0x21)
 /* FEATURE ADDRESS DEFINITIONS */
-#define BMA253_LOW_DURN_ADDR (0x22)
-#define BMA253_LOW_THRES_ADDR (0x23)
-#define BMA253_LOW_HIGH_HYST_ADDR (0x24)
-#define BMA253_HIGH_DURN_ADDR (0x25)
-#define BMA253_HIGH_THRES_ADDR (0x26)
-#define BMA253_SLOPE_DURN_ADDR (0x27)
-#define BMA253_SLOPE_THRES_ADDR (0x28)
+#define BMA253_LOW_DURN_ADDR             (0x22)
+#define BMA253_LOW_THRES_ADDR            (0x23)
+#define BMA253_LOW_HIGH_HYST_ADDR        (0x24)
+#define BMA253_HIGH_DURN_ADDR            (0x25)
+#define BMA253_HIGH_THRES_ADDR           (0x26)
+#define BMA253_SLOPE_DURN_ADDR           (0x27)
+#define BMA253_SLOPE_THRES_ADDR          (0x28)
 #define BMA253_SLOW_NO_MOTION_THRES_ADDR (0x29)
-#define BMA253_TAP_PARAM_ADDR (0x2A)
-#define BMA253_TAP_THRES_ADDR (0x2B)
-#define BMA253_ORIENT_PARAM_ADDR (0x2C)
-#define BMA253_THETA_BLOCK_ADDR (0x2D)
-#define BMA253_THETA_FLAT_ADDR (0x2E)
-#define BMA253_FLAT_HOLD_TIME_ADDR (0x2F)
-#define BMA253_SELFTEST_ADDR (0x32)
-#define BMA253_EEPROM_CTRL_ADDR (0x33)
-#define BMA253_SERIAL_CTRL_ADDR (0x34)
+#define BMA253_TAP_PARAM_ADDR            (0x2A)
+#define BMA253_TAP_THRES_ADDR            (0x2B)
+#define BMA253_ORIENT_PARAM_ADDR         (0x2C)
+#define BMA253_THETA_BLOCK_ADDR          (0x2D)
+#define BMA253_THETA_FLAT_ADDR           (0x2E)
+#define BMA253_FLAT_HOLD_TIME_ADDR       (0x2F)
+#define BMA253_SELFTEST_ADDR             (0x32)
+#define BMA253_EEPROM_CTRL_ADDR          (0x33)
+#define BMA253_SERIAL_CTRL_ADDR          (0x34)
 /* OFFSET ADDRESS DEFINITIONS */
-#define BMA253_OFFSET_CTRL_ADDR (0x36)
+#define BMA253_OFFSET_CTRL_ADDR   (0x36)
 #define BMA253_OFFSET_PARAMS_ADDR (0x37)
 #define BMA253_OFFSET_X_AXIS_ADDR (0x38)
 #define BMA253_OFFSET_Y_AXIS_ADDR (0x39)
@@ -109,9 +109,9 @@
 #define BMA253_GP0_ADDR (0x3B)
 #define BMA253_GP1_ADDR (0x3C)
 /* FIFO ADDRESS DEFINITIONS */
-#define BMA253_FIFO_MODE_ADDR (0x3E)
+#define BMA253_FIFO_MODE_ADDR        (0x3E)
 #define BMA253_FIFO_DATA_OUTPUT_ADDR (0x3F)
-#define BMA253_FIFO_WML_TRIG (0x30)
+#define BMA253_FIFO_WML_TRIG         (0x30)
 
 static bool bma253_read_byte(uint8_t addr, uint8_t *value)
 {
@@ -131,14 +131,12 @@ bool accelerometer_probe(void)
 {
     uint8_t chip_id;
     if (true != bma253_read_byte(BMA253_CHIP_ID_ADDR, &chip_id)) {
-        //LOG_DEBUG("%s bma253_read_byte: 0x%x failed! \n", __FUNCTION__, BMA253_CHIP_ID_ADDR);
         goto ERR;
     }
     if (BMA253_CHIP_ID != chip_id) {
-        //LOG_DEBUG("%s Chip id: 0x%x != BMA253_CHIP_ID: 0x%x \n", __FUNCTION__, chip_id, BMA253_CHIP_ID);
         goto ERR;
     } else {
-        //LOG_DEBUG("%s Chip id: 0x%x == BMA253_CHIP_ID: 0x%x \n", __FUNCTION__, chip_id, BMA253_CHIP_ID);
+        ;
     }
 
     return true;
@@ -622,7 +620,7 @@ bool accelerometer_filter_bandwidth_get(acc_filter_bandwidth_t *bw)
     if (bma253_read_byte(BMA253_BW_SELECT_ADDR, &data) == false)
         goto ERR;
     data = data & 0x0f;
-    *bw = (acc_filter_bandwidth_t)(data - 0x08);
+    *bw  = (acc_filter_bandwidth_t)(data - 0x08);
 
     return true;
 ERR:
@@ -650,7 +648,7 @@ bool accelerometer_fifo_mode_get(acc_fifo_mode_t *mode, acc_fifo_data_type_t *da
     if (bma253_read_byte(BMA253_FIFO_MODE_ADDR, &data) == false)
         goto ERR;
 
-    *mode = (acc_fifo_mode_t)((data & 0xC0) >> 6);
+    *mode      = (acc_fifo_mode_t)((data & 0xC0) >> 6);
     *data_type = (acc_fifo_data_type_t)(data & 0x02);
 
     return true;
@@ -714,7 +712,7 @@ bool accelerometer_fifo_status_get(uint8_t *frame_count, uint8_t *over_run)
     if (bma253_read_byte(BMA253_STAT_FIFO_ADDR, &data) == false)
         goto ERR;
 
-    *over_run = (data & 0x80) >> 7;
+    *over_run    = (data & 0x80) >> 7;
     *frame_count = data & 0x7f;
 
     return true;
@@ -1194,7 +1192,7 @@ static ErrorStatus BMA253_SetParameter(void)
     bool ret;
     uint8_t get;
     uint8_t error_cnt = 0;
-    uint16_t cnt = 0;
+    uint16_t cnt      = 0;
 
     BMA_DelayMs(10);
     accelerometer_soft_reset();

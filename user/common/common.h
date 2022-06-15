@@ -30,6 +30,6 @@ extern void SetOneSecondFlag(bool flag);
 void SysInit(void);
 extern void LPTIM1_CounterStartIT(void);
 extern void EnterStopMode(void);
-extern int fputc(int ch, FILE* stream);
+extern int fputc(int ch, FILE *stream);
 
 #endif

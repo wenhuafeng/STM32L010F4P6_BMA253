@@ -14,19 +14,19 @@
 /**************************************************************/
 /**\name	CONSTANTS DEFINITION    */
 /**************************************************************/
-#define C_BMA2x2_ZERO_uint8_tX ((uint8_t)0)
-#define C_BMA2x2_ONE_uint8_tX ((uint8_t)1)
-#define C_BMA2x2_TWO_uint8_tX ((uint8_t)2)
-#define C_BMA2x2_THREE_uint8_tX ((uint8_t)3)
-#define C_BMA2x2_FOUR_uint8_tX ((uint8_t)4)
-#define C_BMA2x2_FIVE_uint8_tX ((uint8_t)5)
-#define C_BMA2x2_SIX_uint8_tX ((uint8_t)6)
-#define C_BMA2x2_SEVEN_uint8_tX ((uint8_t)7)
-#define C_BMA2x2_EIGHT_uint8_tX ((uint8_t)8)
-#define C_BMA2x2_NINE_uint8_tX ((uint8_t)9)
-#define C_BMA2x2_TWELVE_uint8_tX ((uint8_t)12)
-#define C_BMA2x2_FIFETEEN_uint8_tX ((uint8_t)15)
-#define C_BMA2x2_SIXTEEN_uint8_tX ((uint8_t)16)
+#define C_BMA2x2_ZERO_uint8_tX      ((uint8_t)0)
+#define C_BMA2x2_ONE_uint8_tX       ((uint8_t)1)
+#define C_BMA2x2_TWO_uint8_tX       ((uint8_t)2)
+#define C_BMA2x2_THREE_uint8_tX     ((uint8_t)3)
+#define C_BMA2x2_FOUR_uint8_tX      ((uint8_t)4)
+#define C_BMA2x2_FIVE_uint8_tX      ((uint8_t)5)
+#define C_BMA2x2_SIX_uint8_tX       ((uint8_t)6)
+#define C_BMA2x2_SEVEN_uint8_tX     ((uint8_t)7)
+#define C_BMA2x2_EIGHT_uint8_tX     ((uint8_t)8)
+#define C_BMA2x2_NINE_uint8_tX      ((uint8_t)9)
+#define C_BMA2x2_TWELVE_uint8_tX    ((uint8_t)12)
+#define C_BMA2x2_FIFETEEN_uint8_tX  ((uint8_t)15)
+#define C_BMA2x2_SIXTEEN_uint8_tX   ((uint8_t)16)
 #define C_BMA2x2_THIRTYTWO_uint8_tX ((uint8_t)32)
 
 #define BMA2x2_10_BIT_SHIFT 0xC0
@@ -77,16 +77,16 @@ typedef enum _acc_power_mode_t {
 
 typedef enum _acc_sleep_durn_t {
     ACC_SLEEP_DURN_0_5MS = (0x05 << 1),
-    ACC_SLEEP_DURN_1MS = (0x06 << 1),
-    ACC_SLEEP_DURN_2MS = (0x07 << 1),
-    ACC_SLEEP_DURN_4MS = (0x08 << 1),
-    ACC_SLEEP_DURN_6MS = (0x09 << 1),
-    ACC_SLEEP_DURN_10MS = (0x0A << 1),
-    ACC_SLEEP_DURN_25MS = (0x0B << 1),
-    ACC_SLEEP_DURN_50MS = (0x0C << 1),
+    ACC_SLEEP_DURN_1MS   = (0x06 << 1),
+    ACC_SLEEP_DURN_2MS   = (0x07 << 1),
+    ACC_SLEEP_DURN_4MS   = (0x08 << 1),
+    ACC_SLEEP_DURN_6MS   = (0x09 << 1),
+    ACC_SLEEP_DURN_10MS  = (0x0A << 1),
+    ACC_SLEEP_DURN_25MS  = (0x0B << 1),
+    ACC_SLEEP_DURN_50MS  = (0x0C << 1),
     ACC_SLEEP_DURN_100MS = (0x0D << 1),
     ACC_SLEEP_DURN_500MS = (0x0E << 1),
-    ACC_SLEEP_DURN_1S = (0x0F << 1)
+    ACC_SLEEP_DURN_1S    = (0x0F << 1)
 } acc_sleep_durn_t;
 
 typedef enum _acc_fifo_mode_t {
@@ -124,16 +124,20 @@ typedef enum _acc_int_latch_type_t {
     ACC_INT_LATCH_MAX
 } acc_int_latch_type_t;
 
-typedef enum _acc_int_pin_t { ACC_INT_PIN_1, ACC_INT_PIN_2, ACC_INT_PIN_MAX } acc_int_pin_t;
+typedef enum _acc_int_pin_t {
+    ACC_INT_PIN_1,
+    ACC_INT_PIN_2,
+    ACC_INT_PIN_MAX
+} acc_int_pin_t;
 
 typedef enum _acc_int_output_type_level_t {
-    ACC_INT_PIN1_PUSH_PULL_OUT_LOW = 0x00,
-    ACC_INT_PIN1_PUSH_PULL_OUT_HIGH = 0x01,
-    ACC_INT_PIN1_OPEN_DRAIN_OUT_LOW = 0x02,
+    ACC_INT_PIN1_PUSH_PULL_OUT_LOW   = 0x00,
+    ACC_INT_PIN1_PUSH_PULL_OUT_HIGH  = 0x01,
+    ACC_INT_PIN1_OPEN_DRAIN_OUT_LOW  = 0x02,
     ACC_INT_PIN1_OPEN_DRAIN_OUT_HIGH = 0x03,
-    ACC_INT_PIN2_PUSH_PULL_OUT_LOW = 0x00,
-    ACC_INT_PIN2_PUSH_PULL_OUT_HIGH = 0x04,
-    ACC_INT_PIN2_OPEN_DRAIN_OUT_LOW = 0x08,
+    ACC_INT_PIN2_PUSH_PULL_OUT_LOW   = 0x00,
+    ACC_INT_PIN2_PUSH_PULL_OUT_HIGH  = 0x04,
+    ACC_INT_PIN2_OPEN_DRAIN_OUT_LOW  = 0x08,
     ACC_INT_PIN2_OPEN_DRAIN_OUT_HIGH = 0x0C,
 } acc_int_output_type_level_t;
 

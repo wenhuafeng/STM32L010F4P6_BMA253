@@ -97,7 +97,6 @@ void LPUART_TxCompleteCallback(void)
   }
 }*/
 
-
 static bool F_32HZ;
 static bool F_250MS;
 static bool F_500MS;
@@ -115,12 +114,12 @@ void LP_TimeHandle(void)
 
     ctr0++;
     if (ctr0 > 7) {
-        ctr0 = 0x00;
+        ctr0    = 0x00;
         F_250MS = 1;
     }
     ctr1++;
     if (ctr1 > 15) {
-        ctr1 = 0x00;
+        ctr1    = 0x00;
         F_500MS = 1;
         LED_BLINK();
     }

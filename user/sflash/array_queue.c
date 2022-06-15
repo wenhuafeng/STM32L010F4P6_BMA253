@@ -12,7 +12,7 @@ struct Queue queue;
 void InitQueue(void)
 {
     queue.front = 0;
-    queue.rear = 0;
+    queue.rear  = 0;
 }
 
 // Empty? front == rear
@@ -42,7 +42,7 @@ bool EnQueue(uint8_t val)
         return false;
     }
     queue.data[queue.rear] = val;
-    queue.rear = (queue.rear + 1) % ARRAY_QUEUE_MAXSIZE;
+    queue.rear             = (queue.rear + 1) % ARRAY_QUEUE_MAXSIZE;
 
     return true;
 }
@@ -55,7 +55,7 @@ bool DeQueue(uint8_t val)
         __asm("NOP");
         return false;
     }
-    val = queue.data[queue.front];
+    val         = queue.data[queue.front];
     queue.front = (queue.front + 1) % ARRAY_QUEUE_MAXSIZE;
 
     return true;

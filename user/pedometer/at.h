@@ -8,19 +8,18 @@ extern "C" {
 #endif
 
 /* AT Command strings. Commands start with AT */
-#define AT_RESET      "+REBOOT"
-#define AT_GSTEP      "+GSTEP"
+#define AT_RESET "+REBOOT"
+#define AT_GSTEP "+GSTEP"
 
-typedef enum eATEerror
-{
-  AT_OK = 0,
-  AT_ERROR,
-  AT_PARAM_ERROR,
-  AT_BUSY_ERROR,
-  AT_TEST_PARAM_OVERFLOW,
-  AT_NO_NET_JOINED,
-  AT_RX_ERROR,
-  AT_MAX,
+typedef enum eATEerror {
+    AT_OK = 0,
+    AT_ERROR,
+    AT_PARAM_ERROR,
+    AT_BUSY_ERROR,
+    AT_TEST_PARAM_OVERFLOW,
+    AT_NO_NET_JOINED,
+    AT_RX_ERROR,
+    AT_MAX,
 } ATEerror_t;
 
 extern ATEerror_t AT_ReturnError(const char *param);

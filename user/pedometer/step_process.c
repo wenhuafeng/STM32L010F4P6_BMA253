@@ -10,8 +10,8 @@
 
 #if defined(PEDOMETER) && PEDOMETER
 
-#define MAX_COUNT 3 // x.y.z
-#define FILTER_NR 9
+#define MAX_COUNT           3 // x.y.z
+#define FILTER_NR           9
 #define MIN_EFFECTIVE_STEPS 9
 
 #define TASK_STEP_CLEAR_TIME_1 (1500 / 31.25)
@@ -99,7 +99,7 @@ static uint8_t CalcX(unsigned int value)
         // g_accelDevice.hightCnt[0]++;
         // g_accelDevice.max[0] = x[1];
         g_accelDevice.max[0] = FindMaxInt(x, 5);
-        maxMin = g_accelDevice.max[0] - g_accelDevice.min[0];
+        maxMin               = g_accelDevice.max[0] - g_accelDevice.min[0];
         //g_accelDevice.mid[0] =  (int)(g_accelDevice.max[0] - maxMin * 0.2);
 
         if (((g_mTicks - lTicks) >= 200) && ((g_mTicks - lTicks) <= 2000)) {
@@ -114,7 +114,7 @@ static uint8_t CalcX(unsigned int value)
         // g_accelDevice.lowCnt[0]++;
         // g_accelDevice.min[0] = x[1];
         g_accelDevice.min[0] = FindMinInt(x, 5);
-        maxMin = g_accelDevice.max[0] - g_accelDevice.min[0];
+        maxMin               = g_accelDevice.max[0] - g_accelDevice.min[0];
         //g_accelDevice.mid[0] =  (int)(g_accelDevice.min[0] + maxMin * 0.2);
 
         if ((((g_mTicks - lTicks) >= 200) && ((g_mTicks - lTicks) <= 2000)) && (maxMin > 35))
@@ -124,11 +124,11 @@ static uint8_t CalcX(unsigned int value)
             g_accelDevice.iCounter[0]++;
 
             uint32_t max = (g_accelDevice.iCounter[1] > g_accelDevice.iCounter[2]) ? (g_accelDevice.iCounter[1]) :
-                                                                            (g_accelDevice.iCounter[2]);
+                                                                                     (g_accelDevice.iCounter[2]);
 
             if (g_accelDevice.iCounter[0] < max) {
                 g_accelDevice.iCounter[0] = max;
-                g_accelDevice.allCounter = max;
+                g_accelDevice.allCounter  = max;
             } else {
                 g_accelDevice.allCounter = g_accelDevice.iCounter[0];
 
@@ -162,7 +162,7 @@ static uint8_t CalcY(unsigned int value)
         // g_accelDevice.hightCnt[1]++;
         // g_accelDevice.max[1] = y[1];
         g_accelDevice.max[1] = FindMaxInt(y, 5);
-        maxMin = g_accelDevice.max[1] - g_accelDevice.min[1];
+        maxMin               = g_accelDevice.max[1] - g_accelDevice.min[1];
         //g_accelDevice.mid[1] =  (int)(g_accelDevice.max[1] - maxMin * 0.2);
 
         if (((g_mTicks - lTicks) >= 200) && ((g_mTicks - lTicks) <= 2000)) {
@@ -177,7 +177,7 @@ static uint8_t CalcY(unsigned int value)
         // g_accelDevice.lowCnt[1]++;
         // g_accelDevice.min[1] = y[1];
         g_accelDevice.min[1] = FindMinInt(y, 5);
-        maxMin = g_accelDevice.max[1] - g_accelDevice.min[1];
+        maxMin               = g_accelDevice.max[1] - g_accelDevice.min[1];
         //g_accelDevice.mid[1] =  (int)(g_accelDevice.min[1] + maxMin * 0.2);
 
         if ((((g_mTicks - lTicks) >= 200) && ((g_mTicks - lTicks) <= 2000)) && (maxMin > 35))
@@ -187,11 +187,11 @@ static uint8_t CalcY(unsigned int value)
             g_accelDevice.iCounter[1]++;
 
             uint32_t max = (g_accelDevice.iCounter[0] > g_accelDevice.iCounter[2]) ? (g_accelDevice.iCounter[0]) :
-                                                                            (g_accelDevice.iCounter[2]);
+                                                                                     (g_accelDevice.iCounter[2]);
 
             if (g_accelDevice.iCounter[1] < max) {
                 g_accelDevice.iCounter[1] = max;
-                g_accelDevice.allCounter = max;
+                g_accelDevice.allCounter  = max;
             } else {
                 g_accelDevice.allCounter = g_accelDevice.iCounter[1];
 
@@ -225,7 +225,7 @@ static uint8_t CalcZ(unsigned int value)
         // g_accelDevice.hightCnt[2]++;
         // g_accelDevice.max[2] = z[1];
         g_accelDevice.max[2] = FindMaxInt(z, 5);
-        maxMin = g_accelDevice.max[2] - g_accelDevice.min[2];
+        maxMin               = g_accelDevice.max[2] - g_accelDevice.min[2];
         //g_accelDevice.mid[2] =  (int)(g_accelDevice.max[2] - maxMin * 0.2);
         if (((g_mTicks - lTicks) >= 200) && ((g_mTicks - lTicks) <= 2000)) {
         }
@@ -239,7 +239,7 @@ static uint8_t CalcZ(unsigned int value)
         // g_accelDevice.lowCnt[2]++;
         // g_accelDevice.min[2] = z[1];
         g_accelDevice.min[2] = FindMinInt(z, 5);
-        maxMin = g_accelDevice.max[2] - g_accelDevice.min[2];
+        maxMin               = g_accelDevice.max[2] - g_accelDevice.min[2];
         //g_accelDevice.mid[2] = (int)(g_accelDevice.min[2] + maxMin * 0.2);
         if ((((g_mTicks - lTicks) >= 200) && ((g_mTicks - lTicks) <= 2000)) && (maxMin > 35))
         //&& (maxMin > 50))
@@ -252,7 +252,7 @@ static uint8_t CalcZ(unsigned int value)
 
             if (g_accelDevice.iCounter[2] < max) {
                 g_accelDevice.iCounter[2] = max;
-                g_accelDevice.allCounter = max;
+                g_accelDevice.allCounter  = max;
             } else {
                 g_accelDevice.allCounter = g_accelDevice.iCounter[2];
 
@@ -346,7 +346,7 @@ static void UploadPedometer(void)
     if (g_stepStatus == 0) {
         /* 至少2秒内要走出一步，且连续十步有效 */
         if ((g_accelDevice.allCounter - g_accelDevice.oCounter) > MIN_EFFECTIVE_STEPS) {
-            g_stepStatus = 1;
+            g_stepStatus         = 1;
             g_taskStepClearCount = 0x00;
             goto exit;
         }
@@ -365,7 +365,7 @@ static void UploadPedometer(void)
 
     if (g_accelDevice.oCounter != g_accelDevice.allCounter) {
         g_accelDevice.oCounter = g_accelDevice.allCounter;
-        g_counter = g_accelDevice.oCounter; /* update pedometer */
+        g_counter              = g_accelDevice.oCounter; /* update pedometer */
         PRINTF("Pedometer:%d\n", g_counter);
 
         g_taskStepClearCount = TASK_STEP_CLEAR_TIME_2;
@@ -406,16 +406,16 @@ static void ReadFifoData(void)
     for (i = 0; i < FIFO_DEPTH; i++) {
         buf = (char *)&g_accelFifo[i];
 
-        g_accelFifo[i].x = (int16_t)((((int32_t)((int8_t)buf[1])) << C_BMA2x2_EIGHT_uint8_tX) |
-                                    (buf[0] & BMA2x2_10_BIT_SHIFT));
+        g_accelFifo[i].x =
+                (int16_t)((((int32_t)((int8_t)buf[1])) << C_BMA2x2_EIGHT_uint8_tX) | (buf[0] & BMA2x2_10_BIT_SHIFT));
         g_accelFifo[i].x = g_accelFifo[i].x >> C_BMA2x2_SIX_uint8_tX;
 
-        g_accelFifo[i].y = (int16_t)((((int32_t)((int8_t)buf[3])) << C_BMA2x2_EIGHT_uint8_tX) |
-                                    (buf[2] & BMA2x2_10_BIT_SHIFT));
+        g_accelFifo[i].y =
+                (int16_t)((((int32_t)((int8_t)buf[3])) << C_BMA2x2_EIGHT_uint8_tX) | (buf[2] & BMA2x2_10_BIT_SHIFT));
         g_accelFifo[i].y = g_accelFifo[i].y >> C_BMA2x2_SIX_uint8_tX;
 
-        g_accelFifo[i].z = (int16_t)((((int32_t)((int8_t)buf[5])) << C_BMA2x2_EIGHT_uint8_tX) |
-                                    (buf[4] & BMA2x2_10_BIT_SHIFT));
+        g_accelFifo[i].z =
+                (int16_t)((((int32_t)((int8_t)buf[5])) << C_BMA2x2_EIGHT_uint8_tX) | (buf[4] & BMA2x2_10_BIT_SHIFT));
         g_accelFifo[i].z = g_accelFifo[i].z >> C_BMA2x2_SIX_uint8_tX;
     }
 }
@@ -447,7 +447,7 @@ static void TaskStepClearCountdown(void)
         if (g_taskStepClearCount == 0x00) {
             g_accelDevice.allCounter = g_accelDevice.oCounter;
             for (i = 0; i < MAX_COUNT; i++) {
-                g_accelDevice.counter[i] = g_accelDevice.oCounter;
+                g_accelDevice.counter[i]  = g_accelDevice.oCounter;
                 g_accelDevice.iCounter[i] = g_accelDevice.oCounter;
             }
 

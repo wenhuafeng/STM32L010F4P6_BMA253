@@ -34,7 +34,7 @@ static const char *const ATError_description[] = {
 
 static const struct ATCommand_s ATCommand[] = {
     {
-            .string = AT_RESET,
+            .string      = AT_RESET,
             .size_string = sizeof(AT_RESET) - 1,
 #ifndef NO_HELP
             .help_string = "AT" AT_RESET ": Trig a reset of the MCU\r\n",
@@ -45,7 +45,7 @@ static const struct ATCommand_s ATCommand[] = {
     },
 
     {
-            .string = AT_GSTEP,
+            .string      = AT_GSTEP,
             .size_string = sizeof(AT_GSTEP) - 1,
 #ifndef NO_HELP
             .help_string = "AT" AT_GSTEP ": Get the step count\r\n",
@@ -97,7 +97,7 @@ static void parse_cmd(const char *cmd)
                         break;
                     case '=':
                     case ' ': // special case for CTX and UTX
-                        status = Current_ATCommand->set(cmd + 1);
+                        status      = Current_ATCommand->set(cmd + 1);
                         confirm_set = 1;
                         break;
                     default:

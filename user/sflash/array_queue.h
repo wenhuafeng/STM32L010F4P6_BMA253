@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#define ARRAY_QUEUE_MAXSIZE   256
+#define ARRAY_QUEUE_MAXSIZE 256
 
 struct Queue {
     uint8_t data[ARRAY_QUEUE_MAXSIZE];
