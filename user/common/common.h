@@ -22,13 +22,14 @@ extern void LPUART_DMA_CONFIG(void);
 extern void LPUART_RxIdleCallback(void);
 extern void LPUART_TxCompleteCallback(void);
 
-extern void LP_TimeHandle(void);
+extern void LPTIM1_CounterStartIT(void);
+extern void LPTIM1_IsrHandle(void);
+
 extern bool Get32HzFlag(void);
 extern void Set32HzFlag(bool flag);
 extern bool GetOneSecondFlag(void);
 extern void SetOneSecondFlag(bool flag);
-void SysInit(void);
-extern void LPTIM1_CounterStartIT(void);
+extern void SysInit(void);
 extern void EnterStopMode(void);
 extern int fputc(int ch, FILE *stream);
 

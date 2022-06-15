@@ -103,7 +103,25 @@ static bool F_500MS;
 static bool F_1S;
 static bool F_2S;
 
-void LP_TimeHandle(void)
+//#define LPTIM1_INT_TIME (32768-1) //32768/32768 = 1S
+//#define LPTIM1_INT_TIME (8192-1) //8192/32768 = 0.25S
+#define LPTIM1_INT_TIME (1024 - 1) //1024/32768 = 0.03125S
+
+void LPTIM1_CounterStartIT(void)
+{
+    /* Enable the Autoreload match Interrupt */
+    LL_LPTIM_EnableIT_ARRM(LPTIM1);
+    /* Enable the LPTIM1 counter */
+    LL_LPTIM_Enable(LPTIM1);
+
+    /* Set the Autoreload value */
+    LL_LPTIM_SetAutoReload(LPTIM1, LPTIM1_INT_TIME);
+
+    /* Start the LPTIM counter in continuous mode */
+    LL_LPTIM_StartCounter(LPTIM1, LL_LPTIM_OPERATING_MODE_CONTINUOUS);
+}
+
+void LPTIM1_IsrHandle(void)
 {
     static uint8_t ctr0 = 0x00;
     static uint8_t ctr1 = 0x00;
@@ -165,24 +183,6 @@ void SysInit(void)
     LPTIM1_CounterStartIT();
     vcom_Init();
     vcom_ReceiveInit();
-}
-
-//#define LPTIM1_INT_TIME (32768-1) //32768/32768 = 1S
-//#define LPTIM1_INT_TIME (8192-1) //8192/32768 = 0.25S
-#define LPTIM1_INT_TIME (1024 - 1) //1024/32768 = 0.03125S
-
-void LPTIM1_CounterStartIT(void)
-{
-    /* Enable the Autoreload match Interrupt */
-    LL_LPTIM_EnableIT_ARRM(LPTIM1);
-    /* Enable the LPTIM1 counter */
-    LL_LPTIM_Enable(LPTIM1);
-
-    /* Set the Autoreload value */
-    LL_LPTIM_SetAutoReload(LPTIM1, LPTIM1_INT_TIME);
-
-    /* Start the LPTIM counter in continuous mode */
-    LL_LPTIM_StartCounter(LPTIM1, LL_LPTIM_OPERATING_MODE_CONTINUOUS);
 }
 
 void EnterStopMode(void)
