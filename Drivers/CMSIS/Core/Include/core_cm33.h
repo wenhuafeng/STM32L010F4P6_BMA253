@@ -1087,7 +1087,7 @@ typedef struct
 {
   __OM  union
   {
-    __OM  uint8_t    uint8_t;                 /*!< Offset: 0x000 ( /W)  ITM Stimulus Port 8-bit */
+    __OM  uint8_t    u8;                 /*!< Offset: 0x000 ( /W)  ITM Stimulus Port 8-bit */
     __OM  uint16_t   u16;                /*!< Offset: 0x000 ( /W)  ITM Stimulus Port 16-bit */
     __OM  uint32_t   u32;                /*!< Offset: 0x000 ( /W)  ITM Stimulus Port 32-bit */
   }  PORT [32U];                         /*!< Offset: 0x000 ( /W)  ITM Stimulus Port Registers */
@@ -2159,7 +2159,7 @@ typedef struct
 
 /* Special LR values for Secure/Non-Secure call handling and exception handling                                               */
 
-/* Function Return Payload (from ARMv8-M Architecture Reference Manual) LR value on entry from Secure BLXNS                   */
+/* Function Return Payload (from ARMv8-M Architecture Reference Manual) LR value on entry from Secure BLXNS                   */ 
 #define FNC_RETURN                 (0xFEFFFFFFUL)     /* bit [0] ignored when processing a branch                             */
 
 /* The following EXC_RETURN mask values are used to evaluate the LR on exception entry */
@@ -2174,7 +2174,7 @@ typedef struct
 /* Integrity Signature (from ARMv8-M Architecture Reference Manual) for exception context stacking                            */
 #if defined (__FPU_PRESENT) && (__FPU_PRESENT == 1U)  /* Value for processors with floating-point extension:                  */
 #define EXC_INTEGRITY_SIGNATURE     (0xFEFA125AUL)     /* bit [0] SFTC must match LR bit[4] EXC_RETURN_FTYPE                   */
-#else
+#else 
 #define EXC_INTEGRITY_SIGNATURE     (0xFEFA125BUL)     /* Value for processors without floating-point extension                */
 #endif
 
@@ -2943,7 +2943,7 @@ __STATIC_INLINE uint32_t ITM_SendChar (uint32_t ch)
     {
       __NOP();
     }
-    ITM->PORT[0U].uint8_t = (uint8_t)ch;
+    ITM->PORT[0U].u8 = (uint8_t)ch;
   }
   return (ch);
 }

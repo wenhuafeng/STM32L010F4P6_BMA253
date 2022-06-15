@@ -100,7 +100,7 @@
  * \li \c refOutput points to the reference output data
  * \li \c testOutput points to the test output data
  * \li \c firStateF32 points to state buffer
- * \li \c firCoeffint32_t points to coefficient buffer
+ * \li \c firCoeffs32 points to coefficient buffer
  * \li \c blockSize number of samples processed at a time
  * \li \c numBlocks number of frames
  *
@@ -159,7 +159,7 @@ static float32_t firStateF32[BLOCK_SIZE + NUM_TAPS - 1];
 ** fir1(28, 6/24)
 ** ------------------------------------------------------------------- */
 
-const float32_t firCoeffint32_t[NUM_TAPS] = {
+const float32_t firCoeffs32[NUM_TAPS] = {
   -0.0018225230f, -0.0015879294f, +0.0000000000f, +0.0036977508f, +0.0080754303f, +0.0085302217f, -0.0000000000f, -0.0173976984f,
   -0.0341458607f, -0.0333591565f, +0.0000000000f, +0.0676308395f, +0.1522061835f, +0.2229246956f, +0.2504960933f, +0.2229246956f,
   +0.1522061835f, +0.0676308395f, +0.0000000000f, -0.0333591565f, -0.0341458607f, -0.0173976984f, -0.0000000000f, +0.0085302217f,
@@ -191,7 +191,7 @@ int32_t main(void)
   outputF32 = &testOutput[0];
 
   /* Call FIR init function to initialize the instance structure. */
-  arm_fir_init_f32(&S, NUM_TAPS, (float32_t *)&firCoeffint32_t[0], &firStateF32[0], blockSize);
+  arm_fir_init_f32(&S, NUM_TAPS, (float32_t *)&firCoeffs32[0], &firStateF32[0], blockSize);
 
   /* ----------------------------------------------------------------------
   ** Call the FIR process function for every blockSize samples

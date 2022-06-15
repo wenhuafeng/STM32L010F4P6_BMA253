@@ -1,3 +1,4 @@
+/* USER CODE BEGIN Header */
 /**
   ******************************************************************************
   * @file    rtc.c
@@ -6,17 +7,16 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2022 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2022 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
-
+/* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "rtc.h"
 
@@ -42,12 +42,14 @@ void MX_RTC_Init(void)
   /* USER CODE BEGIN RTC_Init 1 */
 
   /* USER CODE END RTC_Init 1 */
+
   /** Initialize RTC and set the Time and Date
   */
   RTC_InitStruct.HourFormat = LL_RTC_HOURFORMAT_24HOUR;
   RTC_InitStruct.AsynchPrescaler = 127;
   RTC_InitStruct.SynchPrescaler = 255;
   LL_RTC_Init(RTC, &RTC_InitStruct);
+
   /** Initialize RTC and set the Time and Date
   */
   RTC_TimeStruct.Hours = 0;
@@ -56,7 +58,7 @@ void MX_RTC_Init(void)
   LL_RTC_TIME_Init(RTC, LL_RTC_FORMAT_BCD, &RTC_TimeStruct);
   RTC_DateStruct.WeekDay = LL_RTC_WEEKDAY_FRIDAY;
   RTC_DateStruct.Month = LL_RTC_MONTH_MAY;
-  RTC_DateStruct.Day = 1;
+  RTC_DateStruct.Day = 0x1;
   RTC_DateStruct.Year = 20;
   LL_RTC_DATE_Init(RTC, LL_RTC_FORMAT_BCD, &RTC_DateStruct);
   /* USER CODE BEGIN RTC_Init 2 */
@@ -68,5 +70,3 @@ void MX_RTC_Init(void)
 /* USER CODE BEGIN 1 */
 
 /* USER CODE END 1 */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

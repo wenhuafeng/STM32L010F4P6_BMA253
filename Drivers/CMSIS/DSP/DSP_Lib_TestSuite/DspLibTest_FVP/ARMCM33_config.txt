@@ -14,14 +14,14 @@ cpu0.INITNSVTOR=0x0                                   # (int   , init-time) defa
 cpu0.SAU=0x0                                          # (int   , init-time) default = '0x4'    : Number of SAU regions (0 => no SAU) : [0x0..0x8]
 cpu0.SAU_CTRL.ENABLE=0                                # (bool  , init-time) default = '0'      : Enable SAU at reset
 cpu0.SAU_CTRL.ALLNS=0                                 # (bool  , init-time) default = '0'      : At reset, the SAU treats entire memory space as NS when the SAU is disabled if this is set
-cpu0.NUM_IDAU_REGION=0x0                              # (int   , init-time) default = '0xA'    :
+cpu0.NUM_IDAU_REGION=0x0                              # (int   , init-time) default = '0xA'    : 
 cpu0.LOCK_SAU=0                                       # (bool  , init-time) default = '0'      : Lock down of SAU registers write
 cpu0.LOCK_S_MPU=0                                     # (bool  , init-time) default = '0'      : Lock down of Secure MPU registers write
 cpu0.LOCK_NS_MPU=0                                    # (bool  , init-time) default = '0'      : Lock down of Non-Secure MPU registers write
 cpu0.CPIF=1                                           # (bool  , init-time) default = '1'      : Specifies whether the external coprocessor interface is included
 cpu0.SECEXT=0                                         # (bool  , init-time) default = '1'      : Whether the ARMv8-M Security Extensions are included
 fvp_mps2.DISABLE_GATING=1                             # (bool  , init-time) default = '0'      : Disable Memory gating logic
-fvp_mps2.NUM_IDAU_REGION=0x0                          # (int   , init-time) default = '0xA'    :
+fvp_mps2.NUM_IDAU_REGION=0x0                          # (int   , init-time) default = '0xA'    : 
 fvp_mps2.SCC_ID.Variant=0x0                           # (int   , init-time) default = '0x0'    : SCC_ID[23:20], X in the FGPA version 'rXpY' : [0x0..0xF]
 fvp_mps2.SCC_ID.Revision=0x1                          # (int   , init-time) default = '0x1'    : SCC_ID[3:0], Y in the FGPA version 'rXpY' : [0x0..0xF]
 fvp_mps2.platform_type=0x0                            # (int   , init-time) default = '0x0'    : 0:MPS2 ; 1:IoT Kit ; 2:Castor : [0x0..0x2]
@@ -67,7 +67,7 @@ fvp_mps2.UART0.in_file_escape_sequence="##"           # (string, init-time) defa
 fvp_mps2.UART0.shutdown_on_eot=0                      # (bool  , init-time) default = '0'      : Shutdown simulation when a EOT (ASCII 4) char is transmitted (useful for regression tests when semihosting is not available)
 fvp_mps2.UART0.shutdown_tag=""                        # (string, run-time ) default = ''       : Shutdown simulation when a string is transmitted
 fvp_mps2.cmsdk_watchdog.simhalt=0                     # (bool  , run-time ) default = '0'      : Halt on reset.
-fvp_mps2.int32_tk_watchdog.simhalt=0                      # (bool  , run-time ) default = '0'      : Halt on reset.
+fvp_mps2.s32k_watchdog.simhalt=0                      # (bool  , run-time ) default = '0'      : Halt on reset.
 fvp_mps2.secure_watchdog.simhalt=0                    # (bool  , run-time ) default = '0'      : Halt on reset.
 fvp_mps2.nonsecure_watchdog.simhalt=0                 # (bool  , run-time ) default = '0'      : Halt on reset.
 fvp_mps2.PSRAM.size=0x100000000                       # (int   , init-time) default = '0x100000000' : Memory Size
