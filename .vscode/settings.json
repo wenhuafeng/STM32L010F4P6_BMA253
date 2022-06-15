@@ -10,6 +10,7 @@
         "bma253.h": "c",
         "sys_func.h": "c",
         "stdint.h": "c",
-        "stdarg.h": "c"
+        "stdarg.h": "c",
+        "stm32_assert.h": "c"
     }
 }

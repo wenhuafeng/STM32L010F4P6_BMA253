@@ -22,16 +22,6 @@ static char ReceivedData[MAX_RECEIVED_DATA];
 static unsigned ReceivedDataSize = 0;
 static uint8_t ReceivedDataPort;
 
-//static ATEerror_t translate_status(LoRaMacStatus_t status);
-
-//static int sscanf_16_hhx(const char *from, uint8_t *pt);
-//static void print_16_02x(uint8_t *pt);
-//static int sscanf_uint32_as_hhx(const char *from, uint32_t *value);
-//static void print_uint32_as_02x(uint32_t value);
-//static void print_8_02x(uint8_t *pt);
-//static void print_d(int value);
-//static void print_u(unsigned int value);
-
 void set_at_receive(uint8_t AppPort, uint8_t *Buff, uint8_t BuffSize)
 {
     if (MAX_RECEIVED_DATA <= BuffSize)

@@ -1,7 +1,10 @@
 #include "acc_printf.h"
 #include <stdint.h>
 #include <stdbool.h>
+#include "main.h"
 #include "sys_func.h"
+#include "vcom.h"
+#include "bma253.h"
 
 #if (ACC_PRINTF)
 

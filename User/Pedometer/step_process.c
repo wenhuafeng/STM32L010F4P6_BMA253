@@ -366,7 +366,7 @@ static void UploadPedometer(void)
     if (g_accelDevice.oCounter != g_accelDevice.allCounter) {
         g_accelDevice.oCounter = g_accelDevice.allCounter;
         g_counter = g_accelDevice.oCounter; /* update pedometer */
-        PRINTF("Pedometer:%d\n",g_counter);
+        PRINTF("Pedometer:%d\n", g_counter);
 
         g_taskStepClearCount = TASK_STEP_CLEAR_TIME_2;
         if (!LL_LPTIM_IsEnabled(LPTIM1)) {

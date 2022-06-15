@@ -51,7 +51,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#define ACC_PRINTF 0
+#define ACC_PRINTF 1
 #define PEDOMETER 1
 /* USER CODE END Includes */
 
