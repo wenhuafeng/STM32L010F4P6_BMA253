@@ -17,6 +17,11 @@
         LL_GPIO_SetOutputPin(LED_GPIO_Port, LED_Pin); \
     } while (0)
 
+extern void DMA_ISR_Callback(void);
+extern void LPUART_DMA_CONFIG(void);
+extern void LPUART_RxIdleCallback(void);
+extern void LPUART_TxCompleteCallback(void);
+
 extern void LP_TimeHandle(void);
 extern bool Get32HzFlag(void);
 extern void Set32HzFlag(bool flag);

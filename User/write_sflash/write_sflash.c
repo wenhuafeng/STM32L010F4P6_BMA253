@@ -7,92 +7,6 @@
 
 #if (_GSENSOR_TO_SPI_FLASH_)
 
-#define RX_BUFF_SIZE 20
-#define TX_BUFF_SIZE 100
-
-bool F_RxComplete;
-bool F_TxComplete;
-char Usart1_RxBuff[RX_BUFF_SIZE];
-uint8_t Usart1_TxBuff[TX_BUFF_SIZE];
-
-/**
-  * @brief  DMA TX ISR handler
-  * @param  NONE
-  * @retval NONE
-  */
-void DMA_ISR_Callback(void)
-{
-    if (LL_DMA_IsEnabledIT_TC(DMA1, LL_DMA_CHANNEL_4) && LL_DMA_IsActiveFlag_TC4(DMA1)) {
-        LL_LPUART_DisableDMAReq_TX(LPUART1);
-        LL_DMA_DisableChannel(DMA1, LL_DMA_CHANNEL_4);
-        LL_DMA_ClearFlag_TC4(DMA1); /* Clear transfer complete flag */
-
-        //LL_DMA_SetPeriphAddress(DMA1, LL_DMA_CHANNEL_4, (uint32_t)(&LPUART1->TDR));// LL_USART_DMA_GetRegAddr(USART1->DR));
-        LL_DMA_SetMemoryAddress(DMA1, LL_DMA_CHANNEL_4, (uint32_t)Usart1_TxBuff);
-        LL_DMA_SetDataLength(DMA1, LL_DMA_CHANNEL_4, USART1_TXBUFF_SIZE);
-        //LL_DMA_ClearFlag_TC4(DMA1);
-        //LL_DMA_EnableIT_TC(DMA1, LL_DMA_CHANNEL_4);
-        LL_DMA_EnableChannel(DMA1, LL_DMA_CHANNEL_4);
-        F_TxComplete = true;
-    }
-}
-
-/**
-  * @brief  DMA config
-  * @param  NONE
-  * @retval NONE
-  */
-void LPUART_DMA_CONFIG(void)
-{
-    //RX
-    LL_DMA_SetPeriphAddress(DMA1, LL_DMA_CHANNEL_3, (uint32_t)(&LPUART1->RDR)); // LL_USART_DMA_GetRegAddr(USART1->DR));
-    LL_DMA_SetMemoryAddress(DMA1, LL_DMA_CHANNEL_3, (uint32_t)Usart1_RxBuff);
-    LL_DMA_SetDataLength(DMA1, LL_DMA_CHANNEL_3, USART1_RXBUFF_SIZE);
-    //LL_DMA_EnableIT_TC(DMA1, LL_DMA_CHANNEL_3);
-    LL_DMA_EnableChannel(DMA1, LL_DMA_CHANNEL_3);
-    LL_LPUART_EnableDMAReq_RX(LPUART1);
-    //LL_LPUART_ClearFlag_IDLE(LPUART1);
-    LL_LPUART_EnableIT_IDLE(LPUART1);
-    //TX
-    LL_DMA_SetPeriphAddress(DMA1, LL_DMA_CHANNEL_4, (uint32_t)(&LPUART1->TDR)); // LL_USART_DMA_GetRegAddr(USART1->DR));
-    LL_DMA_SetMemoryAddress(DMA1, LL_DMA_CHANNEL_4, (uint32_t)Usart1_TxBuff);
-    LL_DMA_SetDataLength(DMA1, LL_DMA_CHANNEL_4, USART1_TXBUFF_SIZE);
-    LL_DMA_ClearFlag_TC4(DMA1);
-    LL_DMA_EnableIT_TC(DMA1, LL_DMA_CHANNEL_4);
-    LL_DMA_EnableChannel(DMA1, LL_DMA_CHANNEL_4);
-    //LL_LPUART_EnableDMAReq_TX(LPUART1);
-
-    LL_LPUART_Enable(LPUART1);
-    while (!LL_LPUART_IsActiveFlag_TEACK(LPUART1) || !LL_LPUART_IsActiveFlag_REACK(LPUART1)) {
-    }
-}
-
-void LPUART_RxIdleCallback(void)
-{
-    uint8_t cnt;
-
-    if (LL_LPUART_IsEnabledIT_IDLE(LPUART1) && LL_LPUART_IsActiveFlag_IDLE(LPUART1)) {
-        LL_DMA_DisableChannel(DMA1, LL_DMA_CHANNEL_3); //�ر�DMA
-        cnt = LL_DMA_GetDataLength(DMA1, LL_DMA_CHANNEL_3);
-        LL_DMA_SetDataLength(DMA1, LL_DMA_CHANNEL_3, USART1_RXBUFF_SIZE);
-        LL_DMA_EnableChannel(DMA1, LL_DMA_CHANNEL_3);
-        LL_LPUART_ClearFlag_IDLE(LPUART1);
-        F_RxComplete = true;
-    }
-}
-
-/*
-void LPUART_TxCompleteCallback(void)
-{
-  if (LL_LPUART_IsActiveFlag_TC(LPUART1))
-  {
-    //LL_LPUART_DisableIT_TC(LPUART1);
-    //LL_DMA_DisableChannel(DMA1, LL_DMA_CHANNEL_4);
-    LL_LPUART_ClearFlag_TC(LPUART1);
-    F_TxComplete = true;
-  }
-}*/
-
 bool F_QueueFull;
 bool F_Sflash_Full;
 
@@ -198,15 +112,15 @@ void AT_command_process(char *cRxBuf)
     buf = "AT+GET";
     if (strstr(cRxBuf, buf) != NULL) {
         Address_start = 0x00;
-        F_TxComplete = true;
+        F_txComplete = true;
         do {
             if (F_32HZ_1) {
                 F_32HZ_1 = 0;
                 LED_BLINK();
             }
-            if (F_TxComplete == true) {
-                F_TxComplete = false;
-                W25QXX_Read(Usart1_TxBuff, Address_start, ARRAY_QUEUE_MAXSIZE);
+            if (F_txComplete == true) {
+                F_txComplete = false;
+                W25QXX_Read(g_usart1TxBuffer, Address_start, ARRAY_QUEUE_MAXSIZE);
                 LL_LPUART_EnableDMAReq_TX(LPUART1);
                 Address_start += ARRAY_QUEUE_MAXSIZE;
             }
@@ -225,10 +139,10 @@ void LPUART_DMA_Send_Test(void)
 
         i = 0;
         do {
-            Usart1_TxBuff[i] = i;
+            g_usart1TxBuffer[i] = i;
             i++;
         } while (i < (USART1_TXBUFF_SIZE - 1));
-        Usart1_TxBuff[i] = i;
+        g_usart1TxBuffer[i] = i;
 
         LL_LPUART_EnableDMAReq_TX(LPUART1);
     }
@@ -253,9 +167,9 @@ void LowPowerDetect(void)
 
 void WriteSflash(void)
 {
-    if (F_RxComplete) {
-        F_RxComplete = false;
-        AT_command_process(Usart1_RxBuff);
+    if (F_rxComplete) {
+        F_rxComplete = false;
+        AT_command_process(g_usart1RxBuffer);
     }
 
     LowPowerDetect();

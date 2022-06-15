@@ -17,11 +17,6 @@
 void GsensorToSflash_Process(void);
 void LP_TimeHandle(void);
 
-void LPUART_DMA_CONFIG(void);
-void LPUART_RxIdleCallback(void);
-void LPUART_TxCompleteCallback(void);
-
-void DMA_ISR_Callback(void);
 void WriteSflash(void);
 
 #endif

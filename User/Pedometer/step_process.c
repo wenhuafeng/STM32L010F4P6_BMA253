@@ -397,7 +397,6 @@ static void ReadFifoData(void)
     uint8_t i;
     const char *buf;
 
-    //BMA2X2_READ_FIFO_BUFFER(g_accelFifo, 6 * FIFO_DEPTH);
     ret = accelerometer_fifo_data_read(g_accelFifo, sizeof(g_accelFifo));
     if (ret == false) {
         PRINTF("read accelerometer fifo error!\r\n");
@@ -428,12 +427,10 @@ static void TaskStepFunc(void)
     }
     g_gsensorInt = false;
 
-    //LED_OFF();
     ReadFifoData();
     AccelHandle();
     UploadPedometer();
     accelerometer_rst_intr();
-    //LED_ON();
 }
 
 static void TaskStepClearCountdown(void)

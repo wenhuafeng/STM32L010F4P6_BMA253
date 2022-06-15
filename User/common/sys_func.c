@@ -10,6 +10,94 @@
 #include "vcom.h"
 #include "sys_func.h"
 
+#define RX_BUFF_SIZE 20
+#define TX_BUFF_SIZE 100
+
+bool F_rxComplete;
+bool F_txComplete;
+char g_usart1RxBuffer[RX_BUFF_SIZE];
+uint8_t g_usart1TxBuffer[TX_BUFF_SIZE];
+
+/**
+  * @brief  DMA TX ISR handler
+  * @param  NONE
+  * @retval NONE
+  */
+void DMA_ISR_Callback(void)
+{
+    if (LL_DMA_IsEnabledIT_TC(DMA1, LL_DMA_CHANNEL_4) && LL_DMA_IsActiveFlag_TC4(DMA1)) {
+        LL_LPUART_DisableDMAReq_TX(LPUART1);
+        LL_DMA_DisableChannel(DMA1, LL_DMA_CHANNEL_4);
+        LL_DMA_ClearFlag_TC4(DMA1);
+
+        //LL_DMA_SetPeriphAddress(DMA1, LL_DMA_CHANNEL_4, (uint32_t)(&LPUART1->TDR));
+        LL_DMA_SetMemoryAddress(DMA1, LL_DMA_CHANNEL_4, (uint32_t)g_usart1TxBuffer);
+        LL_DMA_SetDataLength(DMA1, LL_DMA_CHANNEL_4, TX_BUFF_SIZE);
+        //LL_DMA_ClearFlag_TC4(DMA1);
+        //LL_DMA_EnableIT_TC(DMA1, LL_DMA_CHANNEL_4);
+        LL_DMA_EnableChannel(DMA1, LL_DMA_CHANNEL_4);
+        F_txComplete = true;
+    }
+}
+
+/**
+  * @brief  DMA config
+  * @param  NONE
+  * @retval NONE
+  */
+void LPUART_DMA_CONFIG(void)
+{
+    //RX
+    LL_DMA_SetPeriphAddress(DMA1, LL_DMA_CHANNEL_3, (uint32_t)(&LPUART1->RDR));
+    LL_DMA_SetMemoryAddress(DMA1, LL_DMA_CHANNEL_3, (uint32_t)g_usart1RxBuffer);
+    LL_DMA_SetDataLength(DMA1, LL_DMA_CHANNEL_3, RX_BUFF_SIZE);
+    //LL_DMA_EnableIT_TC(DMA1, LL_DMA_CHANNEL_3);
+    LL_DMA_EnableChannel(DMA1, LL_DMA_CHANNEL_3);
+    LL_LPUART_EnableDMAReq_RX(LPUART1);
+    //LL_LPUART_ClearFlag_IDLE(LPUART1);
+    LL_LPUART_EnableIT_IDLE(LPUART1);
+
+    //TX
+    LL_DMA_SetPeriphAddress(DMA1, LL_DMA_CHANNEL_4, (uint32_t)(&LPUART1->TDR));
+    LL_DMA_SetMemoryAddress(DMA1, LL_DMA_CHANNEL_4, (uint32_t)g_usart1TxBuffer);
+    LL_DMA_SetDataLength(DMA1, LL_DMA_CHANNEL_4, TX_BUFF_SIZE);
+    LL_DMA_ClearFlag_TC4(DMA1);
+    LL_DMA_EnableIT_TC(DMA1, LL_DMA_CHANNEL_4);
+    LL_DMA_EnableChannel(DMA1, LL_DMA_CHANNEL_4);
+    //LL_LPUART_EnableDMAReq_TX(LPUART1);
+
+    LL_LPUART_Enable(LPUART1);
+    while (!LL_LPUART_IsActiveFlag_TEACK(LPUART1) || !LL_LPUART_IsActiveFlag_REACK(LPUART1)) {
+    }
+}
+
+void LPUART_RxIdleCallback(void)
+{
+    uint8_t cnt;
+
+    if (LL_LPUART_IsEnabledIT_IDLE(LPUART1) && LL_LPUART_IsActiveFlag_IDLE(LPUART1)) {
+        LL_DMA_DisableChannel(DMA1, LL_DMA_CHANNEL_3);
+        cnt = LL_DMA_GetDataLength(DMA1, LL_DMA_CHANNEL_3);
+        LL_DMA_SetDataLength(DMA1, LL_DMA_CHANNEL_3, RX_BUFF_SIZE);
+        LL_DMA_EnableChannel(DMA1, LL_DMA_CHANNEL_3);
+        LL_LPUART_ClearFlag_IDLE(LPUART1);
+        F_rxComplete = true;
+    }
+}
+
+/*
+void LPUART_TxCompleteCallback(void)
+{
+  if (LL_LPUART_IsActiveFlag_TC(LPUART1))
+  {
+    //LL_LPUART_DisableIT_TC(LPUART1);
+    //LL_DMA_DisableChannel(DMA1, LL_DMA_CHANNEL_4);
+    LL_LPUART_ClearFlag_TC(LPUART1);
+    F_txComplete = true;
+  }
+}*/
+
+
 static bool F_32HZ;
 static bool F_250MS;
 static bool F_500MS;
