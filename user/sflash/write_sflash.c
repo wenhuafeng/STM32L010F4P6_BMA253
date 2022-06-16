@@ -7,12 +7,12 @@
 
 #if defined(GSENSOR_TO_SPI_FLASH) && GSENSOR_TO_SPI_FLASH
 
-bool F_QueueFull;
-bool F_Sflash_Full;
+bool f_queueFull;
+bool f_sflashFull;
 
-bool F_EraseChip;
-bool F_GetData;
-bool F_LowBatt;
+bool f_eraseChip;
+bool f_getData;
+bool f_lowBatt;
 
 uint8_t Buffer[ARRAY_QUEUE_MAXSIZE];
 uint32_t Address_start;
@@ -24,7 +24,7 @@ void DataEnterQueue(uint8_t Data)
     if (EnQueue(Data) == false) {
         QueueToBuffer(Buffer);
         InitQueue();
-        F_QueueFull = true;
+        f_queueFull = true;
     }
 }
 
@@ -34,12 +34,12 @@ void AccelerometerDataGet(void)
     int16_t x, y, z;
     uint8_t data[6];
 
-    if (F_32HZ) {
-        F_32HZ = false;
+    if (Get32HzFlag() == true) {
+        Set32HzFlag(false);
         //TEST
         //LED_BLINK();
         //TEST
-        if (F_EraseChip)
+        if (f_eraseChip)
             return;
 
         ret = accelerometer_accel_get(&x, &y, &z);
@@ -68,19 +68,19 @@ void AccelerometerDataGet(void)
 
 void WriteDataToSflash(void)
 {
-    if (F_Sflash_Full == false) {
-        if (F_QueueFull) {
-            F_QueueFull = false;
+    if (f_sflashFull == false) {
+        if (f_queueFull) {
+            f_queueFull = false;
             if (Address_current < _FLASH_SIZE_) {
                 W25QXX_Write_NoCheck(&Buffer[0], Address_current, ARRAY_QUEUE_MAXSIZE);
                 Address_current += ARRAY_QUEUE_MAXSIZE;
             } else {
-                F_Sflash_Full = true;
+                f_sflashFull = true;
             }
         }
     } else {
-        if (F_250MS) {
-            F_250MS = false;
+        if (Get250msFlag() == true) {
+            Set250msFlag(false);
             LED_BLINK();
         }
     }
@@ -93,12 +93,12 @@ void AT_command_process(char *cRxBuf)
     buf = "AT+RST";
     if (strstr(cRxBuf, buf) != NULL) {
         W25QXX_Erase_Chip();
-        F_EraseChip = 1;
+        f_eraseChip = 1;
 
         uint8_t i = 10 * 4;
         do {
-            if (F_250MS) {
-                F_250MS = 0;
+            if (Get250msFlag() == true) {
+                Set250msFlag(false);
                 LED_BLINK();
                 i--;
                 if (i == 0)
@@ -111,20 +111,20 @@ void AT_command_process(char *cRxBuf)
     buf = "AT+GET";
     if (strstr(cRxBuf, buf) != NULL) {
         Address_start = 0x00;
-        F_txComplete  = true;
+        f_txComplete  = true;
         do {
-            if (F_32HZ_1) {
-                F_32HZ_1 = 0;
+            if (Get32HzTwoFlag() == true) {
+                Set32HzTwoFlag(false);
                 LED_BLINK();
             }
-            if (F_txComplete == true) {
-                F_txComplete = false;
+            if (f_txComplete == true) {
+                f_txComplete = false;
                 W25QXX_Read(g_usart1TxBuffer, Address_start, ARRAY_QUEUE_MAXSIZE);
                 LL_LPUART_EnableDMAReq_TX(LPUART1);
                 Address_start += ARRAY_QUEUE_MAXSIZE;
             }
         } while (Address_start < Address_current);
-        F_GetData = 1;
+        f_getData = 1;
         LED_OFF();
     }
 }
@@ -133,8 +133,8 @@ void LPUART_DMA_Send_Test(void)
 {
     uint8_t i;
 
-    if (F_2S) {
-        F_2S = 0;
+    if (Get2sFlag() == true) {
+        Set2sFlag(false);
 
         i = 0;
         do {
@@ -160,14 +160,14 @@ void LowPowerDetect(void)
     } while (j < 30);
 
     if (i > 25) {
-        F_LowBatt = 1;
+        f_lowBatt = 1;
     }
 }
 
 void WriteSflash(void)
 {
-    if (F_rxComplete) {
-        F_rxComplete = false;
+    if (f_rxComplete) {
+        f_rxComplete = false;
         AT_command_process(g_usart1RxBuffer);
     }
 

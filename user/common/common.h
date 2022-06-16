@@ -27,6 +27,8 @@ extern void LPTIM1_IsrHandle(void);
 
 extern void Set32HzFlag(bool flag);
 extern bool Get32HzFlag(void);
+extern void Set32HzTwoFlag(bool flag);
+extern bool Get32HzTwoFlag(void);
 extern void Set250msFlag(bool flag);
 extern bool Get250msFlag(void);
 extern void Set500msFlag(bool flag);

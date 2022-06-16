@@ -13,8 +13,8 @@
 #define RX_BUFF_SIZE 20
 #define TX_BUFF_SIZE 100
 
-bool F_rxComplete;
-bool F_txComplete;
+bool f_rxComplete;
+bool f_txComplete;
 char g_usart1RxBuffer[RX_BUFF_SIZE];
 uint8_t g_usart1TxBuffer[TX_BUFF_SIZE];
 
@@ -36,7 +36,7 @@ void DMA_ISR_Callback(void)
         //LL_DMA_ClearFlag_TC4(DMA1);
         //LL_DMA_EnableIT_TC(DMA1, LL_DMA_CHANNEL_4);
         LL_DMA_EnableChannel(DMA1, LL_DMA_CHANNEL_4);
-        F_txComplete = true;
+        f_txComplete = true;
     }
 }
 
@@ -82,7 +82,7 @@ void LPUART_RxIdleCallback(void)
         LL_DMA_SetDataLength(DMA1, LL_DMA_CHANNEL_3, RX_BUFF_SIZE);
         LL_DMA_EnableChannel(DMA1, LL_DMA_CHANNEL_3);
         LL_LPUART_ClearFlag_IDLE(LPUART1);
-        F_rxComplete = true;
+        f_rxComplete = true;
     }
 }
 
@@ -93,15 +93,21 @@ void LPUART_TxCompleteCallback(void)
     //LL_LPUART_DisableIT_TC(LPUART1);
     //LL_DMA_DisableChannel(DMA1, LL_DMA_CHANNEL_4);
     LL_LPUART_ClearFlag_TC(LPUART1);
-    F_txComplete = true;
+    f_txComplete = true;
   }
 }*/
 
-static bool F_32HZ;
-static bool F_250MS;
-static bool F_500MS;
-static bool F_1S;
-static bool F_2S;
+#define TIME_250MS 7
+#define TIME_500MS 15
+#define TIME_1S 31
+#define TIME_2S 63
+
+static bool f_32hz;
+static bool f_32hz_1;
+static bool f_250ms;
+static bool f_500ms;
+static bool f_1s;
+static bool f_2s;
 
 //#define LPTIM1_INT_TIME (32768-1) //32768/32768 = 1S
 //#define LPTIM1_INT_TIME (8192-1) //8192/32768 = 0.25S
@@ -128,79 +134,90 @@ void LPTIM1_IsrHandle(void)
     static uint8_t ctr2 = 0x00;
     static uint8_t ctr3 = 0x00;
 
-    F_32HZ = true;
+    f_32hz = true;
+    f_32hz_1 = true;
 
     ctr0++;
-    if (ctr0 > 7) {
+    if (ctr0 > TIME_250MS) {
         ctr0    = 0x00;
-        F_250MS = 1;
+        f_250ms = true;
     }
     ctr1++;
-    if (ctr1 > 15) {
+    if (ctr1 > TIME_500MS) {
         ctr1    = 0x00;
-        F_500MS = 1;
+        f_500ms = true;
         LED_BLINK();
     }
     ctr2++;
-    if (ctr2 > 31) {
+    if (ctr2 > TIME_1S) {
         ctr2 = 0x00;
-        F_1S = 1;
+        f_1s = true;
     }
     ctr3++;
-    if (ctr3 > 63) {
+    if (ctr3 > TIME_2S) {
         ctr3 = 0x00;
-        F_2S = 1;
+        f_2s = true;
     }
 }
 
 bool Get32HzFlag(void)
 {
-    return F_32HZ;
+    return f_32hz;
 }
 
 void Set32HzFlag(bool flag)
 {
-    F_32HZ = flag;
+    f_32hz = flag;
+}
+
+bool Get32HzTwoFlag(void)
+{
+    return f_32hz_1;
+}
+
+void Set32HzTwoFlag(bool flag)
+{
+    f_32hz_1 = flag;
 }
 
 void Set250msFlag(bool flag)
 {
-    F_250MS = flag;
+    f_250ms = flag;
 }
 
 bool Get250msFlag(void)
 {
-    return F_250MS;
+    return f_250ms;
 }
 
 void Set500msFlag(bool flag)
 {
-    F_500MS = flag;
+    f_500ms = flag;
 }
 
 bool Get500msFlag(void)
 {
-    return F_500MS;
+    return f_500ms;
 }
 
 void Set1sFlag(bool flag)
 {
-    F_1S = flag;
+    f_1s = flag;
 }
 
 bool Get1sFlag(void)
 {
-    return F_1S;
+    return f_1s;
 }
 
 void Set2sFlag(bool flag)
 {
-    F_2S = flag;
+    f_2s = flag;
 }
 
 bool Get2sFlag(void)
 {
-    return F_2S;
+    return f_2s;
 }
 
 void SysInit(void)
