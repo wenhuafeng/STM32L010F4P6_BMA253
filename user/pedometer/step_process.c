@@ -452,7 +452,7 @@ static void TaskStepClearCountdown(void)
             }
 
             g_stepStatus = 0;
-            LL_LPTIM_Disable(LPTIM1);
+            //LL_LPTIM_Disable(LPTIM1);
         }
     }
 }

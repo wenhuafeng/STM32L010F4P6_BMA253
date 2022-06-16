@@ -23,7 +23,7 @@ stlink_config_file = "user/openocd/stlink.cfg"
 chip_config_file = "user/openocd/stm32l0.cfg"
 program_cmd = "\"program user/output/STM32L0_BMA253.bin 0x8000000\""
 
-def openocd_run():
+def stlink_run():
     host_os = platform.system()
     print("host os: %s" % host_os)
 
@@ -117,8 +117,8 @@ def main_func(parameter):
         mdk_build()
     elif parameter == 'jlink':
         jlink_run(jlink_loadfile)
-    elif parameter == 'openocd':
-        openocd_run()
+    elif parameter == 'stlink':
+        stlink_run()
     else:
         print("input parameter error!")
 

@@ -18,7 +18,8 @@
             ],
             "executable": "build/STM32L0_BMA253.elf",
             "device": "stm32l0",
-            "runToMain": true,
+            "runToEntryPoint": "main",
+            "preLaunchTask": "build",
         }
     ]
 }

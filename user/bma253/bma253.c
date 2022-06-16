@@ -1195,7 +1195,9 @@ static ErrorStatus BMA253_SetParameter(void)
     uint16_t cnt      = 0;
 
     BMA_DelayMs(10);
-    accelerometer_soft_reset();
+    if (accelerometer_soft_reset() == false) {
+        PRINTF("bma253 soft reset error!\r\n");
+    }
     BMA_DelayMs(10);
 
     if (accelerometer_probe() == false) {

@@ -134,6 +134,11 @@ void LPTIM1_IsrHandle(void)
     static uint8_t ctr2 = 0x00;
     static uint8_t ctr3 = 0x00;
 
+    if (LL_LPTIM_IsActiveFlag_ARRM(LPTIM1) == false) {
+        return;
+    }
+    LL_LPTIM_ClearFLAG_ARRM(LPTIM1);
+
     f_32hz = true;
     f_32hz_1 = true;
 
