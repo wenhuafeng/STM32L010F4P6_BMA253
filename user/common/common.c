@@ -10,6 +10,8 @@
 #include "vcom.h"
 #include "common.h"
 
+#define SOFTWARE_VERSION "V101"
+
 #define RX_BUFF_SIZE 20
 #define TX_BUFF_SIZE 100
 
@@ -235,6 +237,8 @@ void SysInit(void)
     LPTIM1_CounterStartIT();
     vcom_Init();
     vcom_ReceiveInit();
+
+    PRINTF("%s, %s, %s\r\n", SOFTWARE_VERSION, __TIME__, __DATE__);
 }
 
 void EnterStopMode(void)
