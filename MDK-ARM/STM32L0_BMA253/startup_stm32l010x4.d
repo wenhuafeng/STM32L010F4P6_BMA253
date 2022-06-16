@@ -1,1 +1,0 @@
-stm32l0_bma253\startup_stm32l010x4.o: startup_stm32l010x4.s
