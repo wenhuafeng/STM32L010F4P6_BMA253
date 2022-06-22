@@ -17,6 +17,8 @@
         LL_GPIO_SetOutputPin(LED_GPIO_Port, LED_Pin); \
     } while (0)
 
+extern uint8_t *GetTxBuffer(void);
+
 extern void DMA_ISR_Callback(void);
 extern void LPUART_DMA_CONFIG(void);
 extern void LPUART_RxIdleCallback(void);
@@ -37,6 +39,10 @@ extern void Set1sFlag(bool flag);
 extern bool Get1sFlag(void);
 extern void Set2sFlag(bool flag);
 extern bool Get2sFlag(void);
+extern void SetTxCompleteFlag(bool flag);
+extern bool GetTxCompleteFlag(void);
+extern void SetRxCompleteFlag(bool flag);
+extern bool GetRxCompleteFlag(void);
 
 extern void SysInit(void);
 extern void EnterStopMode(void);

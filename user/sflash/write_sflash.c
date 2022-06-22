@@ -4,6 +4,8 @@
 #include "main.h"
 #include "w25qxx.h"
 #include "array_queue.h"
+#include "bma253.h"
+#include "common.h"
 
 #if defined(GSENSOR_TO_SPI_FLASH) && GSENSOR_TO_SPI_FLASH
 
@@ -21,9 +23,9 @@ uint32_t Address_current = 0x00;
 
 void DataEnterQueue(uint8_t Data)
 {
-    if (EnQueue(Data) == false) {
-        QueueToBuffer(Buffer);
-        InitQueue();
+    if (QUEUE_Enable(Data) == false) {
+        QUEUE_ToBuffer(Buffer);
+        QUEUE_Init();
         f_queueFull = true;
     }
 }
@@ -72,7 +74,7 @@ void WriteDataToSflash(void)
         if (f_queueFull) {
             f_queueFull = false;
             if (Address_current < _FLASH_SIZE_) {
-                W25QXX_Write_NoCheck(&Buffer[0], Address_current, ARRAY_QUEUE_MAXSIZE);
+                W25QXX_WriteNoCheck(&Buffer[0], Address_current, ARRAY_QUEUE_MAXSIZE);
                 Address_current += ARRAY_QUEUE_MAXSIZE;
             } else {
                 f_sflashFull = true;
@@ -89,10 +91,11 @@ void WriteDataToSflash(void)
 void AT_command_process(char *cRxBuf)
 {
     char *buf;
+    uint8_t *buffer;
 
     buf = "AT+RST";
     if (strstr(cRxBuf, buf) != NULL) {
-        W25QXX_Erase_Chip();
+        W25QXX_EraseChip();
         f_eraseChip = 1;
 
         uint8_t i = 10 * 4;
@@ -111,15 +114,17 @@ void AT_command_process(char *cRxBuf)
     buf = "AT+GET";
     if (strstr(cRxBuf, buf) != NULL) {
         Address_start = 0x00;
-        f_txComplete  = true;
+        SetTxCompleteFlag(true);
         do {
             if (Get32HzTwoFlag() == true) {
                 Set32HzTwoFlag(false);
                 LED_BLINK();
             }
-            if (f_txComplete == true) {
-                f_txComplete = false;
-                W25QXX_Read(g_usart1TxBuffer, Address_start, ARRAY_QUEUE_MAXSIZE);
+
+            buffer = GetTxBuffer();
+            if (GetTxCompleteFlag() == true) {
+                SetTxCompleteFlag(false);
+                W25QXX_Read(buffer, Address_start, ARRAY_QUEUE_MAXSIZE);
                 LL_LPUART_EnableDMAReq_TX(LPUART1);
                 Address_start += ARRAY_QUEUE_MAXSIZE;
             }
@@ -132,16 +137,18 @@ void AT_command_process(char *cRxBuf)
 void LPUART_DMA_Send_Test(void)
 {
     uint8_t i;
+    uint8_t *buf;
 
+    buf = GetTxBuffer();
     if (Get2sFlag() == true) {
         Set2sFlag(false);
 
         i = 0;
         do {
-            g_usart1TxBuffer[i] = i;
+            buf[i] = i;
             i++;
-        } while (i < (USART1_TXBUFF_SIZE - 1));
-        g_usart1TxBuffer[i] = i;
+        } while (i < (strlen((char *)buf) - 1));
+        buf[i] = i;
 
         LL_LPUART_EnableDMAReq_TX(LPUART1);
     }
@@ -166,9 +173,12 @@ void LowPowerDetect(void)
 
 void WriteSflash(void)
 {
-    if (f_rxComplete) {
-        f_rxComplete = false;
-        AT_command_process(g_usart1RxBuffer);
+    uint8_t *buf;
+
+    buf = GetTxBuffer();
+    if (GetRxCompleteFlag() == true) {
+        SetRxCompleteFlag(false);
+        AT_command_process((char *)buf);
     }
 
     LowPowerDetect();

@@ -85,12 +85,12 @@
 uint16_t W25QXX_TYPE = W25Q128;
 uint8_t g_buffer[512];
 
-void W25QXX_CS(uint8_t cs)
+static void W25QXX_CS(uint8_t cs)
 {
     cs ? LL_GPIO_SetOutputPin(SPI1_CS_GPIO_Port, SPI1_CS_Pin) : LL_GPIO_ResetOutputPin(SPI1_CS_GPIO_Port, SPI1_CS_Pin);
 }
 
-uint8_t SPI1_ReadWriteByte(uint8_t dat)
+static uint8_t SPI1_ReadWriteByte(uint8_t dat)
 {
     uint8_t r;
 
@@ -106,6 +106,22 @@ uint8_t SPI1_ReadWriteByte(uint8_t dat)
     return (r);
 }
 
+uint16_t W25QXX_ReadID(void)
+{
+    uint16_t Temp = 0;
+
+    W25QXX_CS(0);
+    SPI1_ReadWriteByte(0x90);
+    SPI1_ReadWriteByte(0x00);
+    SPI1_ReadWriteByte(0x00);
+    SPI1_ReadWriteByte(0x00);
+    Temp |= (SPI1_ReadWriteByte(0xFF) << 8);
+    Temp |= SPI1_ReadWriteByte(0xFF);
+    W25QXX_CS(1);
+
+    return Temp;
+}
+
 void W25QXX_Init(void)
 {
     LL_SPI_Enable(SPI1);
@@ -116,7 +132,7 @@ void W25QXX_Init(void)
     }
 }
 
-uint8_t W25QXX_ReadSR(void)
+static uint8_t W25QXX_ReadSR(void)
 {
     uint8_t byte = 0;
 
@@ -136,7 +152,7 @@ void W25QXX_WriteSR(uint8_t sr)
     W25QXX_CS(1);
 }
 
-void W25QXX_WriteEnable(void)
+static void W25QXX_WriteEnable(void)
 {
     W25QXX_CS(0);
     SPI1_ReadWriteByte(W25X_WriteEnable);
@@ -148,22 +164,6 @@ void W25QXX_WriteDisable(void)
     W25QXX_CS(0);
     SPI1_ReadWriteByte(W25X_WriteDisable);
     W25QXX_CS(1);
-}
-
-uint16_t W25QXX_ReadID(void)
-{
-    uint16_t Temp = 0;
-
-    W25QXX_CS(0);
-    SPI1_ReadWriteByte(0x90);
-    SPI1_ReadWriteByte(0x00);
-    SPI1_ReadWriteByte(0x00);
-    SPI1_ReadWriteByte(0x00);
-    Temp |= (SPI1_ReadWriteByte(0xFF) << 8);
-    Temp |= SPI1_ReadWriteByte(0xFF);
-    W25QXX_CS(1);
-
-    return Temp;
 }
 
 void W25QXX_Read(uint8_t *buffer, uint32_t addr, uint16_t len)
@@ -181,7 +181,12 @@ void W25QXX_Read(uint8_t *buffer, uint32_t addr, uint16_t len)
     W25QXX_CS(1);
 }
 
-void W25QXX_WritePage(uint8_t *buffer, uint32_t addr, uint16_t len)
+void W25QXX_WaitBusy(void)
+{
+    while ((W25QXX_ReadSR() & 0x01) == 0x01);
+}
+
+static void W25QXX_WritePage(uint8_t *buffer, uint32_t addr, uint16_t len)
 {
     uint16_t i;
 
@@ -223,6 +228,21 @@ void W25QXX_WriteNoCheck(uint8_t *buffer, uint32_t addr, uint16_t len)
             }
         }
     };
+}
+
+void W25QXX_EraseSector(uint32_t addr)
+{
+    //printf("fe:%x\r\n",addr);
+    addr *= 4096;
+    W25QXX_WriteEnable();
+    W25QXX_WaitBusy();
+    W25QXX_CS(0);
+    SPI1_ReadWriteByte(W25X_SectorErase);
+    SPI1_ReadWriteByte((uint8_t)((addr) >> 16));
+    SPI1_ReadWriteByte((uint8_t)((addr) >> 8));
+    SPI1_ReadWriteByte((uint8_t)addr);
+    W25QXX_CS(1);
+    W25QXX_WaitBusy();
 }
 
 void W25QXX_Write(uint8_t *buffer, uint32_t addr, uint16_t len)
@@ -285,26 +305,6 @@ void W25QXX_EraseChip(void)
     SPI1_ReadWriteByte(W25X_ChipErase);
     W25QXX_CS(1);
     W25QXX_WaitBusy();
-}
-
-void W25QXX_EraseSector(uint32_t addr)
-{
-    //printf("fe:%x\r\n",addr);
-    addr *= 4096;
-    W25QXX_WriteEnable();
-    W25QXX_WaitBusy();
-    W25QXX_CS(0);
-    SPI1_ReadWriteByte(W25X_SectorErase);
-    SPI1_ReadWriteByte((uint8_t)((addr) >> 16));
-    SPI1_ReadWriteByte((uint8_t)((addr) >> 8));
-    SPI1_ReadWriteByte((uint8_t)addr);
-    W25QXX_CS(1);
-    W25QXX_WaitBusy();
-}
-
-void W25QXX_WaitBusy(void)
-{
-    while ((W25QXX_ReadSR() & 0x01) == 0x01);
 }
 
 void W25QXX_PowerDown(void)

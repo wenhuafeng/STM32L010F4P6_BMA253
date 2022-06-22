@@ -9,14 +9,14 @@
 struct Queue queue;
 
 // init queue
-void InitQueue(void)
+void QUEUE_Init(void)
 {
     queue.front = 0;
     queue.rear  = 0;
 }
 
 // Empty? front == rear
-bool isEmpty(void)
+bool QUEUE_IsEmpty(void)
 {
     if (queue.front == queue.rear) {
         return true;
@@ -25,7 +25,7 @@ bool isEmpty(void)
 }
 
 // Full? (rear+1) % MAXSIZE == front
-bool isFull(void)
+bool QUEUE_IsEull(void)
 {
     if (queue.front == (queue.rear + 1) % ARRAY_QUEUE_MAXSIZE) {
         return true;
@@ -34,9 +34,9 @@ bool isFull(void)
 }
 
 // Into queue
-bool EnQueue(uint8_t val)
+bool QUEUE_Enable(uint8_t val)
 {
-    if (isFull()) {
+    if (QUEUE_IsEull()) {
         queue.data[queue.rear] = val;
         __asm("NOP");
         return false;
@@ -48,10 +48,10 @@ bool EnQueue(uint8_t val)
 }
 
 // Out queue
-bool DeQueue(uint8_t val)
+bool QUEUE_Disable(uint8_t val)
 {
     (void)val;
-    if (isEmpty()) {
+    if (QUEUE_IsEmpty()) {
         __asm("NOP");
         return false;
     }
@@ -62,13 +62,13 @@ bool DeQueue(uint8_t val)
 }
 
 // Get queue length, (rear - front) % MAXSIZE
-int getLen(void)
+int QUEUE_GetLen(void)
 {
     return (queue.rear - queue.front) % ARRAY_QUEUE_MAXSIZE;
 }
 
 // queue data to buffer
-void QueueToBuffer(uint8_t *Buf)
+void QUEUE_ToBuffer(uint8_t *Buf)
 {
     uint8_t i;
 

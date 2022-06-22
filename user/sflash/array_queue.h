@@ -12,12 +12,12 @@ struct Queue {
     uint16_t rear;
 };
 
-void InitQueue(void);
-bool isEmpty(void);
-bool isFull(void);
-bool EnQueue(uint8_t val);
-bool DeQueue(uint8_t val);
-int getLen(void);
-void QueueToBuffer(uint8_t *Buf);
+void QUEUE_Init(void);
+bool QUEUE_IsEmpty(void);
+bool QUEUE_IsEull(void);
+bool QUEUE_Enable(uint8_t val);
+bool QUEUE_Disable(uint8_t val);
+int QUEUE_GetLen(void);
+void QUEUE_ToBuffer(uint8_t *Buf);
 
 #endif

@@ -20,6 +20,11 @@ bool f_txComplete;
 char g_usart1RxBuffer[RX_BUFF_SIZE];
 uint8_t g_usart1TxBuffer[TX_BUFF_SIZE];
 
+uint8_t *GetTxBuffer(void)
+{
+    return g_usart1TxBuffer;
+}
+
 /**
   * @brief  DMA TX ISR handler
   * @param  NONE
@@ -225,6 +230,26 @@ void Set2sFlag(bool flag)
 bool Get2sFlag(void)
 {
     return f_2s;
+}
+
+void SetTxCompleteFlag(bool flag)
+{
+    f_txComplete = flag;
+}
+
+bool GetTxCompleteFlag(void)
+{
+    return f_txComplete;
+}
+
+void SetRxCompleteFlag(bool flag)
+{
+    f_rxComplete = flag;
+}
+
+bool GetRxCompleteFlag(void)
+{
+    return f_rxComplete;
 }
 
 void SysInit(void)
