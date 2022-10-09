@@ -370,11 +370,11 @@ ARM Macro Assembler    Page 6
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0+ --apcs=inter
 work --depend=stm32l0_bma253\startup_stm32l010x4.d -ostm32l0_bma253\startup_stm
-32l010x4.o -I.\RTE\_STM32L0_BMA253 -ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.1.1\CMSIS\
-Include -ID:\Keil_v5\ARM\PACK\Keil\STM32L0xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\
-STM32L0xx\Include --predefine="__UVISION_VERSION SETA 524" --predefine="_RTE_ S
-ETA 1" --predefine="STM32L010x4 SETA 1" --list=startup_stm32l010x4.lst startup_
-stm32l010x4.s
+32l010x4.o -I.\RTE\_STM32L0_BMA253 -ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\
+Core\Include -ID:\Keil_v5\ARM\PACK\Keil\STM32L0xx_DFP\2.2.0\Drivers\CMSIS\Devic
+e\ST\STM32L0xx\Include --predefine="__UVISION_VERSION SETA 537" --predefine="_R
+TE_ SETA 1" --predefine="STM32L010x4 SETA 1" --predefine="_RTE_ SETA 1" --list=
+startup_stm32l010x4.lst startup_stm32l010x4.s
 
 
 

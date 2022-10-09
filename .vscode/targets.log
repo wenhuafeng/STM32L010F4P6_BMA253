@@ -6,7 +6,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jun 22 14:56:59 2022
+# Make data base, printed on Sun Jul 24 14:55:55 2022
 
 # Variables
 
@@ -22,8 +22,6 @@ GNUMAKEFLAGS :=
 LDSCRIPT = STM32L010F4Px_FLASH.ld
 # makefile
 MAKEFLAGS = pqrR
-# environment
-VSCODE_LOG_NATIVE = false
 # makefile (from 'Makefile', line 16)
 TARGET = STM32L0_BMA253
 # automatic
@@ -47,9 +45,11 @@ SHELL := sh.exe
 # makefile (from 'Makefile', line 98)
 BIN = $(CP) -O binary -S
 # environment
+SDD_VCD = camcad
+# environment
 WINDIR = C:\WINDOWS
 # environment
-VSCODE_NLS_CONFIG = {"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"bbca1a7059cee8a1b93da8947fee1c4f.zh-cn","_translationsConfigFile":"C:\\Users\\wenhuafeng\\AppData\\Roaming\\Code\\clp\\bbca1a7059cee8a1b93da8947fee1c4f.zh-cn\\tcf.json","_cacheRoot":"C:\\Users\\wenhuafeng\\AppData\\Roaming\\Code\\clp\\bbca1a7059cee8a1b93da8947fee1c4f.zh-cn","_resolvedLanguagePackCoreLocation":"C:\\Users\\wenhuafeng\\AppData\\Roaming\\Code\\clp\\bbca1a7059cee8a1b93da8947fee1c4f.zh-cn\\30d9c6cd9483b2cc586687151bcbcd635f373630","_corruptedFile":"C:\\Users\\wenhuafeng\\AppData\\Roaming\\Code\\clp\\bbca1a7059cee8a1b93da8947fee1c4f.zh-cn\\corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"1d735750dbb1b9066c7513078396ba0f.zh-cn","_translationsConfigFile":"C:\\Users\\wenhuafeng\\AppData\\Roaming\\Code\\clp\\1d735750dbb1b9066c7513078396ba0f.zh-cn\\tcf.json","_cacheRoot":"C:\\Users\\wenhuafeng\\AppData\\Roaming\\Code\\clp\\1d735750dbb1b9066c7513078396ba0f.zh-cn","_resolvedLanguagePackCoreLocation":"C:\\Users\\wenhuafeng\\AppData\\Roaming\\Code\\clp\\1d735750dbb1b9066c7513078396ba0f.zh-cn\\3b889b090b5ad5793f524b5d1d39fda662b96a2a","_corruptedFile":"C:\\Users\\wenhuafeng\\AppData\\Roaming\\Code\\clp\\1d735750dbb1b9066c7513078396ba0f.zh-cn\\corrupted.info","_languagePackSupport":true}
 # makefile (from 'Makefile', line 95)
 SZ = $(PREFIX)size
 # environment
@@ -58,6 +58,8 @@ VBOX_MSI_INSTALL_PATH = D:\Program Files\Oracle\VirtualBox\
 CFLAGS = $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -MMD -MP -MF"$(@:%.o=%.d)"
 # environment
 ONEDRIVE = C:\Users\wenhuafeng\OneDrive
+# environment
+PADS_PROGRAMS = Programs
 # environment
 PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW
 # makefile (from 'build/command.d', line 1)
@@ -70,22 +72,32 @@ CP = $(PREFIX)objcopy
 DEBUG = 1
 # environment
 TMP = C:\Users\WENHUA~1\AppData\Local\Temp
-# environment
-VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 93)
 AS = $(PREFIX)gcc -x assembler-with-cpp
 # environment
+SDD_WG = wg
+# environment
+SDD_START = start
+# environment
+SDD_LOCAL = C:\ProgramData\mgc\win32\9.5PADS
+# environment
 PROGRAMW6432 = C:\Program Files
+# environment
+SDD_HLX = hlx
 # environment
 PROGRAMDATA = C:\ProgramData
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-72cf3331-1e4e-480d-881c-e417648a24de-sock
-# environment
 VSCODE_CWD = D:\Program Files\Microsoft VS Code
+# environment
+SDD_PADS = pads
 # default
 MAKE_HOST := x86_64-w64-mingw32
 # environment
-PATH = D:\Program Files\Python\Python310\Scripts\;D:\Program Files\Python\Python310\;D:\Program Files (x86)\STMicroelectronics\st_toolset\asm;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Program Files\PuTTY\;D:\Program Files\Git\cmd;D:\Program Files\CMake\bin;D:\Program Files\OpenOCD-20211118-0.11.0\bin;D:\Program Files\TortoiseGit\bin;D:\Program Files (x86)\Nordic Semiconductor\nrf-command-line-tools\bin\;D:\Program Files\mingw-w64\x86_64-8.1.0-win32-sjlj-rt_v6-rev0\mingw64\bin;C:\Program Files (x86)\stlink\bin;C:\Program Files\stlink\bin;D:\Program Files\Python\Python310;D:\Espressif\python_env\idf4.4_py3.8_env\Scripts;D:\Program Files\cloc;D:\Keil_v5\UV4;C:\Program Files (x86)\SEGGER\JLink;D:\Program Files\GitHub CLI\;D:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\bin;C:\Users\wenhuafeng\AppData\Local\Microsoft\WindowsApps;D:\Program Files\Microsoft VS Code\bin
+PATH = D:\MentorGraphics\9.5PADS\SDD_HOME\common\win32\bin;D:\MentorGraphics\9.5PADS\SDD_HOME\common\win32\lib;D:\MentorGraphics\9.5PADS\MGC_HOME.ixn\bin;D:\MentorGraphics\9.5PADS\MGC_HOME.ixn\lib;D:\Program Files\Python\Python310\Scripts\;D:\Program Files\Python\Python310\;D:\Program Files (x86)\STMicroelectronics\st_toolset\asm;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Program Files\PuTTY\;D:\Program Files\Git\cmd;D:\Program Files\CMake\bin;D:\Program Files\OpenOCD-20211118-0.11.0\bin;D:\Program Files\TortoiseGit\bin;D:\Program Files (x86)\Nordic Semiconductor\nrf-command-line-tools\bin\;D:\Program Files\mingw-w64\x86_64-8.1.0-win32-sjlj-rt_v6-rev0\mingw64\bin;C:\Program Files (x86)\stlink\bin;C:\Program Files\stlink\bin;D:\Program Files\Python\Python310;D:\Espressif\python_env\idf4.4_py3.8_env\Scripts;D:\Program Files\cloc;D:\Keil_v5\UV4;C:\Program Files (x86)\SEGGER\JLink;D:\Program Files\GitHub CLI\;D:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\bin;C:\Users\wenhuafeng\AppData\Local\Microsoft\WindowsApps;D:\Program Files\Microsoft VS Code\bin;D:\MentorGraphics\9.5PADS\SDD_HOME\common\win32\lib;D:\MentorGraphics\9.5PADS\SDD_HOME\CAMCAD
+# environment
+SDD_TRN = translators
+# environment
+SDD_PLATFORM = win32
 # environment
 COMMONPROGRAMW6432 = C:\Program Files\Common Files
 # environment
@@ -93,9 +105,9 @@ PROCESSOR_ARCHITECTURE = AMD64
 # environment
 USERPROFILE = C:\Users\wenhuafeng
 # environment
-ALLUSERSPROFILE = C:\ProgramData
+HYP_HOME = D:\MentorGraphics\9.5PADS\SDD_HOME\hyperlynx
 # environment
-VSCODE_LOG_STACK = false
+ALLUSERSPROFILE = C:\ProgramData
 # environment
 NUMBER_OF_PROCESSORS = 12
 # environment
@@ -107,13 +119,15 @@ LDFLAGS = $(MCU) -specs=nano.specs -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BU
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_15564_GMXTACPNXZWDJCPD
+PADS_ROOT = D:\MentorGraphics\9.5PADS\SDD_HOME
+# environment
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_5564_OSABSXFUTMRSRMZJ
+# environment
+MGC_HOME = D:\MentorGraphics\9.5PADS\MGC_HOME.ixn
 # makefile (from 'Makefile', line 76)
 ASM_SOURCES = startup_stm32l010x4.s
 # makefile (from 'Makefile', line 25)
 OPT = -Og
-# environment
-VSCODE_PIPE_LOGGING = true
 # environment
 COMPUTERNAME = LAPTOP-PRAVS7GT
 # environment
@@ -127,17 +141,23 @@ ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
 USERNAME = wenhuafeng
 # environment
+MGLS_LICENSE_FILE = D:\MentorGraphics\LICENSE.TXT
+# environment
 PUBLIC = C:\Users\Public
+# environment
+SDD_VERSION = 9.5PADS
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-VSCODE_CODE_CACHE_PATH = C:\Users\wenhuafeng\AppData\Roaming\Code\CachedData\30d9c6cd9483b2cc586687151bcbcd635f373630
+VSCODE_CODE_CACHE_PATH = C:\Users\wenhuafeng\AppData\Roaming\Code\CachedData\3b889b090b5ad5793f524b5d1d39fda662b96a2a
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 COMMONPROGRAMFILES = C:\Program Files\Common Files
 # environment
 LOGONSERVER = \\LAPTOP-PRAVS7GT
+# automatic
++F = $(notdir $+)
 # makefile (from 'Makefile', line 83)
 PREFIX = arm-none-eabi-
 # environment
@@ -146,6 +166,10 @@ ONEDRIVECONSUMER = C:\Users\wenhuafeng\OneDrive
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # environment
 USERDOMAIN = LAPTOP-PRAVS7GT
+# environment
+SDD_DOC_UTILS = doc_utils
+# environment
+SDD_COMMON_BIN = D:\MentorGraphics\9.5PADS\SDD_HOME\common\win32\bin
 # makefile (from 'Makefile', line 120)
 C_DEFS = -DUSE_FULL_LL_DRIVER -DHSE_VALUE=8000000 -DHSE_STARTUP_TIMEOUT=100 -DLSE_STARTUP_TIMEOUT=5000 -DLSE_VALUE=32768 -DMSI_VALUE=2097000 -DHSI_VALUE=16000000 -DLSI_VALUE=37000 -DVDD_VALUE=3300 -DPREFETCH_ENABLE=0 -DINSTRUCTION_CACHE_ENABLE=1 -DDATA_CACHE_ENABLE=1 -DSTM32L010x4
 # environment
@@ -158,6 +182,8 @@ C_INCLUDES = -ICore/Inc -IDrivers/STM32L0xx_HAL_Driver/Inc -IDrivers/CMSIS/Devic
 MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
+# environment
+SDD_HOME = D:\MentorGraphics\9.5PADS\SDD_HOME
 # makefile (from 'Makefile', line 97)
 HEX = $(CP) -O ihex
 # makefile (from 'Makefile', line 92)
@@ -177,6 +203,8 @@ PROGRAMFILES(X86) = C:\Program Files (x86)
 # makefile (from 'Makefile', line 104)
 CPU = -mcpu=cortex-m0plus
 # environment
+SDD_STARTBAT = start /b /wait
+# environment
 LOCALAPPDATA = C:\Users\wenhuafeng\AppData\Local
 # environment
 PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
@@ -184,6 +212,8 @@ PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\Wi
 MAKE_COMMAND := make.exe
 # makefile (from 'Makefile', line 174)
 LIBDIR = 
+# environment
+SDD_HSSD = hssd
 # default
 .VARIABLES := 
 # automatic
@@ -193,7 +223,7 @@ PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD
 # environment
 OS = Windows_NT
 # environment
-VSCODE_IPC_HOOK = \\.\pipe\d0f9ff90f2b0f15191b4ed40651aea96-1.68.1-main-sock
+VSCODE_IPC_HOOK = \\.\pipe\d0f9ff90f2b0f15191b4ed40651aea96-1.69.2-main-sock
 # environment
 HOMEPATH = \Users\wenhuafeng
 # environment
@@ -205,11 +235,15 @@ MFLAGS = -pqrR
 # automatic
 *D = $(patsubst %/,%,$(patsubst %\,%,$(dir $*)))
 # environment
+WDIR = C:\PADS Projects;D:\MentorGraphics\9.5PADS\SDD_HOME\standard
+# environment
 SYSTEMROOT = C:\WINDOWS
 # automatic
 +D = $(patsubst %/,%,$(patsubst %\,%,$(dir $+)))
-# automatic
-+F = $(notdir $+)
+# environment
+SDD_WV = wv
+# environment
+SDD_MGC_HOME = ..\MGC_HOME.ixn
 # environment
 APPDATA = C:\Users\wenhuafeng\AppData\Roaming
 # environment
@@ -220,6 +254,12 @@ COMSPEC = C:\WINDOWS\system32\cmd.exe
 MAKEFILES := 
 # environment
 IDF_TOOLS_PATH = D:\Espressif
+# environment
+SDD_ICDB = iCDB
+# environment
+WF_CLASSPATH = D:\MentorGraphics\9.5PADS\SDD_HOME\common\win32\lib
+# environment
+SDD_CES = ces
 # automatic
 <F = $(notdir $<)
 # environment
@@ -249,11 +289,11 @@ PROCESSOR_LEVEL = 23
 # environment
 FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
-VSCODE_PID = 15564
+VSCODE_PID = 5564
 # environment
 USERDOMAIN_ROAMINGPROFILE = LAPTOP-PRAVS7GT
 # variable set hash-table stats:
-# Load=121/1024=12%, Rehash=0, Collisions=18/250=7%
+# Load=141/1024=14%, Rehash=0, Collisions=19/270=7%
 
 # Pattern-specific Variable Values
 
@@ -263,9 +303,9 @@ USERDOMAIN_ROAMINGPROFILE = LAPTOP-PRAVS7GT
 
 # user/lpuart (key d:/src/0_examples/STM32/STM32L010F4P6_BMA253/user/lpuart, mtime 1606625412): 10 files, no impossibilities.
 # user/sflash (key d:/src/0_examples/STM32/STM32L010F4P6_BMA253/user/sflash, mtime 1644754800): 8 files, no impossibilities.
-# . (key d:/src/0_examples/STM32/STM32L010F4P6_BMA253, mtime 1655473352): 18 files, no impossibilities.
+# . (key d:/src/0_examples/STM32/STM32L010F4P6_BMA253, mtime 1655950648): 18 files, no impossibilities.
 # Drivers/STM32L0xx_HAL_Driver/Src (key d:/src/0_examples/STM32/STM32L010F4P6_BMA253/Drivers/STM32L0xx_HAL_Driver/Src, mtime 1655303915): 13 files, no impossibilities.
-# build (key d:/src/0_examples/STM32/STM32L010F4P6_BMA253/build, mtime 1655473354): 113 files, no impossibilities.
+# build (key d:/src/0_examples/STM32/STM32L010F4P6_BMA253/build, mtime 1655950653): 113 files, no impossibilities.
 # user/common (key d:/src/0_examples/STM32/STM32L010F4P6_BMA253/user/common, mtime 1655291141): 4 files, no impossibilities.
 # user/pedometer (key d:/src/0_examples/STM32/STM32L010F4P6_BMA253/user/pedometer, mtime 1645111828): 8 files, no impossibilities.
 # Core/Src (key d:/src/0_examples/STM32/STM32L010F4P6_BMA253/Core/Src, mtime 1655303914): 12 files, no impossibilities.
@@ -318,7 +358,7 @@ Core/Src/gpio.c:
 # Not a target:
 build/dma.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:32
+#  Last modified 2022-06-23 10:17:28
 #  File has been updated.
 #  Successfully updated.
 
@@ -338,7 +378,7 @@ Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_rcc.c:
 # Not a target:
 build/stm32l0xx_ll_utils.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:30
 #  File has been updated.
 #  Successfully updated.
 
@@ -350,28 +390,29 @@ user/sflash/write_sflash.h:
 
 user/sflash/w25qxx.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-15 20:18:39
+#  Last modified 2022-06-22 15:17:18
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 build/gpio.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:32
+#  Last modified 2022-06-23 10:17:28
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 build/startup_stm32l010x4.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:34
+#  Last modified 2022-06-23 10:17:32
 #  File has been updated.
 #  Successfully updated.
 
-build/main.o: Core/Src/main.c Makefile Core/Src/main.c Core/Inc/main.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h user/common/common.h user/bma253/bma253.h user/print/print.h user/pedometer/step_process.h | build
+build/main.o: Core/Src/main.c Makefile Core/Src/main.c Core/Inc/main.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h D 
+rivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h user/common/common.h user/bma253/bma253.h user/print/print.h user/pedometer/step_process.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  Last modified 2022-06-17 21:42:32
+#  Last modified 2022-06-23 10:17:30
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -380,7 +421,7 @@ build/main.o: Core/Src/main.c Makefile Core/Src/main.c Core/Inc/main.h Drivers/S
 # Not a target:
 build/utilities.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:31
 #  File has been updated.
 #  Successfully updated.
 
@@ -400,14 +441,14 @@ Drivers/CMSIS/Include/cmsis_version.h:
 # Not a target:
 build/stm32l0xx_ll_dma.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:30
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 user/common/common.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-16 21:22:20
+#  Last modified 2022-06-22 15:33:26
 #  File has been updated.
 #  Successfully updated.
 
@@ -435,7 +476,7 @@ startup_stm32l010x4.s:
 build/bma253.o: user/bma253/bma253.c Makefile user/bma253/bma253.c user/bma253/bma253.h Core/Inc/main.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h user/bma253/bma253_iic.h user/lpuart/vcom.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'bma253'
-#  Last modified 2022-06-17 21:42:34
+#  Last modified 2022-06-23 10:17:32
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -450,7 +491,7 @@ Drivers/CMSIS/Include/cmsis_gcc.h:
 build/usart.o: Core/Src/usart.c Makefile Core/Src/usart.c Core/Inc/usart.h Core/Inc/main.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'usart'
-#  Last modified 2022-06-17 21:42:32
+#  Last modified 2022-06-23 10:17:30
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -459,21 +500,21 @@ build/usart.o: Core/Src/usart.c Makefile Core/Src/usart.c Core/Inc/usart.h Core/
 # Not a target:
 build/step_process.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:34
+#  Last modified 2022-06-23 10:17:32
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 build/tiny_vsnprintf.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:31
 #  File has been updated.
 #  Successfully updated.
 
 build/array_queue.o: user/sflash/array_queue.c Makefile user/sflash/array_queue.c user/sflash/array_queue.h Core/Inc/main.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'array_queue'
-#  Last modified 2022-06-17 21:42:34
+#  Last modified 2022-06-23 10:17:32
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -495,7 +536,7 @@ user/lpuart/vcom.c:
 build/lptim.o: Core/Src/lptim.c Makefile Core/Src/lptim.c Core/Inc/lptim.h Core/Inc/main.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'lptim'
-#  Last modified 2022-06-17 21:42:32
+#  Last modified 2022-06-23 10:17:30
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -504,7 +545,7 @@ build/lptim.o: Core/Src/lptim.c Makefile Core/Src/lptim.c Core/Inc/lptim.h Core/
 build/vcom.o: user/lpuart/vcom.c Makefile user/lpuart/vcom.c user/lpuart/vcom.h Core/Inc/main.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h user/lpuart/tiny_vsnprintf.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'vcom'
-#  Last modified 2022-06-17 21:42:34
+#  Last modified 2022-06-23 10:17:32
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -513,7 +554,7 @@ build/vcom.o: user/lpuart/vcom.c Makefile user/lpuart/vcom.c user/lpuart/vcom.h 
 build/rtc.o: Core/Src/rtc.c Makefile Core/Src/rtc.c Core/Inc/rtc.h Core/Inc/main.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'rtc'
-#  Last modified 2022-06-17 21:42:32
+#  Last modified 2022-06-23 10:17:30
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -522,7 +563,7 @@ build/rtc.o: Core/Src/rtc.c Makefile Core/Src/rtc.c Core/Inc/rtc.h Core/Inc/main
 build/stm32l0xx_ll_pwr.o: Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_pwr.c Makefile Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_pwr.c Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'stm32l0xx_ll_pwr'
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:31
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -530,7 +571,7 @@ build/stm32l0xx_ll_pwr.o: Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_pwr.c Ma
 
 user/common/common.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-16 15:52:04
+#  Last modified 2022-06-22 15:33:41
 #  File has been updated.
 #  Successfully updated.
 
@@ -543,14 +584,14 @@ user/pedometer/at.h:
 # Not a target:
 build/stm32l0xx_ll_spi.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:31
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 build/stm32l0xx_ll_lptim.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:30
 #  File has been updated.
 #  Successfully updated.
 
@@ -569,7 +610,7 @@ Core/Inc/i2c.h:
 # Not a target:
 build/print.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:34
+#  Last modified 2022-06-23 10:17:32
 #  File has been updated.
 #  Successfully updated.
 
@@ -596,7 +637,7 @@ Drivers/CMSIS/Include/cmsis_compiler.h:
 build/system_stm32l0xx.o: Core/Src/system_stm32l0xx.c Makefile Core/Src/system_stm32l0xx.c Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'system_stm32l0xx'
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:31
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -605,7 +646,7 @@ build/system_stm32l0xx.o: Core/Src/system_stm32l0xx.c Makefile Core/Src/system_s
 build/dma.o: Core/Src/dma.c Makefile Core/Src/dma.c Core/Inc/dma.h Core/Inc/main.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'dma'
-#  Last modified 2022-06-17 21:42:32
+#  Last modified 2022-06-23 10:17:30
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -614,7 +655,7 @@ build/dma.o: Core/Src/dma.c Makefile Core/Src/dma.c Core/Inc/dma.h Core/Inc/main
 build/stm32l0xx_ll_utils.o: Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_utils.c Makefile Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_utils.c Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'stm32l0xx_ll_utils'
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:31
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -623,21 +664,21 @@ build/stm32l0xx_ll_utils.o: Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_utils.
 # Not a target:
 build/write_sflash.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:34
+#  Last modified 2022-06-23 10:17:32
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 build/w25qxx.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:34
+#  Last modified 2022-06-23 10:17:32
 #  File has been updated.
 #  Successfully updated.
 
 build/gpio.o: Core/Src/gpio.c Makefile Core/Src/gpio.c Core/Inc/gpio.h Core/Inc/main.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'gpio'
-#  Last modified 2022-06-17 21:42:32
+#  Last modified 2022-06-23 10:17:30
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -652,7 +693,7 @@ Core/Src/i2c.c:
 
 build:
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-17 21:42:34
+#  Last modified 2022-06-23 10:17:33
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 208):
@@ -667,7 +708,7 @@ user/lpuart/vcom.h:
 build/startup_stm32l010x4.o: startup_stm32l010x4.s Makefile startup_stm32l010x4.s | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'startup_stm32l010x4'
-#  Last modified 2022-06-17 21:42:34
+#  Last modified 2022-06-23 10:17:32
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 195):
@@ -676,21 +717,21 @@ build/startup_stm32l010x4.o: startup_stm32l010x4.s Makefile startup_stm32l010x4.
 # Not a target:
 build/stm32l0xx_ll_gpio.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:30
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 build/command.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:34
+#  Last modified 2022-06-23 10:17:32
 #  File has been updated.
 #  Successfully updated.
 
 build/utilities.o: user/lpuart/utilities.c Makefile user/lpuart/utilities.c user/lpuart/utilities.h Core/Inc/main.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'utilities'
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:31
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -699,7 +740,7 @@ build/utilities.o: user/lpuart/utilities.c Makefile user/lpuart/utilities.c user
 # Not a target:
 build/i2c.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:32
+#  Last modified 2022-06-23 10:17:28
 #  File has been updated.
 #  Successfully updated.
 
@@ -713,7 +754,7 @@ Core/Src/rtc.c:
 build/stm32l0xx_ll_dma.o: Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_dma.c Makefile Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_dma.c Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'stm32l0xx_ll_dma'
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:30
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -722,14 +763,14 @@ build/stm32l0xx_ll_dma.o: Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_dma.c Ma
 # Not a target:
 build/vcom.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:31
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 build/stm32l0xx_ll_lpuart.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:31
 #  File has been updated.
 #  Successfully updated.
 
@@ -743,7 +784,7 @@ Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_rtc.c:
 # Not a target:
 build/tiny_sscanf.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:31
 #  File has been updated.
 #  Successfully updated.
 
@@ -756,14 +797,14 @@ Core/Inc/stm32l0xx_it.h:
 # Not a target:
 build/stm32l0xx_ll_rcc.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:30
 #  File has been updated.
 #  Successfully updated.
 
 build/step_process.o: user/pedometer/step_process.c Makefile user/pedometer/step_process.c user/pedometer/step_process.h Core/Inc/main.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h Core/Inc/usart.h Core/Inc/main.h Core/Inc/lptim.h user/lpuart/vcom.h user/common/common.h user/bma253/bma253.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'step_process'
-#  Last modified 2022-06-17 21:42:34
+#  Last modified 2022-06-23 10:17:32
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -772,7 +813,7 @@ build/step_process.o: user/pedometer/step_process.c Makefile user/pedometer/step
 # Not a target:
 build/common.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:31
 #  File has been updated.
 #  Successfully updated.
 
@@ -791,14 +832,14 @@ user/pedometer/command.h:
 # Not a target:
 build/stm32l0xx_ll_rtc.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:31
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 user/sflash/array_queue.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-15 20:18:00
+#  Last modified 2022-06-22 15:03:22
 #  File has been updated.
 #  Successfully updated.
 
@@ -818,7 +859,7 @@ Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h:
 build/tiny_vsnprintf.o: user/lpuart/tiny_vsnprintf.c Makefile user/lpuart/tiny_vsnprintf.c user/lpuart/tiny_vsnprintf.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'tiny_vsnprintf'
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:31
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -827,7 +868,7 @@ build/tiny_vsnprintf.o: user/lpuart/tiny_vsnprintf.c Makefile user/lpuart/tiny_v
 # Not a target:
 build/stm32l0xx_ll_exti.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:30
 #  File has been updated.
 #  Successfully updated.
 
@@ -860,14 +901,14 @@ Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h:
 # Not a target:
 build/stm32l0xx_it.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:30
 #  File has been updated.
 #  Successfully updated.
 
 build/stm32l0xx_ll_spi.o: Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_spi.c Makefile Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_spi.c Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'stm32l0xx_ll_spi'
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:31
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -876,7 +917,7 @@ build/stm32l0xx_ll_spi.o: Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_spi.c Ma
 build/stm32l0xx_ll_lptim.o: Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_lptim.c Makefile Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_lptim.c Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'stm32l0xx_ll_lptim'
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:31
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -892,7 +933,7 @@ Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_pwr.c:
 # Not a target:
 build/spi.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:32
+#  Last modified 2022-06-23 10:17:28
 #  File has been updated.
 #  Successfully updated.
 
@@ -912,7 +953,7 @@ user/pedometer/step_process.c:
 build/print.o: user/print/print.c Makefile user/print/print.c user/print/print.h Core/Inc/main.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h user/common/common.h user/lpuart/vcom.h user/bma253/bma253.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'print'
-#  Last modified 2022-06-17 21:42:34
+#  Last modified 2022-06-23 10:17:32
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -933,7 +974,7 @@ Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_spi.c:
 
 user/sflash/array_queue.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-15 20:18:06
+#  Last modified 2022-06-22 15:03:24
 #  File has been updated.
 #  Successfully updated.
 
@@ -949,10 +990,10 @@ user/lpuart/tiny_vsnprintf.h:
 #  File has been updated.
 #  Successfully updated.
 
-build/write_sflash.o: user/sflash/write_sflash.c Makefile user/sflash/write_sflash.c user/sflash/write_sflash.h Core/Inc/main.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h user/sflash/w25qxx.h user/sflash/array_queue.h | build
+build/write_sflash.o: user/sflash/write_sflash.c Makefile user/sflash/write_sflash.c user/sflash/write_sflash.h Core/Inc/main.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h user/sflash/w25qxx.h user/sflash/array_queue.h user/bma253/bma253.h user/common/common.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'write_sflash'
-#  Last modified 2022-06-17 21:42:34
+#  Last modified 2022-06-23 10:17:32
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -961,7 +1002,7 @@ build/write_sflash.o: user/sflash/write_sflash.c Makefile user/sflash/write_sfla
 build/w25qxx.o: user/sflash/w25qxx.c Makefile user/sflash/w25qxx.c user/sflash/w25qxx.h Core/Inc/main.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'w25qxx'
-#  Last modified 2022-06-17 21:42:34
+#  Last modified 2022-06-23 10:17:32
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -977,14 +1018,14 @@ Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_utils.c:
 # Not a target:
 build/bma253_iic.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:31
 #  File has been updated.
 #  Successfully updated.
 
 build/stm32l0xx_ll_gpio.o: Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_gpio.c Makefile Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_gpio.c Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'stm32l0xx_ll_gpio'
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:30
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -993,7 +1034,7 @@ build/stm32l0xx_ll_gpio.o: Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_gpio.c 
 build/command.o: user/pedometer/command.c Makefile user/pedometer/command.c user/pedometer/at.h user/lpuart/vcom.h Core/Inc/main.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h user/pedometer/command.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'command'
-#  Last modified 2022-06-17 21:42:34
+#  Last modified 2022-06-23 10:17:32
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -1002,7 +1043,7 @@ build/command.o: user/pedometer/command.c Makefile user/pedometer/command.c user
 build/STM32L0_BMA253.hex: build/STM32L0_BMA253.elf | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'STM32L0_BMA253'
-#  Last modified 2022-06-17 21:42:34
+#  Last modified 2022-06-23 10:17:33
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 202):
@@ -1011,7 +1052,7 @@ build/STM32L0_BMA253.hex: build/STM32L0_BMA253.elf | build
 build/i2c.o: Core/Src/i2c.c Makefile Core/Src/i2c.c Core/Inc/i2c.h Core/Inc/main.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'i2c'
-#  Last modified 2022-06-17 21:42:32
+#  Last modified 2022-06-23 10:17:30
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -1019,14 +1060,14 @@ build/i2c.o: Core/Src/i2c.c Makefile Core/Src/i2c.c Core/Inc/i2c.h Core/Inc/main
 
 Core/Inc/main.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-15 22:26:22
+#  Last modified 2022-06-22 15:36:28
 #  File has been updated.
 #  Successfully updated.
 
 build/stm32l0xx_ll_lpuart.o: Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_lpuart.c Makefile Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_lpuart.c Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'stm32l0xx_ll_lpuart'
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:31
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -1035,7 +1076,7 @@ build/stm32l0xx_ll_lpuart.o: Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_lpuar
 # Not a target:
 build/at.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:34
+#  Last modified 2022-06-23 10:17:32
 #  File has been updated.
 #  Successfully updated.
 
@@ -1069,7 +1110,7 @@ user/bma253/bma253_iic.c:
 # Not a target:
 build/stm32l0xx_ll_i2c.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:30
 #  File has been updated.
 #  Successfully updated.
 
@@ -1096,7 +1137,7 @@ user/pedometer/step_process.h:
 build/tiny_sscanf.o: user/lpuart/tiny_sscanf.c Makefile user/lpuart/tiny_sscanf.c user/lpuart/tiny_sscanf.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'tiny_sscanf'
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:31
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -1105,7 +1146,7 @@ build/tiny_sscanf.o: user/lpuart/tiny_sscanf.c Makefile user/lpuart/tiny_sscanf.
 build/stm32l0xx_ll_rcc.o: Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_rcc.c Makefile Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_rcc.c Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'stm32l0xx_ll_rcc'
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:31
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -1120,7 +1161,7 @@ Core/Inc/usart.h:
 build/common.o: user/common/common.c Makefile user/common/common.c Core/Inc/main.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h Core/Inc/gpio.h Core/Inc/main.h Core/Inc/i2c.h Core/Inc/usart.h Core/Inc/lptim.h Core/Inc/rtc.h user/lpuart/vcom.h user/common/common.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'common'
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:31
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -1129,7 +1170,7 @@ build/common.o: user/common/common.c Makefile user/common/common.c Core/Inc/main
 build/stm32l0xx_ll_rtc.o: Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_rtc.c Makefile Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_rtc.c Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'stm32l0xx_ll_rtc'
-#  Last modified 2022-06-17 21:42:34
+#  Last modified 2022-06-23 10:17:31
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -1161,8 +1202,7 @@ Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h:
 #  Successfully updated.
 
 Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h:
-#  Implicit rule search has been  
-done.
+#  Implicit rule search has been done.
 #  Last modified 2021-08-09 19:29:58
 #  File has been updated.
 #  Successfully updated.
@@ -1177,7 +1217,7 @@ user/print/print.c:
 build/stm32l0xx_ll_exti.o: Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_exti.c Makefile Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_exti.c Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'stm32l0xx_ll_exti'
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:30
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -1186,7 +1226,7 @@ build/stm32l0xx_ll_exti.o: Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_exti.c 
 # Not a target:
 build/main.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:32
+#  Last modified 2022-06-23 10:17:29
 #  File has been updated.
 #  Successfully updated.
 
@@ -1219,14 +1259,14 @@ Core/Inc/lptim.h:
 # Not a target:
 build/bma253.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:31
 #  File has been updated.
 #  Successfully updated.
 
 build/stm32l0xx_it.o: Core/Src/stm32l0xx_it.c Makefile Core/Src/stm32l0xx_it.c Core/Inc/main.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h Core/Inc/stm32l0xx_it.h user/common/common.h user/pedometer/step_process.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'stm32l0xx_it'
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:31
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -1234,7 +1274,7 @@ build/stm32l0xx_it.o: Core/Src/stm32l0xx_it.c Makefile Core/Src/stm32l0xx_it.c C
 
 build/STM32L0_BMA253.elf: build/main.o build/gpio.o build/dma.o build/i2c.o build/lptim.o build/usart.o build/rtc.o build/spi.o build/stm32l0xx_it.o build/stm32l0xx_ll_gpio.o build/stm32l0xx_ll_dma.o build/stm32l0xx_ll_i2c.o build/stm32l0xx_ll_rcc.o build/stm32l0xx_ll_utils.o build/stm32l0xx_ll_exti.o build/stm32l0xx_ll_lptim.o build/stm32l0xx_ll_lpuart.o build/stm32l0xx_ll_rtc.o build/stm32l0xx_ll_spi.o build/stm32l0xx_ll_pwr.o build/system_stm32l0xx.o build/bma253_iic.o build/bma253.o build/common.o build/tiny_sscanf.o build/tiny_vsnprintf.o build/utilities.o build/vcom.o build/at.o build/command.o build/step_process.o build/print.o build/array_queue.o build/w25qxx.o build/write_sflash.o build/startup_stm32l010x4.o Makefile
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-17 21:42:34
+#  Last modified 2022-06-23 10:17:33
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 198):
@@ -1244,14 +1284,14 @@ build/STM32L0_BMA253.elf: build/main.o build/gpio.o build/dma.o build/i2c.o buil
 # Not a target:
 build/usart.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:32
+#  Last modified 2022-06-23 10:17:28
 #  File has been updated.
 #  Successfully updated.
 
 build/spi.o: Core/Src/spi.c Makefile Core/Src/spi.c Core/Inc/spi.h Core/Inc/main.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'spi'
-#  Last modified 2022-06-17 21:42:32
+#  Last modified 2022-06-23 10:17:30
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -1286,14 +1326,14 @@ Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h:
 # Not a target:
 user/sflash/write_sflash.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-16 15:53:40
+#  Last modified 2022-06-22 15:35:20
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 user/sflash/w25qxx.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-15 20:18:33
+#  Last modified 2022-06-22 15:17:40
 #  File has been updated.
 #  Successfully updated.
 
@@ -1307,7 +1347,7 @@ Core/Src/lptim.c:
 # Not a target:
 build/array_queue.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:34
+#  Last modified 2022-06-23 10:17:32
 #  File has been updated.
 #  Successfully updated.
 
@@ -1344,7 +1384,7 @@ Core/Inc/rtc.h:
 # Not a target:
 build/lptim.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:32
+#  Last modified 2022-06-23 10:17:28
 #  File has been updated.
 #  Successfully updated.
 
@@ -1357,7 +1397,7 @@ Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h:
 build/bma253_iic.o: user/bma253/bma253_iic.c Makefile user/bma253/bma253_iic.c user/bma253/bma253_iic.h Core/Inc/main.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h Core/Inc/i2c.h Core/Inc/main.h user/lpuart/vcom.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'bma253_iic'
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:31
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -1372,7 +1412,7 @@ Core/Inc/gpio.h:
 build/STM32L0_BMA253.bin: build/STM32L0_BMA253.elf | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'STM32L0_BMA253'
-#  Last modified 2022-06-17 21:42:34
+#  Last modified 2022-06-23 10:17:33
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 205):
@@ -1381,7 +1421,7 @@ build/STM32L0_BMA253.bin: build/STM32L0_BMA253.elf | build
 # Not a target:
 build/rtc.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:32
+#  Last modified 2022-06-23 10:17:28
 #  File has been updated.
 #  Successfully updated.
 
@@ -1394,7 +1434,7 @@ Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h:
 # Not a target:
 build/stm32l0xx_ll_pwr.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:31
 #  File has been updated.
 #  Successfully updated.
 
@@ -1421,7 +1461,7 @@ Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h:
 build/at.o: user/pedometer/at.c Makefile user/pedometer/at.c user/pedometer/at.h user/lpuart/utilities.h Core/Inc/main.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_dma.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lptim.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_lpuart.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rcc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_crs.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_system.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_exti.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_cortex.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_utils.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_pwr.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_rtc.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_spi.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_gpio.h user/lpuart/vcom.h user/lpuart/tiny_sscanf.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'at'
-#  Last modified 2022-06-17 21:42:34
+#  Last modified 2022-06-23 10:17:32
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -1437,7 +1477,7 @@ Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_lpuart.c:
 build/stm32l0xx_ll_i2c.o: Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_i2c.c Makefile Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_i2c.c Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_i2c.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l010x4.h Drivers/CMSIS/Include/core_cm0plus.h Drivers/CMSIS/Include/cmsis_version.h Drivers/CMSIS/Include/cmsis_compiler.h Drivers/CMSIS/Include/cmsis_gcc.h Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_bus.h | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'stm32l0xx_ll_i2c'
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:30
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 192):
@@ -1446,19 +1486,20 @@ build/stm32l0xx_ll_i2c.o: Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_ll_i2c.c Ma
 # Not a target:
 Core/Src/dma.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-15 22:26:20
+#  Last modified 2022-06 
+-15 22:26:20
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 build/system_stm32l0xx.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 21:42:33
+#  Last modified 2022-06-23 10:17:31
 #  File has been updated.
 #  Successfully updated.
 
 # files hash-table stats:
-# Load=162/1024=16%, Rehash=0, Collisions=207/2288=9%
+# Load=162/1024=16%, Rehash=0, Collisions=207/2292=9%
 # VPATH Search Paths
 
 vpath %.c Core/Src;Drivers/STM32L0xx_HAL_Driver/Src;user/bma253;user/common;user/lpuart;user/pedometer;user/print;user/sflash
@@ -1470,9 +1511,9 @@ vpath %.c Core/Src;Drivers/STM32L0xx_HAL_Driver/Src;user/bma253;user/common;user
 # strcache buffers: 1 (0) / strings = 389 / storage = 7185 B / avg = 18 B
 # current buf: size = 8162 B / used = 7185 B / count = 389 / avg = 18 B
 
-# strcache performance: lookups = 2742 / hit rate = 85%
+# strcache performance: lookups = 2748 / hit rate = 85%
 # hash-table stats:
-# Load=389/8192=5%, Rehash=0, Collisions=46/2742=2%
-# Finished Make data base on Wed Jun 22 14:56:59 2022
+# Load=389/8192=5%, Rehash=0, Collisions=46/2748=2%
+# Finished Make data base on Sun Jul 24 14:55:55 2022
 
  
