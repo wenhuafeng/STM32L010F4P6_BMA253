@@ -1,4 +1,3 @@
-build
-MDK-ARM/STM32L0_BMA253
-user/document
-nul.d
+program/build
+program/MDK-ARM/STM32L0_BMA253
+program/nul.d

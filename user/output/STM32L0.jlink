@@ -1,5 +1,0 @@
-h
-loadfile user/output/STM32L0_BMA253.hex 0x8000000
-g
-r
-qc
